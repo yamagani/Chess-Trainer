@@ -1,1 +1,51 @@
-[]
+[
+  {
+    "id": "run-34182181784",
+    "white": "Alice",
+    "black": "Bob",
+    "result": "1-0",
+    "event": "Smoke test",
+    "date": "",
+    "status": "ready",
+    "progress": {
+      "analyzed": 48,
+      "total": 48
+    },
+    "summary": {
+      "inaccuracies": 1,
+      "mistakes": 2,
+      "blunders": 1,
+      "worst": [
+        {
+          "ply": 41,
+          "san": "Nxh5",
+          "color": "w",
+          "lossCp": 341,
+          "kind": "blunder"
+        },
+        {
+          "ply": 45,
+          "san": "g4",
+          "color": "w",
+          "lossCp": 175,
+          "kind": "mistake"
+        },
+        {
+          "ply": 47,
+          "san": "Qxf4",
+          "color": "w",
+          "lossCp": 101,
+          "kind": "mistake"
+        },
+        {
+          "ply": 43,
+          "san": "Bxe7",
+          "color": "w",
+          "lossCp": 83,
+          "kind": "inaccuracy"
+        }
+      ]
+    },
+    "createdAt": "2026-09-08T03:03:59.518Z"
+  }
+]

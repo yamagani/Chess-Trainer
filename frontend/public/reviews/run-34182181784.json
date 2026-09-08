@@ -1,0 +1,1023 @@
+{
+  "id": "run-34182181784",
+  "pgn": "[Event \"Smoke test\"]\n[White \"Alice\"]\n[Black \"Bob\"]\n[Result \"1-0\"]\n\n1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O Be7 6. Re1 b5 7. Bb3 d6 8. c3 O-O 9. h3 Nb8 10. d4 Nbd7 11. Nbd2 Bb7 12. Bc2 Re8 13. Nf1 Bf8 14. Ng3 g6 15. a4 c5 16. d5 c4 17. Bg5 h6 18. Be3 Nc5 19. Qd2 h5 20. Bg5 Be7 21. Nxh5 Nxh5 22. Bxe7 Qxe7 23. g4 Nf4 24. Qxf4 exf4 1-0",
+  "white": "Alice",
+  "black": "Bob",
+  "result": "1-0",
+  "event": "Smoke test",
+  "date": "",
+  "status": "ready",
+  "progress": {
+    "analyzed": 48,
+    "total": 48
+  },
+  "startingFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "ply": 1,
+      "san": "e4",
+      "from": "e2",
+      "to": "e4",
+      "color": "w",
+      "fen": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
+      "evaluation": {
+        "type": "cp",
+        "value": 42
+      },
+      "bestEvaluation": {
+        "type": "cp",
+        "value": 42
+      },
+      "lossCp": 0,
+      "annotation": {
+        "kind": "book",
+        "glyph": "book"
+      },
+      "openingName": "Ruy Lopez"
+    },
+    {
+      "ply": 2,
+      "san": "e5",
+      "from": "e7",
+      "to": "e5",
+      "color": "b",
+      "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+      "evaluation": {
+        "type": "cp",
+        "value": 42
+      },
+      "bestEvaluation": {
+        "type": "cp",
+        "value": 42
+      },
+      "lossCp": 0,
+      "annotation": {
+        "kind": "book",
+        "glyph": "book"
+      },
+      "openingName": "Ruy Lopez"
+    },
+    {
+      "ply": 3,
+      "san": "Nf3",
+      "from": "g1",
+      "to": "f3",
+      "color": "w",
+      "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2",
+      "evaluation": {
+        "type": "cp",
+        "value": 39
+      },
+      "bestEvaluation": {
+        "type": "cp",
+        "value": 39
+      },
+      "lossCp": 0,
+      "annotation": {
+        "kind": "book",
+        "glyph": "book"
+      },
+      "openingName": "Ruy Lopez"
+    },
+    {
+      "ply": 4,
+      "san": "Nc6",
+      "from": "b8",
+      "to": "c6",
+      "color": "b",
+      "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
+      "evaluation": {
+        "type": "cp",
+        "value": 31
+      },
+      "bestEvaluation": {
+        "type": "cp",
+        "value": 31
+      },
+      "lossCp": 0,
+      "annotation": {
+        "kind": "book",
+        "glyph": "book"
+      },
+      "openingName": "Ruy Lopez"
+    },
+    {
+      "ply": 5,
+      "san": "Bb5",
+      "from": "f1",
+      "to": "b5",
+      "color": "w",
+      "fen": "r1bqkbnr/pppp1ppp/2n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3",
+      "evaluation": {
+        "type": "cp",
+        "value": 39
+      },
+      "bestEvaluation": {
+        "type": "cp",
+        "value": 41
+      },
+      "lossCp": 2,
+      "annotation": {
+        "kind": "book",
+        "glyph": "book"
+      },
+      "bestMove": "f1c4",
+      "openingName": "Ruy Lopez"
+    },
+    {
+      "ply": 6,
+      "san": "a6",
+      "from": "a7",
+      "to": "a6",
+      "color": "b",
+      "fen": "r1bqkbnr/1ppp1ppp/p1n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 4",
+      "evaluation": {
+        "type": "cp",
+        "value": 39
+      },
+      "bestEvaluation": {
+        "type": "cp",
+        "value": 39
+      },
+      "lossCp": 0,
+      "annotation": {
+        "kind": "book",
+        "glyph": "book"
+      },
+      "openingName": "Ruy Lopez"
+    },
+    {
+      "ply": 7,
+      "san": "Ba4",
+      "from": "b5",
+      "to": "a4",
+      "color": "w",
+      "fen": "r1bqkbnr/1ppp1ppp/p1n5/4p3/B3P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 1 4",
+      "evaluation": {
+        "type": "cp",
+        "value": 43
+      },
+      "bestEvaluation": {
+        "type": "cp",
+        "value": 43
+      },
+      "lossCp": 0,
+      "annotation": {
+        "kind": "book",
+        "glyph": "book"
+      },
+      "openingName": "Ruy Lopez"
+    },
+    {
+      "ply": 8,
+      "san": "Nf6",
+      "from": "g8",
+      "to": "f6",
+      "color": "b",
+      "fen": "r1bqkb1r/1ppp1ppp/p1n2n2/4p3/B3P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 2 5",
+      "evaluation": {
+        "type": "cp",
+        "value": 40
+      },
+      "bestEvaluation": {
+        "type": "cp",
+        "value": 40
+      },
+      "lossCp": 0,
+      "annotation": {
+        "kind": "book",
+        "glyph": "book"
+      },
+      "openingName": "Ruy Lopez"
+    },
+    {
+      "ply": 9,
+      "san": "O-O",
+      "from": "e1",
+      "to": "g1",
+      "color": "w",
+      "fen": "r1bqkb1r/1ppp1ppp/p1n2n2/4p3/B3P3/5N2/PPPP1PPP/RNBQ1RK1 b kq - 3 5",
+      "evaluation": {
+        "type": "cp",
+        "value": 38
+      },
+      "bestEvaluation": {
+        "type": "cp",
+        "value": 38
+      },
+      "lossCp": 0,
+      "annotation": {
+        "kind": "book",
+        "glyph": "book"
+      },
+      "openingName": "Ruy Lopez"
+    },
+    {
+      "ply": 10,
+      "san": "Be7",
+      "from": "f8",
+      "to": "e7",
+      "color": "b",
+      "fen": "r1bqk2r/1pppbppp/p1n2n2/4p3/B3P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 4 6",
+      "evaluation": {
+        "type": "cp",
+        "value": 35
+      },
+      "bestEvaluation": {
+        "type": "cp",
+        "value": 22
+      },
+      "lossCp": 13,
+      "annotation": {
+        "kind": "book",
+        "glyph": "book"
+      },
+      "bestMove": "b7b5",
+      "openingName": "Ruy Lopez"
+    },
+    {
+      "ply": 11,
+      "san": "Re1",
+      "from": "f1",
+      "to": "e1",
+      "color": "w",
+      "fen": "r1bqk2r/1pppbppp/p1n2n2/4p3/B3P3/5N2/PPPP1PPP/RNBQR1K1 b kq - 5 6",
+      "evaluation": {
+        "type": "cp",
+        "value": 40
+      },
+      "bestEvaluation": {
+        "type": "cp",
+        "value": 40
+      },
+      "lossCp": 0,
+      "annotation": {
+        "kind": "book",
+        "glyph": "book"
+      },
+      "openingName": "Ruy Lopez"
+    },
+    {
+      "ply": 12,
+      "san": "b5",
+      "from": "b7",
+      "to": "b5",
+      "color": "b",
+      "fen": "r1bqk2r/2ppbppp/p1n2n2/1p2p3/B3P3/5N2/PPPP1PPP/RNBQR1K1 w kq - 0 7",
+      "evaluation": {
+        "type": "cp",
+        "value": 55
+      },
+      "bestEvaluation": {
+        "type": "cp",
+        "value": 52
+      },
+      "lossCp": 3,
+      "annotation": {
+        "kind": "book",
+        "glyph": "book"
+      },
+      "bestMove": "d7d6",
+      "openingName": "Ruy Lopez"
+    },
+    {
+      "ply": 13,
+      "san": "Bb3",
+      "from": "a4",
+      "to": "b3",
+      "color": "w",
+      "fen": "r1bqk2r/2ppbppp/p1n2n2/1p2p3/4P3/1B3N2/PPPP1PPP/RNBQR1K1 b kq - 1 7",
+      "evaluation": {
+        "type": "cp",
+        "value": 49
+      },
+      "bestEvaluation": {
+        "type": "cp",
+        "value": 49
+      },
+      "lossCp": 0,
+      "annotation": {
+        "kind": "book",
+        "glyph": "book"
+      },
+      "openingName": "Ruy Lopez"
+    },
+    {
+      "ply": 14,
+      "san": "d6",
+      "from": "d7",
+      "to": "d6",
+      "color": "b",
+      "fen": "r1bqk2r/2p1bppp/p1np1n2/1p2p3/4P3/1B3N2/PPPP1PPP/RNBQR1K1 w kq - 0 8",
+      "evaluation": {
+        "type": "cp",
+        "value": 42
+      },
+      "bestEvaluation": {
+        "type": "cp",
+        "value": 42
+      },
+      "lossCp": 0,
+      "annotation": {
+        "kind": "book",
+        "glyph": "book"
+      },
+      "openingName": "Ruy Lopez"
+    },
+    {
+      "ply": 15,
+      "san": "c3",
+      "from": "c2",
+      "to": "c3",
+      "color": "w",
+      "fen": "r1bqk2r/2p1bppp/p1np1n2/1p2p3/4P3/1BP2N2/PP1P1PPP/RNBQR1K1 b kq - 0 8",
+      "evaluation": {
+        "type": "cp",
+        "value": 44
+      },
+      "bestEvaluation": {
+        "type": "cp",
+        "value": 44
+      },
+      "lossCp": 0,
+      "annotation": {
+        "kind": "book",
+        "glyph": "book"
+      },
+      "openingName": "Ruy Lopez"
+    },
+    {
+      "ply": 16,
+      "san": "O-O",
+      "from": "e8",
+      "to": "g8",
+      "color": "b",
+      "fen": "r1bq1rk1/2p1bppp/p1np1n2/1p2p3/4P3/1BP2N2/PP1P1PPP/RNBQR1K1 w - - 1 9",
+      "evaluation": {
+        "type": "cp",
+        "value": 49
+      },
+      "bestEvaluation": {
+        "type": "cp",
+        "value": 49
+      },
+      "lossCp": 0,
+      "annotation": {
+        "kind": "book",
+        "glyph": "book"
+      },
+      "openingName": "Ruy Lopez"
+    },
+    {
+      "ply": 17,
+      "san": "h3",
+      "from": "h2",
+      "to": "h3",
+      "color": "w",
+      "fen": "r1bq1rk1/2p1bppp/p1np1n2/1p2p3/4P3/1BP2N1P/PP1P1PP1/RNBQR1K1 b - - 0 9",
+      "evaluation": {
+        "type": "cp",
+        "value": 45
+      },
+      "bestEvaluation": {
+        "type": "cp",
+        "value": 45
+      },
+      "lossCp": 0,
+      "annotation": {
+        "kind": "book",
+        "glyph": "book"
+      },
+      "openingName": "Ruy Lopez"
+    },
+    {
+      "ply": 18,
+      "san": "Nb8",
+      "from": "c6",
+      "to": "b8",
+      "color": "b",
+      "fen": "rnbq1rk1/2p1bppp/p2p1n2/1p2p3/4P3/1BP2N1P/PP1P1PP1/RNBQR1K1 w - - 1 10",
+      "evaluation": {
+        "type": "cp",
+        "value": 63
+      },
+      "bestEvaluation": {
+        "type": "cp",
+        "value": 55
+      },
+      "lossCp": 8,
+      "annotation": {
+        "kind": "book",
+        "glyph": "book"
+      },
+      "bestMove": "c8e6",
+      "openingName": "Ruy Lopez"
+    },
+    {
+      "ply": 19,
+      "san": "d4",
+      "from": "d2",
+      "to": "d4",
+      "color": "w",
+      "fen": "rnbq1rk1/2p1bppp/p2p1n2/1p2p3/3PP3/1BP2N1P/PP3PP1/RNBQR1K1 b - - 0 10",
+      "evaluation": {
+        "type": "cp",
+        "value": 73
+      },
+      "bestEvaluation": {
+        "type": "cp",
+        "value": 77
+      },
+      "lossCp": 4,
+      "annotation": {
+        "kind": "book",
+        "glyph": "book"
+      },
+      "bestMove": "b3c2",
+      "openingName": "Ruy Lopez"
+    },
+    {
+      "ply": 20,
+      "san": "Nbd7",
+      "from": "b8",
+      "to": "d7",
+      "color": "b",
+      "fen": "r1bq1rk1/2pnbppp/p2p1n2/1p2p3/3PP3/1BP2N1P/PP3PP1/RNBQR1K1 w - - 1 11",
+      "evaluation": {
+        "type": "cp",
+        "value": 70
+      },
+      "bestEvaluation": {
+        "type": "cp",
+        "value": 70
+      },
+      "lossCp": 0,
+      "annotation": {
+        "kind": "book",
+        "glyph": "book"
+      },
+      "openingName": "Ruy Lopez"
+    },
+    {
+      "ply": 21,
+      "san": "Nbd2",
+      "from": "b1",
+      "to": "d2",
+      "color": "w",
+      "fen": "r1bq1rk1/2pnbppp/p2p1n2/1p2p3/3PP3/1BP2N1P/PP1N1PP1/R1BQR1K1 b - - 2 11",
+      "evaluation": {
+        "type": "cp",
+        "value": 65
+      },
+      "bestEvaluation": {
+        "type": "cp",
+        "value": 71
+      },
+      "lossCp": 6,
+      "annotation": {
+        "kind": "book",
+        "glyph": "book"
+      },
+      "bestMove": "b3c2",
+      "openingName": "Ruy Lopez"
+    },
+    {
+      "ply": 22,
+      "san": "Bb7",
+      "from": "c8",
+      "to": "b7",
+      "color": "b",
+      "fen": "r2q1rk1/1bpnbppp/p2p1n2/1p2p3/3PP3/1BP2N1P/PP1N1PP1/R1BQR1K1 w - - 3 12",
+      "evaluation": {
+        "type": "cp",
+        "value": 63
+      },
+      "bestEvaluation": {
+        "type": "cp",
+        "value": 63
+      },
+      "lossCp": 0,
+      "annotation": {
+        "kind": "book",
+        "glyph": "book"
+      },
+      "openingName": "Ruy Lopez"
+    },
+    {
+      "ply": 23,
+      "san": "Bc2",
+      "from": "b3",
+      "to": "c2",
+      "color": "w",
+      "fen": "r2q1rk1/1bpnbppp/p2p1n2/1p2p3/3PP3/2P2N1P/PPBN1PP1/R1BQR1K1 b - - 4 12",
+      "evaluation": {
+        "type": "cp",
+        "value": 64
+      },
+      "bestEvaluation": {
+        "type": "cp",
+        "value": 64
+      },
+      "lossCp": 0,
+      "annotation": {
+        "kind": "book",
+        "glyph": "book"
+      },
+      "openingName": "Ruy Lopez"
+    },
+    {
+      "ply": 24,
+      "san": "Re8",
+      "from": "f8",
+      "to": "e8",
+      "color": "b",
+      "fen": "r2qr1k1/1bpnbppp/p2p1n2/1p2p3/3PP3/2P2N1P/PPBN1PP1/R1BQR1K1 w - - 5 13",
+      "evaluation": {
+        "type": "cp",
+        "value": 48
+      },
+      "bestEvaluation": {
+        "type": "cp",
+        "value": 48
+      },
+      "lossCp": 0,
+      "annotation": {
+        "kind": "book",
+        "glyph": "book"
+      },
+      "openingName": "Ruy Lopez"
+    },
+    {
+      "ply": 25,
+      "san": "Nf1",
+      "from": "d2",
+      "to": "f1",
+      "color": "w",
+      "fen": "r2qr1k1/1bpnbppp/p2p1n2/1p2p3/3PP3/2P2N1P/PPB2PP1/R1BQRNK1 b - - 6 13",
+      "evaluation": {
+        "type": "cp",
+        "value": 58
+      },
+      "bestEvaluation": {
+        "type": "cp",
+        "value": 58
+      },
+      "lossCp": 0
+    },
+    {
+      "ply": 26,
+      "san": "Bf8",
+      "from": "e7",
+      "to": "f8",
+      "color": "b",
+      "fen": "r2qrbk1/1bpn1ppp/p2p1n2/1p2p3/3PP3/2P2N1P/PPB2PP1/R1BQRNK1 w - - 7 14",
+      "evaluation": {
+        "type": "cp",
+        "value": 55
+      },
+      "bestEvaluation": {
+        "type": "cp",
+        "value": 50
+      },
+      "lossCp": 5,
+      "bestMove": "a6a5"
+    },
+    {
+      "ply": 27,
+      "san": "Ng3",
+      "from": "f1",
+      "to": "g3",
+      "color": "w",
+      "fen": "r2qrbk1/1bpn1ppp/p2p1n2/1p2p3/3PP3/2P2NNP/PPB2PP1/R1BQR1K1 b - - 8 14",
+      "evaluation": {
+        "type": "cp",
+        "value": 51
+      },
+      "bestEvaluation": {
+        "type": "cp",
+        "value": 51
+      },
+      "lossCp": 0
+    },
+    {
+      "ply": 28,
+      "san": "g6",
+      "from": "g7",
+      "to": "g6",
+      "color": "b",
+      "fen": "r2qrbk1/1bpn1p1p/p2p1np1/1p2p3/3PP3/2P2NNP/PPB2PP1/R1BQR1K1 w - - 0 15",
+      "evaluation": {
+        "type": "cp",
+        "value": 74
+      },
+      "bestEvaluation": {
+        "type": "cp",
+        "value": 54
+      },
+      "lossCp": 20,
+      "bestMove": "a6a5"
+    },
+    {
+      "ply": 29,
+      "san": "a4",
+      "from": "a2",
+      "to": "a4",
+      "color": "w",
+      "fen": "r2qrbk1/1bpn1p1p/p2p1np1/1p2p3/P2PP3/2P2NNP/1PB2PP1/R1BQR1K1 b - - 0 15",
+      "evaluation": {
+        "type": "cp",
+        "value": 61
+      },
+      "bestEvaluation": {
+        "type": "cp",
+        "value": 63
+      },
+      "lossCp": 2,
+      "bestMove": "c1g5"
+    },
+    {
+      "ply": 30,
+      "san": "c5",
+      "from": "c7",
+      "to": "c5",
+      "color": "b",
+      "fen": "r2qrbk1/1b1n1p1p/p2p1np1/1pp1p3/P2PP3/2P2NNP/1PB2PP1/R1BQR1K1 w - - 0 16",
+      "evaluation": {
+        "type": "cp",
+        "value": 64
+      },
+      "bestEvaluation": {
+        "type": "cp",
+        "value": 64
+      },
+      "lossCp": 0
+    },
+    {
+      "ply": 31,
+      "san": "d5",
+      "from": "d4",
+      "to": "d5",
+      "color": "w",
+      "fen": "r2qrbk1/1b1n1p1p/p2p1np1/1ppPp3/P3P3/2P2NNP/1PB2PP1/R1BQR1K1 b - - 0 16",
+      "evaluation": {
+        "type": "cp",
+        "value": 57
+      },
+      "bestEvaluation": {
+        "type": "cp",
+        "value": 57
+      },
+      "lossCp": 0
+    },
+    {
+      "ply": 32,
+      "san": "c4",
+      "from": "c5",
+      "to": "c4",
+      "color": "b",
+      "fen": "r2qrbk1/1b1n1p1p/p2p1np1/1p1Pp3/P1p1P3/2P2NNP/1PB2PP1/R1BQR1K1 w - - 0 17",
+      "evaluation": {
+        "type": "cp",
+        "value": 51
+      },
+      "bestEvaluation": {
+        "type": "cp",
+        "value": 51
+      },
+      "lossCp": 0
+    },
+    {
+      "ply": 33,
+      "san": "Bg5",
+      "from": "c1",
+      "to": "g5",
+      "color": "w",
+      "fen": "r2qrbk1/1b1n1p1p/p2p1np1/1p1Pp1B1/P1p1P3/2P2NNP/1PB2PP1/R2QR1K1 b - - 1 17",
+      "evaluation": {
+        "type": "cp",
+        "value": 55
+      },
+      "bestEvaluation": {
+        "type": "cp",
+        "value": 55
+      },
+      "lossCp": 0
+    },
+    {
+      "ply": 34,
+      "san": "h6",
+      "from": "h7",
+      "to": "h6",
+      "color": "b",
+      "fen": "r2qrbk1/1b1n1p2/p2p1npp/1p1Pp1B1/P1p1P3/2P2NNP/1PB2PP1/R2QR1K1 w - - 0 18",
+      "evaluation": {
+        "type": "cp",
+        "value": 56
+      },
+      "bestEvaluation": {
+        "type": "cp",
+        "value": 56
+      },
+      "lossCp": 0
+    },
+    {
+      "ply": 35,
+      "san": "Be3",
+      "from": "g5",
+      "to": "e3",
+      "color": "w",
+      "fen": "r2qrbk1/1b1n1p2/p2p1npp/1p1Pp3/P1p1P3/2P1BNNP/1PB2PP1/R2QR1K1 b - - 1 18",
+      "evaluation": {
+        "type": "cp",
+        "value": 51
+      },
+      "bestEvaluation": {
+        "type": "cp",
+        "value": 51
+      },
+      "lossCp": 0
+    },
+    {
+      "ply": 36,
+      "san": "Nc5",
+      "from": "d7",
+      "to": "c5",
+      "color": "b",
+      "fen": "r2qrbk1/1b3p2/p2p1npp/1pnPp3/P1p1P3/2P1BNNP/1PB2PP1/R2QR1K1 w - - 2 19",
+      "evaluation": {
+        "type": "cp",
+        "value": 53
+      },
+      "bestEvaluation": {
+        "type": "cp",
+        "value": 53
+      },
+      "lossCp": 0
+    },
+    {
+      "ply": 37,
+      "san": "Qd2",
+      "from": "d1",
+      "to": "d2",
+      "color": "w",
+      "fen": "r2qrbk1/1b3p2/p2p1npp/1pnPp3/P1p1P3/2P1BNNP/1PBQ1PP1/R3R1K1 b - - 3 19",
+      "evaluation": {
+        "type": "cp",
+        "value": 65
+      },
+      "bestEvaluation": {
+        "type": "cp",
+        "value": 65
+      },
+      "lossCp": 0
+    },
+    {
+      "ply": 38,
+      "san": "h5",
+      "from": "h6",
+      "to": "h5",
+      "color": "b",
+      "fen": "r2qrbk1/1b3p2/p2p1np1/1pnPp2p/P1p1P3/2P1BNNP/1PBQ1PP1/R3R1K1 w - - 0 20",
+      "evaluation": {
+        "type": "cp",
+        "value": 51
+      },
+      "bestEvaluation": {
+        "type": "cp",
+        "value": 51
+      },
+      "lossCp": 0
+    },
+    {
+      "ply": 39,
+      "san": "Bg5",
+      "from": "e3",
+      "to": "g5",
+      "color": "w",
+      "fen": "r2qrbk1/1b3p2/p2p1np1/1pnPp1Bp/P1p1P3/2P2NNP/1PBQ1PP1/R3R1K1 b - - 1 20",
+      "evaluation": {
+        "type": "cp",
+        "value": 48
+      },
+      "bestEvaluation": {
+        "type": "cp",
+        "value": 46
+      },
+      "lossCp": 0,
+      "bestMove": "a1a2"
+    },
+    {
+      "ply": 40,
+      "san": "Be7",
+      "from": "f8",
+      "to": "e7",
+      "color": "b",
+      "fen": "r2qr1k1/1b2bp2/p2p1np1/1pnPp1Bp/P1p1P3/2P2NNP/1PBQ1PP1/R3R1K1 w - - 2 21",
+      "evaluation": {
+        "type": "cp",
+        "value": 45
+      },
+      "bestEvaluation": {
+        "type": "cp",
+        "value": 45
+      },
+      "lossCp": 0
+    },
+    {
+      "ply": 41,
+      "san": "Nxh5",
+      "from": "g3",
+      "to": "h5",
+      "color": "w",
+      "fen": "r2qr1k1/1b2bp2/p2p1np1/1pnPp1BN/P1p1P3/2P2N1P/1PBQ1PP1/R3R1K1 b - - 0 21",
+      "evaluation": {
+        "type": "cp",
+        "value": -280
+      },
+      "bestEvaluation": {
+        "type": "cp",
+        "value": 61
+      },
+      "lossCp": 341,
+      "annotation": {
+        "kind": "blunder",
+        "glyph": "??"
+      },
+      "bestMove": "a1a3"
+    },
+    {
+      "ply": 42,
+      "san": "Nxh5",
+      "from": "f6",
+      "to": "h5",
+      "color": "b",
+      "fen": "r2qr1k1/1b2bp2/p2p2p1/1pnPp1Bn/P1p1P3/2P2N1P/1PBQ1PP1/R3R1K1 w - - 0 22",
+      "evaluation": {
+        "type": "cp",
+        "value": -275
+      },
+      "bestEvaluation": {
+        "type": "cp",
+        "value": -275
+      },
+      "lossCp": 0
+    },
+    {
+      "ply": 43,
+      "san": "Bxe7",
+      "from": "g5",
+      "to": "e7",
+      "color": "w",
+      "fen": "r2qr1k1/1b2Bp2/p2p2p1/1pnPp2n/P1p1P3/2P2N1P/1PBQ1PP1/R3R1K1 b - - 0 22",
+      "evaluation": {
+        "type": "cp",
+        "value": -347
+      },
+      "bestEvaluation": {
+        "type": "cp",
+        "value": -264
+      },
+      "lossCp": 83,
+      "annotation": {
+        "kind": "inaccuracy",
+        "glyph": "?!"
+      },
+      "bestMove": "g5e3"
+    },
+    {
+      "ply": 44,
+      "san": "Qxe7",
+      "from": "d8",
+      "to": "e7",
+      "color": "b",
+      "fen": "r3r1k1/1b2qp2/p2p2p1/1pnPp2n/P1p1P3/2P2N1P/1PBQ1PP1/R3R1K1 w - - 0 23",
+      "evaluation": {
+        "type": "cp",
+        "value": -366
+      },
+      "bestEvaluation": {
+        "type": "cp",
+        "value": -366
+      },
+      "lossCp": 0
+    },
+    {
+      "ply": 45,
+      "san": "g4",
+      "from": "g2",
+      "to": "g4",
+      "color": "w",
+      "fen": "r3r1k1/1b2qp2/p2p2p1/1pnPp2n/P1p1P1P1/2P2N1P/1PBQ1P2/R3R1K1 b - - 0 23",
+      "evaluation": {
+        "type": "cp",
+        "value": -521
+      },
+      "bestEvaluation": {
+        "type": "cp",
+        "value": -346
+      },
+      "lossCp": 175,
+      "annotation": {
+        "kind": "mistake",
+        "glyph": "?"
+      },
+      "bestMove": "g2g3"
+    },
+    {
+      "ply": 46,
+      "san": "Nf4",
+      "from": "h5",
+      "to": "f4",
+      "color": "b",
+      "fen": "r3r1k1/1b2qp2/p2p2p1/1pnPp3/P1p1PnP1/2P2N1P/1PBQ1P2/R3R1K1 w - - 1 24",
+      "evaluation": {
+        "type": "cp",
+        "value": -532
+      },
+      "bestEvaluation": {
+        "type": "cp",
+        "value": -532
+      },
+      "lossCp": 0
+    },
+    {
+      "ply": 47,
+      "san": "Qxf4",
+      "from": "d2",
+      "to": "f4",
+      "color": "w",
+      "fen": "r3r1k1/1b2qp2/p2p2p1/1pnPp3/P1p1PQP1/2P2N1P/1PB2P2/R3R1K1 b - - 0 24",
+      "evaluation": {
+        "type": "cp",
+        "value": -578
+      },
+      "bestEvaluation": {
+        "type": "cp",
+        "value": -477
+      },
+      "lossCp": 101,
+      "annotation": {
+        "kind": "mistake",
+        "glyph": "?"
+      },
+      "bestMove": "a4b5"
+    },
+    {
+      "ply": 48,
+      "san": "exf4",
+      "from": "e5",
+      "to": "f4",
+      "color": "b",
+      "fen": "r3r1k1/1b2qp2/p2p2p1/1pnP4/P1p1PpP1/2P2N1P/1PB2P2/R3R1K1 w - - 0 25",
+      "evaluation": {
+        "type": "cp",
+        "value": -564
+      },
+      "bestEvaluation": {
+        "type": "cp",
+        "value": -564
+      },
+      "lossCp": 0
+    }
+  ],
+  "summary": {
+    "inaccuracies": 1,
+    "mistakes": 2,
+    "blunders": 1,
+    "worst": [
+      {
+        "ply": 41,
+        "san": "Nxh5",
+        "color": "w",
+        "lossCp": 341,
+        "kind": "blunder"
+      },
+      {
+        "ply": 45,
+        "san": "g4",
+        "color": "w",
+        "lossCp": 175,
+        "kind": "mistake"
+      },
+      {
+        "ply": 47,
+        "san": "Qxf4",
+        "color": "w",
+        "lossCp": 101,
+        "kind": "mistake"
+      },
+      {
+        "ply": 43,
+        "san": "Bxe7",
+        "color": "w",
+        "lossCp": 83,
+        "kind": "inaccuracy"
+      }
+    ]
+  },
+  "createdAt": "2026-09-08T03:03:59.518Z",
+  "engine": {
+    "depth": 12,
+    "multipv": 3
+  }
+}
