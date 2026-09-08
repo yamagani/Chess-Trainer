@@ -7,6 +7,20 @@
         "from": "e2",
         "to": "e4",
         "openingName": "Ruy Lopez"
+      },
+      {
+        "uci": "d2d4",
+        "san": "d4",
+        "from": "d2",
+        "to": "d4",
+        "openingName": "Queen's Gambit Declined"
+      },
+      {
+        "uci": "c2c4",
+        "san": "c4",
+        "from": "c2",
+        "to": "c4",
+        "openingName": "English Opening"
       }
     ],
     "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq -": [
@@ -16,6 +30,27 @@
         "from": "e7",
         "to": "e5",
         "openingName": "Ruy Lopez"
+      },
+      {
+        "uci": "c7c5",
+        "san": "c5",
+        "from": "c7",
+        "to": "c5",
+        "openingName": "Sicilian Defense, Najdorf"
+      },
+      {
+        "uci": "e7e6",
+        "san": "e6",
+        "from": "e7",
+        "to": "e6",
+        "openingName": "French Defense, Winawer"
+      },
+      {
+        "uci": "c7c6",
+        "san": "c6",
+        "from": "c7",
+        "to": "c6",
+        "openingName": "Caro-Kann Defense, Advance"
       }
     ],
     "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq -": [
@@ -34,6 +69,13 @@
         "from": "b8",
         "to": "c6",
         "openingName": "Ruy Lopez"
+      },
+      {
+        "uci": "g8f6",
+        "san": "Nf6",
+        "from": "g8",
+        "to": "f6",
+        "openingName": "Petrov Defense"
       }
     ],
     "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq -": [
@@ -43,9 +85,30 @@
         "from": "f1",
         "to": "b5",
         "openingName": "Ruy Lopez"
+      },
+      {
+        "uci": "f1c4",
+        "san": "Bc4",
+        "from": "f1",
+        "to": "c4",
+        "openingName": "Italian Game"
+      },
+      {
+        "uci": "d2d4",
+        "san": "d4",
+        "from": "d2",
+        "to": "d4",
+        "openingName": "Scotch Game"
       }
     ],
     "r1bqkbnr/pppp1ppp/2n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R b KQkq -": [
+      {
+        "uci": "g8f6",
+        "san": "Nf6",
+        "from": "g8",
+        "to": "f6",
+        "openingName": "Ruy Lopez"
+      },
       {
         "uci": "a7a6",
         "san": "a6",
@@ -53,16 +116,3554 @@
         "to": "a6",
         "openingName": "Ruy Lopez"
       }
+    ],
+    "r1bqkb1r/pppp1ppp/2n2n2/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq -": [
+      {
+        "uci": "e1g1",
+        "san": "O-O",
+        "from": "e1",
+        "to": "g1",
+        "openingName": "Ruy Lopez"
+      }
+    ],
+    "r1bqkb1r/pppp1ppp/2n2n2/1B2p3/4P3/5N2/PPPP1PPP/RNBQ1RK1 b kq -": [
+      {
+        "uci": "f6e4",
+        "san": "Nxe4",
+        "from": "f6",
+        "to": "e4",
+        "openingName": "Ruy Lopez"
+      }
+    ],
+    "r1bqkb1r/pppp1ppp/2n5/1B2p3/4n3/5N2/PPPP1PPP/RNBQ1RK1 w kq -": [
+      {
+        "uci": "d2d4",
+        "san": "d4",
+        "from": "d2",
+        "to": "d4",
+        "openingName": "Ruy Lopez"
+      }
+    ],
+    "r1bqkb1r/pppp1ppp/2n5/1B2p3/3Pn3/5N2/PPP2PPP/RNBQ1RK1 b kq -": [
+      {
+        "uci": "e4d6",
+        "san": "Nd6",
+        "from": "e4",
+        "to": "d6",
+        "openingName": "Ruy Lopez"
+      }
+    ],
+    "r1bqkb1r/pppp1ppp/2nn4/1B2p3/3P4/5N2/PPP2PPP/RNBQ1RK1 w kq -": [
+      {
+        "uci": "b5c6",
+        "san": "Bxc6",
+        "from": "b5",
+        "to": "c6",
+        "openingName": "Ruy Lopez"
+      }
+    ],
+    "r1bqkb1r/pppp1ppp/2Bn4/4p3/3P4/5N2/PPP2PPP/RNBQ1RK1 b kq -": [
+      {
+        "uci": "d7c6",
+        "san": "dxc6",
+        "from": "d7",
+        "to": "c6",
+        "openingName": "Ruy Lopez"
+      }
+    ],
+    "r1bqkb1r/ppp2ppp/2pn4/4p3/3P4/5N2/PPP2PPP/RNBQ1RK1 w kq -": [
+      {
+        "uci": "d4e5",
+        "san": "dxe5",
+        "from": "d4",
+        "to": "e5",
+        "openingName": "Ruy Lopez"
+      }
+    ],
+    "r1bqkb1r/ppp2ppp/2pn4/4P3/8/5N2/PPP2PPP/RNBQ1RK1 b kq -": [
+      {
+        "uci": "d6f5",
+        "san": "Nf5",
+        "from": "d6",
+        "to": "f5",
+        "openingName": "Ruy Lopez"
+      }
+    ],
+    "r1bqkb1r/ppp2ppp/2p5/4Pn2/8/5N2/PPP2PPP/RNBQ1RK1 w kq -": [
+      {
+        "uci": "d1d8",
+        "san": "Qxd8+",
+        "from": "d1",
+        "to": "d8",
+        "openingName": "Ruy Lopez"
+      }
+    ],
+    "r1bQkb1r/ppp2ppp/2p5/4Pn2/8/5N2/PPP2PPP/RNB2RK1 b kq -": [
+      {
+        "uci": "e8d8",
+        "san": "Kxd8",
+        "from": "e8",
+        "to": "d8",
+        "openingName": "Ruy Lopez"
+      }
+    ],
+    "r1bk1b1r/ppp2ppp/2p5/4Pn2/8/5N2/PPP2PPP/RNB2RK1 w - -": [
+      {
+        "uci": "b1c3",
+        "san": "Nc3",
+        "from": "b1",
+        "to": "c3",
+        "openingName": "Ruy Lopez"
+      }
+    ],
+    "r1bk1b1r/ppp2ppp/2p5/4Pn2/8/2N2N2/PPP2PPP/R1B2RK1 b - -": [
+      {
+        "uci": "d8e8",
+        "san": "Ke8",
+        "from": "d8",
+        "to": "e8",
+        "openingName": "Ruy Lopez"
+      }
+    ],
+    "r1b1kb1r/ppp2ppp/2p5/4Pn2/8/2N2N2/PPP2PPP/R1B2RK1 w - -": [
+      {
+        "uci": "h2h3",
+        "san": "h3",
+        "from": "h2",
+        "to": "h3",
+        "openingName": "Ruy Lopez"
+      }
+    ],
+    "r1b1kb1r/ppp2ppp/2p5/4Pn2/8/2N2N1P/PPP2PP1/R1B2RK1 b - -": [
+      {
+        "uci": "h7h5",
+        "san": "h5",
+        "from": "h7",
+        "to": "h5",
+        "openingName": "Ruy Lopez"
+      }
+    ],
+    "r1bqkbnr/1ppp1ppp/p1n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq -": [
+      {
+        "uci": "b5a4",
+        "san": "Ba4",
+        "from": "b5",
+        "to": "a4",
+        "openingName": "Ruy Lopez"
+      }
+    ],
+    "r1bqkbnr/1ppp1ppp/p1n5/4p3/B3P3/5N2/PPPP1PPP/RNBQK2R b KQkq -": [
+      {
+        "uci": "g8f6",
+        "san": "Nf6",
+        "from": "g8",
+        "to": "f6",
+        "openingName": "Ruy Lopez"
+      }
+    ],
+    "r1bqkb1r/1ppp1ppp/p1n2n2/4p3/B3P3/5N2/PPPP1PPP/RNBQK2R w KQkq -": [
+      {
+        "uci": "e1g1",
+        "san": "O-O",
+        "from": "e1",
+        "to": "g1",
+        "openingName": "Ruy Lopez"
+      }
+    ],
+    "r1bqkb1r/1ppp1ppp/p1n2n2/4p3/B3P3/5N2/PPPP1PPP/RNBQ1RK1 b kq -": [
+      {
+        "uci": "f8e7",
+        "san": "Be7",
+        "from": "f8",
+        "to": "e7",
+        "openingName": "Ruy Lopez"
+      }
+    ],
+    "r1bqk2r/1pppbppp/p1n2n2/4p3/B3P3/5N2/PPPP1PPP/RNBQ1RK1 w kq -": [
+      {
+        "uci": "f1e1",
+        "san": "Re1",
+        "from": "f1",
+        "to": "e1",
+        "openingName": "Ruy Lopez"
+      }
+    ],
+    "r1bqk2r/1pppbppp/p1n2n2/4p3/B3P3/5N2/PPPP1PPP/RNBQR1K1 b kq -": [
+      {
+        "uci": "b7b5",
+        "san": "b5",
+        "from": "b7",
+        "to": "b5",
+        "openingName": "Ruy Lopez"
+      }
+    ],
+    "r1bqk2r/2ppbppp/p1n2n2/1p2p3/B3P3/5N2/PPPP1PPP/RNBQR1K1 w kq -": [
+      {
+        "uci": "a4b3",
+        "san": "Bb3",
+        "from": "a4",
+        "to": "b3",
+        "openingName": "Ruy Lopez"
+      }
+    ],
+    "r1bqk2r/2ppbppp/p1n2n2/1p2p3/4P3/1B3N2/PPPP1PPP/RNBQR1K1 b kq -": [
+      {
+        "uci": "d7d6",
+        "san": "d6",
+        "from": "d7",
+        "to": "d6",
+        "openingName": "Ruy Lopez"
+      }
+    ],
+    "r1bqk2r/2p1bppp/p1np1n2/1p2p3/4P3/1B3N2/PPPP1PPP/RNBQR1K1 w kq -": [
+      {
+        "uci": "c2c3",
+        "san": "c3",
+        "from": "c2",
+        "to": "c3",
+        "openingName": "Ruy Lopez"
+      }
+    ],
+    "r1bqk2r/2p1bppp/p1np1n2/1p2p3/4P3/1BP2N2/PP1P1PPP/RNBQR1K1 b kq -": [
+      {
+        "uci": "e8g8",
+        "san": "O-O",
+        "from": "e8",
+        "to": "g8",
+        "openingName": "Ruy Lopez"
+      }
+    ],
+    "r1bq1rk1/2p1bppp/p1np1n2/1p2p3/4P3/1BP2N2/PP1P1PPP/RNBQR1K1 w - -": [
+      {
+        "uci": "h2h3",
+        "san": "h3",
+        "from": "h2",
+        "to": "h3",
+        "openingName": "Ruy Lopez"
+      }
+    ],
+    "r1bq1rk1/2p1bppp/p1np1n2/1p2p3/4P3/1BP2N1P/PP1P1PP1/RNBQR1K1 b - -": [
+      {
+        "uci": "c6b8",
+        "san": "Nb8",
+        "from": "c6",
+        "to": "b8",
+        "openingName": "Ruy Lopez"
+      }
+    ],
+    "rnbq1rk1/2p1bppp/p2p1n2/1p2p3/4P3/1BP2N1P/PP1P1PP1/RNBQR1K1 w - -": [
+      {
+        "uci": "d2d4",
+        "san": "d4",
+        "from": "d2",
+        "to": "d4",
+        "openingName": "Ruy Lopez"
+      }
+    ],
+    "rnbq1rk1/2p1bppp/p2p1n2/1p2p3/3PP3/1BP2N1P/PP3PP1/RNBQR1K1 b - -": [
+      {
+        "uci": "b8d7",
+        "san": "Nbd7",
+        "from": "b8",
+        "to": "d7",
+        "openingName": "Ruy Lopez"
+      }
+    ],
+    "r1bq1rk1/2pnbppp/p2p1n2/1p2p3/3PP3/1BP2N1P/PP3PP1/RNBQR1K1 w - -": [
+      {
+        "uci": "b1d2",
+        "san": "Nbd2",
+        "from": "b1",
+        "to": "d2",
+        "openingName": "Ruy Lopez"
+      }
+    ],
+    "r1bq1rk1/2pnbppp/p2p1n2/1p2p3/3PP3/1BP2N1P/PP1N1PP1/R1BQR1K1 b - -": [
+      {
+        "uci": "c8b7",
+        "san": "Bb7",
+        "from": "c8",
+        "to": "b7",
+        "openingName": "Ruy Lopez"
+      }
+    ],
+    "r2q1rk1/1bpnbppp/p2p1n2/1p2p3/3PP3/1BP2N1P/PP1N1PP1/R1BQR1K1 w - -": [
+      {
+        "uci": "b3c2",
+        "san": "Bc2",
+        "from": "b3",
+        "to": "c2",
+        "openingName": "Ruy Lopez"
+      }
+    ],
+    "r2q1rk1/1bpnbppp/p2p1n2/1p2p3/3PP3/2P2N1P/PPBN1PP1/R1BQR1K1 b - -": [
+      {
+        "uci": "f8e8",
+        "san": "Re8",
+        "from": "f8",
+        "to": "e8",
+        "openingName": "Ruy Lopez"
+      }
+    ],
+    "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq -": [
+      {
+        "uci": "f8c5",
+        "san": "Bc5",
+        "from": "f8",
+        "to": "c5",
+        "openingName": "Italian Game"
+      },
+      {
+        "uci": "g8f6",
+        "san": "Nf6",
+        "from": "g8",
+        "to": "f6",
+        "openingName": "Italian Game"
+      }
+    ],
+    "r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq -": [
+      {
+        "uci": "c2c3",
+        "san": "c3",
+        "from": "c2",
+        "to": "c3",
+        "openingName": "Italian Game"
+      }
+    ],
+    "r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/2P2N2/PP1P1PPP/RNBQK2R b KQkq -": [
+      {
+        "uci": "g8f6",
+        "san": "Nf6",
+        "from": "g8",
+        "to": "f6",
+        "openingName": "Italian Game"
+      }
+    ],
+    "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/2P2N2/PP1P1PPP/RNBQK2R w KQkq -": [
+      {
+        "uci": "d2d3",
+        "san": "d3",
+        "from": "d2",
+        "to": "d3",
+        "openingName": "Italian Game"
+      }
+    ],
+    "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/2PP1N2/PP3PPP/RNBQK2R b KQkq -": [
+      {
+        "uci": "d7d6",
+        "san": "d6",
+        "from": "d7",
+        "to": "d6",
+        "openingName": "Italian Game"
+      }
+    ],
+    "r1bqk2r/ppp2ppp/2np1n2/2b1p3/2B1P3/2PP1N2/PP3PPP/RNBQK2R w KQkq -": [
+      {
+        "uci": "e1g1",
+        "san": "O-O",
+        "from": "e1",
+        "to": "g1",
+        "openingName": "Italian Game"
+      }
+    ],
+    "r1bqk2r/ppp2ppp/2np1n2/2b1p3/2B1P3/2PP1N2/PP3PPP/RNBQ1RK1 b kq -": [
+      {
+        "uci": "a7a6",
+        "san": "a6",
+        "from": "a7",
+        "to": "a6",
+        "openingName": "Italian Game"
+      },
+      {
+        "uci": "e8g8",
+        "san": "O-O",
+        "from": "e8",
+        "to": "g8",
+        "openingName": "Italian Game"
+      }
+    ],
+    "r1bqk2r/1pp2ppp/p1np1n2/2b1p3/2B1P3/2PP1N2/PP3PPP/RNBQ1RK1 w kq -": [
+      {
+        "uci": "a2a4",
+        "san": "a4",
+        "from": "a2",
+        "to": "a4",
+        "openingName": "Italian Game"
+      }
+    ],
+    "r1bqk2r/1pp2ppp/p1np1n2/2b1p3/P1B1P3/2PP1N2/1P3PPP/RNBQ1RK1 b kq -": [
+      {
+        "uci": "c5a7",
+        "san": "Ba7",
+        "from": "c5",
+        "to": "a7",
+        "openingName": "Italian Game"
+      }
+    ],
+    "r1bqk2r/bpp2ppp/p1np1n2/4p3/P1B1P3/2PP1N2/1P3PPP/RNBQ1RK1 w kq -": [
+      {
+        "uci": "f1e1",
+        "san": "Re1",
+        "from": "f1",
+        "to": "e1",
+        "openingName": "Italian Game"
+      }
+    ],
+    "r1bqk2r/bpp2ppp/p1np1n2/4p3/P1B1P3/2PP1N2/1P3PPP/RNBQR1K1 b kq -": [
+      {
+        "uci": "e8g8",
+        "san": "O-O",
+        "from": "e8",
+        "to": "g8",
+        "openingName": "Italian Game"
+      }
+    ],
+    "r1bq1rk1/bpp2ppp/p1np1n2/4p3/P1B1P3/2PP1N2/1P3PPP/RNBQR1K1 w - -": [
+      {
+        "uci": "h2h3",
+        "san": "h3",
+        "from": "h2",
+        "to": "h3",
+        "openingName": "Italian Game"
+      }
+    ],
+    "r1bq1rk1/bpp2ppp/p1np1n2/4p3/P1B1P3/2PP1N1P/1P3PP1/RNBQR1K1 b - -": [
+      {
+        "uci": "h7h6",
+        "san": "h6",
+        "from": "h7",
+        "to": "h6",
+        "openingName": "Italian Game"
+      }
+    ],
+    "r1bq1rk1/bpp2pp1/p1np1n1p/4p3/P1B1P3/2PP1N1P/1P3PP1/RNBQR1K1 w - -": [
+      {
+        "uci": "b1d2",
+        "san": "Nbd2",
+        "from": "b1",
+        "to": "d2",
+        "openingName": "Italian Game"
+      }
+    ],
+    "r1bq1rk1/bpp2pp1/p1np1n1p/4p3/P1B1P3/2PP1N1P/1P1N1PP1/R1BQR1K1 b - -": [
+      {
+        "uci": "f8e8",
+        "san": "Re8",
+        "from": "f8",
+        "to": "e8",
+        "openingName": "Italian Game"
+      }
+    ],
+    "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq -": [
+      {
+        "uci": "d2d3",
+        "san": "d3",
+        "from": "d2",
+        "to": "d3",
+        "openingName": "Italian Game"
+      }
+    ],
+    "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R b KQkq -": [
+      {
+        "uci": "f8c5",
+        "san": "Bc5",
+        "from": "f8",
+        "to": "c5",
+        "openingName": "Italian Game"
+      }
+    ],
+    "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq -": [
+      {
+        "uci": "c2c3",
+        "san": "c3",
+        "from": "c2",
+        "to": "c3",
+        "openingName": "Italian Game"
+      }
+    ],
+    "r1bq1rk1/ppp2ppp/2np1n2/2b1p3/2B1P3/2PP1N2/PP3PPP/RNBQ1RK1 w - -": [
+      {
+        "uci": "c4b3",
+        "san": "Bb3",
+        "from": "c4",
+        "to": "b3",
+        "openingName": "Italian Game"
+      }
+    ],
+    "r1bq1rk1/ppp2ppp/2np1n2/2b1p3/4P3/1BPP1N2/PP3PPP/RNBQ1RK1 b - -": [
+      {
+        "uci": "a7a6",
+        "san": "a6",
+        "from": "a7",
+        "to": "a6",
+        "openingName": "Italian Game"
+      }
+    ],
+    "r1bq1rk1/1pp2ppp/p1np1n2/2b1p3/4P3/1BPP1N2/PP3PPP/RNBQ1RK1 w - -": [
+      {
+        "uci": "b1d2",
+        "san": "Nbd2",
+        "from": "b1",
+        "to": "d2",
+        "openingName": "Italian Game"
+      }
+    ],
+    "r1bq1rk1/1pp2ppp/p1np1n2/2b1p3/4P3/1BPP1N2/PP1N1PPP/R1BQ1RK1 b - -": [
+      {
+        "uci": "c5a7",
+        "san": "Ba7",
+        "from": "c5",
+        "to": "a7",
+        "openingName": "Italian Game"
+      }
+    ],
+    "r1bq1rk1/bpp2ppp/p1np1n2/4p3/4P3/1BPP1N2/PP1N1PPP/R1BQ1RK1 w - -": [
+      {
+        "uci": "h2h3",
+        "san": "h3",
+        "from": "h2",
+        "to": "h3",
+        "openingName": "Italian Game"
+      }
+    ],
+    "r1bq1rk1/bpp2ppp/p1np1n2/4p3/4P3/1BPP1N1P/PP1N1PP1/R1BQ1RK1 b - -": [
+      {
+        "uci": "c8e6",
+        "san": "Be6",
+        "from": "c8",
+        "to": "e6",
+        "openingName": "Italian Game"
+      }
+    ],
+    "r2q1rk1/bpp2ppp/p1npbn2/4p3/4P3/1BPP1N1P/PP1N1PP1/R1BQ1RK1 w - -": [
+      {
+        "uci": "f1e1",
+        "san": "Re1",
+        "from": "f1",
+        "to": "e1",
+        "openingName": "Italian Game"
+      }
+    ],
+    "r2q1rk1/bpp2ppp/p1npbn2/4p3/4P3/1BPP1N1P/PP1N1PP1/R1BQR1K1 b - -": [
+      {
+        "uci": "h7h6",
+        "san": "h6",
+        "from": "h7",
+        "to": "h6",
+        "openingName": "Italian Game"
+      }
+    ],
+    "rnbqkb1r/pppp1ppp/5n2/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq -": [
+      {
+        "uci": "f3e5",
+        "san": "Nxe5",
+        "from": "f3",
+        "to": "e5",
+        "openingName": "Petrov Defense"
+      }
+    ],
+    "rnbqkb1r/pppp1ppp/5n2/4N3/4P3/8/PPPP1PPP/RNBQKB1R b KQkq -": [
+      {
+        "uci": "d7d6",
+        "san": "d6",
+        "from": "d7",
+        "to": "d6",
+        "openingName": "Petrov Defense"
+      }
+    ],
+    "rnbqkb1r/ppp2ppp/3p1n2/4N3/4P3/8/PPPP1PPP/RNBQKB1R w KQkq -": [
+      {
+        "uci": "e5f3",
+        "san": "Nf3",
+        "from": "e5",
+        "to": "f3",
+        "openingName": "Petrov Defense"
+      }
+    ],
+    "rnbqkb1r/ppp2ppp/3p1n2/8/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq -": [
+      {
+        "uci": "f6e4",
+        "san": "Nxe4",
+        "from": "f6",
+        "to": "e4",
+        "openingName": "Petrov Defense"
+      }
+    ],
+    "rnbqkb1r/ppp2ppp/3p4/8/4n3/5N2/PPPP1PPP/RNBQKB1R w KQkq -": [
+      {
+        "uci": "d2d4",
+        "san": "d4",
+        "from": "d2",
+        "to": "d4",
+        "openingName": "Petrov Defense"
+      }
+    ],
+    "rnbqkb1r/ppp2ppp/3p4/8/3Pn3/5N2/PPP2PPP/RNBQKB1R b KQkq -": [
+      {
+        "uci": "d6d5",
+        "san": "d5",
+        "from": "d6",
+        "to": "d5",
+        "openingName": "Petrov Defense"
+      }
+    ],
+    "rnbqkb1r/ppp2ppp/8/3p4/3Pn3/5N2/PPP2PPP/RNBQKB1R w KQkq -": [
+      {
+        "uci": "f1d3",
+        "san": "Bd3",
+        "from": "f1",
+        "to": "d3",
+        "openingName": "Petrov Defense"
+      }
+    ],
+    "rnbqkb1r/ppp2ppp/8/3p4/3Pn3/3B1N2/PPP2PPP/RNBQK2R b KQkq -": [
+      {
+        "uci": "b8c6",
+        "san": "Nc6",
+        "from": "b8",
+        "to": "c6",
+        "openingName": "Petrov Defense"
+      }
+    ],
+    "r1bqkb1r/ppp2ppp/2n5/3p4/3Pn3/3B1N2/PPP2PPP/RNBQK2R w KQkq -": [
+      {
+        "uci": "e1g1",
+        "san": "O-O",
+        "from": "e1",
+        "to": "g1",
+        "openingName": "Petrov Defense"
+      }
+    ],
+    "r1bqkb1r/ppp2ppp/2n5/3p4/3Pn3/3B1N2/PPP2PPP/RNBQ1RK1 b kq -": [
+      {
+        "uci": "f8e7",
+        "san": "Be7",
+        "from": "f8",
+        "to": "e7",
+        "openingName": "Petrov Defense"
+      }
+    ],
+    "r1bqk2r/ppp1bppp/2n5/3p4/3Pn3/3B1N2/PPP2PPP/RNBQ1RK1 w kq -": [
+      {
+        "uci": "c2c4",
+        "san": "c4",
+        "from": "c2",
+        "to": "c4",
+        "openingName": "Petrov Defense"
+      }
+    ],
+    "r1bqk2r/ppp1bppp/2n5/3p4/2PPn3/3B1N2/PP3PPP/RNBQ1RK1 b kq -": [
+      {
+        "uci": "c6b4",
+        "san": "Nb4",
+        "from": "c6",
+        "to": "b4",
+        "openingName": "Petrov Defense"
+      }
+    ],
+    "r1bqk2r/ppp1bppp/8/3p4/1nPPn3/3B1N2/PP3PPP/RNBQ1RK1 w kq -": [
+      {
+        "uci": "d3e2",
+        "san": "Be2",
+        "from": "d3",
+        "to": "e2",
+        "openingName": "Petrov Defense"
+      }
+    ],
+    "r1bqk2r/ppp1bppp/8/3p4/1nPPn3/5N2/PP2BPPP/RNBQ1RK1 b kq -": [
+      {
+        "uci": "e8g8",
+        "san": "O-O",
+        "from": "e8",
+        "to": "g8",
+        "openingName": "Petrov Defense"
+      }
+    ],
+    "r1bq1rk1/ppp1bppp/8/3p4/1nPPn3/5N2/PP2BPPP/RNBQ1RK1 w - -": [
+      {
+        "uci": "b1c3",
+        "san": "Nc3",
+        "from": "b1",
+        "to": "c3",
+        "openingName": "Petrov Defense"
+      }
+    ],
+    "r1bq1rk1/ppp1bppp/8/3p4/1nPPn3/2N2N2/PP2BPPP/R1BQ1RK1 b - -": [
+      {
+        "uci": "c8f5",
+        "san": "Bf5",
+        "from": "c8",
+        "to": "f5",
+        "openingName": "Petrov Defense"
+      }
+    ],
+    "r1bqkbnr/pppp1ppp/2n5/4p3/3PP3/5N2/PPP2PPP/RNBQKB1R b KQkq -": [
+      {
+        "uci": "e5d4",
+        "san": "exd4",
+        "from": "e5",
+        "to": "d4",
+        "openingName": "Scotch Game"
+      }
+    ],
+    "r1bqkbnr/pppp1ppp/2n5/8/3pP3/5N2/PPP2PPP/RNBQKB1R w KQkq -": [
+      {
+        "uci": "f3d4",
+        "san": "Nxd4",
+        "from": "f3",
+        "to": "d4",
+        "openingName": "Scotch Game"
+      }
+    ],
+    "r1bqkbnr/pppp1ppp/2n5/8/3NP3/8/PPP2PPP/RNBQKB1R b KQkq -": [
+      {
+        "uci": "f8c5",
+        "san": "Bc5",
+        "from": "f8",
+        "to": "c5",
+        "openingName": "Scotch Game"
+      }
+    ],
+    "r1bqk1nr/pppp1ppp/2n5/2b5/3NP3/8/PPP2PPP/RNBQKB1R w KQkq -": [
+      {
+        "uci": "d4b3",
+        "san": "Nb3",
+        "from": "d4",
+        "to": "b3",
+        "openingName": "Scotch Game"
+      }
+    ],
+    "r1bqk1nr/pppp1ppp/2n5/2b5/4P3/1N6/PPP2PPP/RNBQKB1R b KQkq -": [
+      {
+        "uci": "c5b6",
+        "san": "Bb6",
+        "from": "c5",
+        "to": "b6",
+        "openingName": "Scotch Game"
+      }
+    ],
+    "r1bqk1nr/pppp1ppp/1bn5/8/4P3/1N6/PPP2PPP/RNBQKB1R w KQkq -": [
+      {
+        "uci": "b1c3",
+        "san": "Nc3",
+        "from": "b1",
+        "to": "c3",
+        "openingName": "Scotch Game"
+      }
+    ],
+    "r1bqk1nr/pppp1ppp/1bn5/8/4P3/1NN5/PPP2PPP/R1BQKB1R b KQkq -": [
+      {
+        "uci": "g8f6",
+        "san": "Nf6",
+        "from": "g8",
+        "to": "f6",
+        "openingName": "Scotch Game"
+      }
+    ],
+    "r1bqk2r/pppp1ppp/1bn2n2/8/4P3/1NN5/PPP2PPP/R1BQKB1R w KQkq -": [
+      {
+        "uci": "d1e2",
+        "san": "Qe2",
+        "from": "d1",
+        "to": "e2",
+        "openingName": "Scotch Game"
+      }
+    ],
+    "r1bqk2r/pppp1ppp/1bn2n2/8/4P3/1NN5/PPP1QPPP/R1B1KB1R b KQkq -": [
+      {
+        "uci": "d7d6",
+        "san": "d6",
+        "from": "d7",
+        "to": "d6",
+        "openingName": "Scotch Game"
+      }
+    ],
+    "r1bqk2r/ppp2ppp/1bnp1n2/8/4P3/1NN5/PPP1QPPP/R1B1KB1R w KQkq -": [
+      {
+        "uci": "c1g5",
+        "san": "Bg5",
+        "from": "c1",
+        "to": "g5",
+        "openingName": "Scotch Game"
+      }
+    ],
+    "r1bqk2r/ppp2ppp/1bnp1n2/6B1/4P3/1NN5/PPP1QPPP/R3KB1R b KQkq -": [
+      {
+        "uci": "h7h6",
+        "san": "h6",
+        "from": "h7",
+        "to": "h6",
+        "openingName": "Scotch Game"
+      }
+    ],
+    "r1bqk2r/ppp2pp1/1bnp1n1p/6B1/4P3/1NN5/PPP1QPPP/R3KB1R w KQkq -": [
+      {
+        "uci": "g5h4",
+        "san": "Bh4",
+        "from": "g5",
+        "to": "h4",
+        "openingName": "Scotch Game"
+      }
+    ],
+    "r1bqk2r/ppp2pp1/1bnp1n1p/8/4P2B/1NN5/PPP1QPPP/R3KB1R b KQkq -": [
+      {
+        "uci": "e8g8",
+        "san": "O-O",
+        "from": "e8",
+        "to": "g8",
+        "openingName": "Scotch Game"
+      }
+    ],
+    "r1bq1rk1/ppp2pp1/1bnp1n1p/8/4P2B/1NN5/PPP1QPPP/R3KB1R w KQ -": [
+      {
+        "uci": "e1c1",
+        "san": "O-O-O",
+        "from": "e1",
+        "to": "c1",
+        "openingName": "Scotch Game"
+      }
+    ],
+    "r1bq1rk1/ppp2pp1/1bnp1n1p/8/4P2B/1NN5/PPP1QPPP/2KR1B1R b - -": [
+      {
+        "uci": "f8e8",
+        "san": "Re8",
+        "from": "f8",
+        "to": "e8",
+        "openingName": "Scotch Game"
+      }
+    ],
+    "rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq -": [
+      {
+        "uci": "g1f3",
+        "san": "Nf3",
+        "from": "g1",
+        "to": "f3",
+        "openingName": "Sicilian Defense, Najdorf"
+      },
+      {
+        "uci": "c2c3",
+        "san": "c3",
+        "from": "c2",
+        "to": "c3",
+        "openingName": "Sicilian Defense, Alapin"
+      }
+    ],
+    "rnbqkbnr/pp1ppppp/8/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq -": [
+      {
+        "uci": "d7d6",
+        "san": "d6",
+        "from": "d7",
+        "to": "d6",
+        "openingName": "Sicilian Defense, Najdorf"
+      },
+      {
+        "uci": "b8c6",
+        "san": "Nc6",
+        "from": "b8",
+        "to": "c6",
+        "openingName": "Sicilian Defense, Sveshnikov"
+      }
+    ],
+    "rnbqkbnr/pp2pppp/3p4/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq -": [
+      {
+        "uci": "d2d4",
+        "san": "d4",
+        "from": "d2",
+        "to": "d4",
+        "openingName": "Sicilian Defense, Najdorf"
+      }
+    ],
+    "rnbqkbnr/pp2pppp/3p4/2p5/3PP3/5N2/PPP2PPP/RNBQKB1R b KQkq -": [
+      {
+        "uci": "c5d4",
+        "san": "cxd4",
+        "from": "c5",
+        "to": "d4",
+        "openingName": "Sicilian Defense, Najdorf"
+      }
+    ],
+    "rnbqkbnr/pp2pppp/3p4/8/3pP3/5N2/PPP2PPP/RNBQKB1R w KQkq -": [
+      {
+        "uci": "f3d4",
+        "san": "Nxd4",
+        "from": "f3",
+        "to": "d4",
+        "openingName": "Sicilian Defense, Najdorf"
+      }
+    ],
+    "rnbqkbnr/pp2pppp/3p4/8/3NP3/8/PPP2PPP/RNBQKB1R b KQkq -": [
+      {
+        "uci": "g8f6",
+        "san": "Nf6",
+        "from": "g8",
+        "to": "f6",
+        "openingName": "Sicilian Defense, Najdorf"
+      }
+    ],
+    "rnbqkb1r/pp2pppp/3p1n2/8/3NP3/8/PPP2PPP/RNBQKB1R w KQkq -": [
+      {
+        "uci": "b1c3",
+        "san": "Nc3",
+        "from": "b1",
+        "to": "c3",
+        "openingName": "Sicilian Defense, Najdorf"
+      }
+    ],
+    "rnbqkb1r/pp2pppp/3p1n2/8/3NP3/2N5/PPP2PPP/R1BQKB1R b KQkq -": [
+      {
+        "uci": "a7a6",
+        "san": "a6",
+        "from": "a7",
+        "to": "a6",
+        "openingName": "Sicilian Defense, Najdorf"
+      }
+    ],
+    "rnbqkb1r/1p2pppp/p2p1n2/8/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq -": [
+      {
+        "uci": "c1e3",
+        "san": "Be3",
+        "from": "c1",
+        "to": "e3",
+        "openingName": "Sicilian Defense, Najdorf"
+      }
+    ],
+    "rnbqkb1r/1p2pppp/p2p1n2/8/3NP3/2N1B3/PPP2PPP/R2QKB1R b KQkq -": [
+      {
+        "uci": "e7e5",
+        "san": "e5",
+        "from": "e7",
+        "to": "e5",
+        "openingName": "Sicilian Defense, Najdorf"
+      }
+    ],
+    "rnbqkb1r/1p3ppp/p2p1n2/4p3/3NP3/2N1B3/PPP2PPP/R2QKB1R w KQkq -": [
+      {
+        "uci": "d4b3",
+        "san": "Nb3",
+        "from": "d4",
+        "to": "b3",
+        "openingName": "Sicilian Defense, Najdorf"
+      }
+    ],
+    "rnbqkb1r/1p3ppp/p2p1n2/4p3/4P3/1NN1B3/PPP2PPP/R2QKB1R b KQkq -": [
+      {
+        "uci": "c8e6",
+        "san": "Be6",
+        "from": "c8",
+        "to": "e6",
+        "openingName": "Sicilian Defense, Najdorf"
+      }
+    ],
+    "rn1qkb1r/1p3ppp/p2pbn2/4p3/4P3/1NN1B3/PPP2PPP/R2QKB1R w KQkq -": [
+      {
+        "uci": "f2f3",
+        "san": "f3",
+        "from": "f2",
+        "to": "f3",
+        "openingName": "Sicilian Defense, Najdorf"
+      }
+    ],
+    "rn1qkb1r/1p3ppp/p2pbn2/4p3/4P3/1NN1BP2/PPP3PP/R2QKB1R b KQkq -": [
+      {
+        "uci": "f8e7",
+        "san": "Be7",
+        "from": "f8",
+        "to": "e7",
+        "openingName": "Sicilian Defense, Najdorf"
+      }
+    ],
+    "rn1qk2r/1p2bppp/p2pbn2/4p3/4P3/1NN1BP2/PPP3PP/R2QKB1R w KQkq -": [
+      {
+        "uci": "d1d2",
+        "san": "Qd2",
+        "from": "d1",
+        "to": "d2",
+        "openingName": "Sicilian Defense, Najdorf"
+      }
+    ],
+    "rn1qk2r/1p2bppp/p2pbn2/4p3/4P3/1NN1BP2/PPPQ2PP/R3KB1R b KQkq -": [
+      {
+        "uci": "e8g8",
+        "san": "O-O",
+        "from": "e8",
+        "to": "g8",
+        "openingName": "Sicilian Defense, Najdorf"
+      }
+    ],
+    "rn1q1rk1/1p2bppp/p2pbn2/4p3/4P3/1NN1BP2/PPPQ2PP/R3KB1R w KQ -": [
+      {
+        "uci": "e1c1",
+        "san": "O-O-O",
+        "from": "e1",
+        "to": "c1",
+        "openingName": "Sicilian Defense, Najdorf"
+      }
+    ],
+    "rn1q1rk1/1p2bppp/p2pbn2/4p3/4P3/1NN1BP2/PPPQ2PP/2KR1B1R b - -": [
+      {
+        "uci": "b8d7",
+        "san": "Nbd7",
+        "from": "b8",
+        "to": "d7",
+        "openingName": "Sicilian Defense, Najdorf"
+      }
+    ],
+    "r2q1rk1/1p1nbppp/p2pbn2/4p3/4P3/1NN1BP2/PPPQ2PP/2KR1B1R w - -": [
+      {
+        "uci": "g2g4",
+        "san": "g4",
+        "from": "g2",
+        "to": "g4",
+        "openingName": "Sicilian Defense, Najdorf"
+      }
+    ],
+    "r2q1rk1/1p1nbppp/p2pbn2/4p3/4P1P1/1NN1BP2/PPPQ3P/2KR1B1R b - -": [
+      {
+        "uci": "b7b5",
+        "san": "b5",
+        "from": "b7",
+        "to": "b5",
+        "openingName": "Sicilian Defense, Najdorf"
+      }
+    ],
+    "r1bqkbnr/pp1ppppp/2n5/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq -": [
+      {
+        "uci": "d2d4",
+        "san": "d4",
+        "from": "d2",
+        "to": "d4",
+        "openingName": "Sicilian Defense, Sveshnikov"
+      }
+    ],
+    "r1bqkbnr/pp1ppppp/2n5/2p5/3PP3/5N2/PPP2PPP/RNBQKB1R b KQkq -": [
+      {
+        "uci": "c5d4",
+        "san": "cxd4",
+        "from": "c5",
+        "to": "d4",
+        "openingName": "Sicilian Defense, Sveshnikov"
+      }
+    ],
+    "r1bqkbnr/pp1ppppp/2n5/8/3pP3/5N2/PPP2PPP/RNBQKB1R w KQkq -": [
+      {
+        "uci": "f3d4",
+        "san": "Nxd4",
+        "from": "f3",
+        "to": "d4",
+        "openingName": "Sicilian Defense, Sveshnikov"
+      }
+    ],
+    "r1bqkbnr/pp1ppppp/2n5/8/3NP3/8/PPP2PPP/RNBQKB1R b KQkq -": [
+      {
+        "uci": "g8f6",
+        "san": "Nf6",
+        "from": "g8",
+        "to": "f6",
+        "openingName": "Sicilian Defense, Sveshnikov"
+      }
+    ],
+    "r1bqkb1r/pp1ppppp/2n2n2/8/3NP3/8/PPP2PPP/RNBQKB1R w KQkq -": [
+      {
+        "uci": "b1c3",
+        "san": "Nc3",
+        "from": "b1",
+        "to": "c3",
+        "openingName": "Sicilian Defense, Sveshnikov"
+      }
+    ],
+    "r1bqkb1r/pp1ppppp/2n2n2/8/3NP3/2N5/PPP2PPP/R1BQKB1R b KQkq -": [
+      {
+        "uci": "e7e5",
+        "san": "e5",
+        "from": "e7",
+        "to": "e5",
+        "openingName": "Sicilian Defense, Sveshnikov"
+      }
+    ],
+    "r1bqkb1r/pp1p1ppp/2n2n2/4p3/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq -": [
+      {
+        "uci": "d4b5",
+        "san": "Ndb5",
+        "from": "d4",
+        "to": "b5",
+        "openingName": "Sicilian Defense, Sveshnikov"
+      }
+    ],
+    "r1bqkb1r/pp1p1ppp/2n2n2/1N2p3/4P3/2N5/PPP2PPP/R1BQKB1R b KQkq -": [
+      {
+        "uci": "d7d6",
+        "san": "d6",
+        "from": "d7",
+        "to": "d6",
+        "openingName": "Sicilian Defense, Sveshnikov"
+      }
+    ],
+    "r1bqkb1r/pp3ppp/2np1n2/1N2p3/4P3/2N5/PPP2PPP/R1BQKB1R w KQkq -": [
+      {
+        "uci": "c1g5",
+        "san": "Bg5",
+        "from": "c1",
+        "to": "g5",
+        "openingName": "Sicilian Defense, Sveshnikov"
+      }
+    ],
+    "r1bqkb1r/pp3ppp/2np1n2/1N2p1B1/4P3/2N5/PPP2PPP/R2QKB1R b KQkq -": [
+      {
+        "uci": "a7a6",
+        "san": "a6",
+        "from": "a7",
+        "to": "a6",
+        "openingName": "Sicilian Defense, Sveshnikov"
+      }
+    ],
+    "r1bqkb1r/1p3ppp/p1np1n2/1N2p1B1/4P3/2N5/PPP2PPP/R2QKB1R w KQkq -": [
+      {
+        "uci": "b5a3",
+        "san": "Na3",
+        "from": "b5",
+        "to": "a3",
+        "openingName": "Sicilian Defense, Sveshnikov"
+      }
+    ],
+    "r1bqkb1r/1p3ppp/p1np1n2/4p1B1/4P3/N1N5/PPP2PPP/R2QKB1R b KQkq -": [
+      {
+        "uci": "b7b5",
+        "san": "b5",
+        "from": "b7",
+        "to": "b5",
+        "openingName": "Sicilian Defense, Sveshnikov"
+      }
+    ],
+    "r1bqkb1r/5ppp/p1np1n2/1p2p1B1/4P3/N1N5/PPP2PPP/R2QKB1R w KQkq -": [
+      {
+        "uci": "c3d5",
+        "san": "Nd5",
+        "from": "c3",
+        "to": "d5",
+        "openingName": "Sicilian Defense, Sveshnikov"
+      }
+    ],
+    "r1bqkb1r/5ppp/p1np1n2/1p1Np1B1/4P3/N7/PPP2PPP/R2QKB1R b KQkq -": [
+      {
+        "uci": "f8e7",
+        "san": "Be7",
+        "from": "f8",
+        "to": "e7",
+        "openingName": "Sicilian Defense, Sveshnikov"
+      }
+    ],
+    "r1bqk2r/4bppp/p1np1n2/1p1Np1B1/4P3/N7/PPP2PPP/R2QKB1R w KQkq -": [
+      {
+        "uci": "g5f6",
+        "san": "Bxf6",
+        "from": "g5",
+        "to": "f6",
+        "openingName": "Sicilian Defense, Sveshnikov"
+      }
+    ],
+    "r1bqk2r/4bppp/p1np1B2/1p1Np3/4P3/N7/PPP2PPP/R2QKB1R b KQkq -": [
+      {
+        "uci": "e7f6",
+        "san": "Bxf6",
+        "from": "e7",
+        "to": "f6",
+        "openingName": "Sicilian Defense, Sveshnikov"
+      }
+    ],
+    "r1bqk2r/5ppp/p1np1b2/1p1Np3/4P3/N7/PPP2PPP/R2QKB1R w KQkq -": [
+      {
+        "uci": "c2c3",
+        "san": "c3",
+        "from": "c2",
+        "to": "c3",
+        "openingName": "Sicilian Defense, Sveshnikov"
+      }
+    ],
+    "r1bqk2r/5ppp/p1np1b2/1p1Np3/4P3/N1P5/PP3PPP/R2QKB1R b KQkq -": [
+      {
+        "uci": "e8g8",
+        "san": "O-O",
+        "from": "e8",
+        "to": "g8",
+        "openingName": "Sicilian Defense, Sveshnikov"
+      }
+    ],
+    "r1bq1rk1/5ppp/p1np1b2/1p1Np3/4P3/N1P5/PP3PPP/R2QKB1R w KQ -": [
+      {
+        "uci": "a3c2",
+        "san": "Nc2",
+        "from": "a3",
+        "to": "c2",
+        "openingName": "Sicilian Defense, Sveshnikov"
+      }
+    ],
+    "r1bq1rk1/5ppp/p1np1b2/1p1Np3/4P3/2P5/PPN2PPP/R2QKB1R b KQ -": [
+      {
+        "uci": "f6g5",
+        "san": "Bg5",
+        "from": "f6",
+        "to": "g5",
+        "openingName": "Sicilian Defense, Sveshnikov"
+      }
+    ],
+    "rnbqkbnr/pp1ppppp/8/2p5/4P3/2P5/PP1P1PPP/RNBQKBNR b KQkq -": [
+      {
+        "uci": "d7d5",
+        "san": "d5",
+        "from": "d7",
+        "to": "d5",
+        "openingName": "Sicilian Defense, Alapin"
+      }
+    ],
+    "rnbqkbnr/pp2pppp/8/2pp4/4P3/2P5/PP1P1PPP/RNBQKBNR w KQkq -": [
+      {
+        "uci": "e4d5",
+        "san": "exd5",
+        "from": "e4",
+        "to": "d5",
+        "openingName": "Sicilian Defense, Alapin"
+      }
+    ],
+    "rnbqkbnr/pp2pppp/8/2pP4/8/2P5/PP1P1PPP/RNBQKBNR b KQkq -": [
+      {
+        "uci": "d8d5",
+        "san": "Qxd5",
+        "from": "d8",
+        "to": "d5",
+        "openingName": "Sicilian Defense, Alapin"
+      }
+    ],
+    "rnb1kbnr/pp2pppp/8/2pq4/8/2P5/PP1P1PPP/RNBQKBNR w KQkq -": [
+      {
+        "uci": "d2d4",
+        "san": "d4",
+        "from": "d2",
+        "to": "d4",
+        "openingName": "Sicilian Defense, Alapin"
+      }
+    ],
+    "rnb1kbnr/pp2pppp/8/2pq4/3P4/2P5/PP3PPP/RNBQKBNR b KQkq -": [
+      {
+        "uci": "g8f6",
+        "san": "Nf6",
+        "from": "g8",
+        "to": "f6",
+        "openingName": "Sicilian Defense, Alapin"
+      }
+    ],
+    "rnb1kb1r/pp2pppp/5n2/2pq4/3P4/2P5/PP3PPP/RNBQKBNR w KQkq -": [
+      {
+        "uci": "g1f3",
+        "san": "Nf3",
+        "from": "g1",
+        "to": "f3",
+        "openingName": "Sicilian Defense, Alapin"
+      }
+    ],
+    "rnb1kb1r/pp2pppp/5n2/2pq4/3P4/2P2N2/PP3PPP/RNBQKB1R b KQkq -": [
+      {
+        "uci": "e7e6",
+        "san": "e6",
+        "from": "e7",
+        "to": "e6",
+        "openingName": "Sicilian Defense, Alapin"
+      }
+    ],
+    "rnb1kb1r/pp3ppp/4pn2/2pq4/3P4/2P2N2/PP3PPP/RNBQKB1R w KQkq -": [
+      {
+        "uci": "c1e3",
+        "san": "Be3",
+        "from": "c1",
+        "to": "e3",
+        "openingName": "Sicilian Defense, Alapin"
+      }
+    ],
+    "rnb1kb1r/pp3ppp/4pn2/2pq4/3P4/2P1BN2/PP3PPP/RN1QKB1R b KQkq -": [
+      {
+        "uci": "c5d4",
+        "san": "cxd4",
+        "from": "c5",
+        "to": "d4",
+        "openingName": "Sicilian Defense, Alapin"
+      }
+    ],
+    "rnb1kb1r/pp3ppp/4pn2/3q4/3p4/2P1BN2/PP3PPP/RN1QKB1R w KQkq -": [
+      {
+        "uci": "c3d4",
+        "san": "cxd4",
+        "from": "c3",
+        "to": "d4",
+        "openingName": "Sicilian Defense, Alapin"
+      }
+    ],
+    "rnb1kb1r/pp3ppp/4pn2/3q4/3P4/4BN2/PP3PPP/RN1QKB1R b KQkq -": [
+      {
+        "uci": "b8c6",
+        "san": "Nc6",
+        "from": "b8",
+        "to": "c6",
+        "openingName": "Sicilian Defense, Alapin"
+      }
+    ],
+    "r1b1kb1r/pp3ppp/2n1pn2/3q4/3P4/4BN2/PP3PPP/RN1QKB1R w KQkq -": [
+      {
+        "uci": "b1c3",
+        "san": "Nc3",
+        "from": "b1",
+        "to": "c3",
+        "openingName": "Sicilian Defense, Alapin"
+      }
+    ],
+    "r1b1kb1r/pp3ppp/2n1pn2/3q4/3P4/2N1BN2/PP3PPP/R2QKB1R b KQkq -": [
+      {
+        "uci": "d5d6",
+        "san": "Qd6",
+        "from": "d5",
+        "to": "d6",
+        "openingName": "Sicilian Defense, Alapin"
+      }
+    ],
+    "r1b1kb1r/pp3ppp/2nqpn2/8/3P4/2N1BN2/PP3PPP/R2QKB1R w KQkq -": [
+      {
+        "uci": "f1d3",
+        "san": "Bd3",
+        "from": "f1",
+        "to": "d3",
+        "openingName": "Sicilian Defense, Alapin"
+      }
+    ],
+    "r1b1kb1r/pp3ppp/2nqpn2/8/3P4/2NBBN2/PP3PPP/R2QK2R b KQkq -": [
+      {
+        "uci": "f8e7",
+        "san": "Be7",
+        "from": "f8",
+        "to": "e7",
+        "openingName": "Sicilian Defense, Alapin"
+      }
+    ],
+    "r1b1k2r/pp2bppp/2nqpn2/8/3P4/2NBBN2/PP3PPP/R2QK2R w KQkq -": [
+      {
+        "uci": "e1g1",
+        "san": "O-O",
+        "from": "e1",
+        "to": "g1",
+        "openingName": "Sicilian Defense, Alapin"
+      }
+    ],
+    "r1b1k2r/pp2bppp/2nqpn2/8/3P4/2NBBN2/PP3PPP/R2Q1RK1 b kq -": [
+      {
+        "uci": "e8g8",
+        "san": "O-O",
+        "from": "e8",
+        "to": "g8",
+        "openingName": "Sicilian Defense, Alapin"
+      }
+    ],
+    "rnbqkbnr/pppp1ppp/4p3/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq -": [
+      {
+        "uci": "d2d4",
+        "san": "d4",
+        "from": "d2",
+        "to": "d4",
+        "openingName": "French Defense, Winawer"
+      }
+    ],
+    "rnbqkbnr/pppp1ppp/4p3/8/3PP3/8/PPP2PPP/RNBQKBNR b KQkq -": [
+      {
+        "uci": "d7d5",
+        "san": "d5",
+        "from": "d7",
+        "to": "d5",
+        "openingName": "French Defense, Winawer"
+      }
+    ],
+    "rnbqkbnr/ppp2ppp/4p3/3p4/3PP3/8/PPP2PPP/RNBQKBNR w KQkq -": [
+      {
+        "uci": "b1c3",
+        "san": "Nc3",
+        "from": "b1",
+        "to": "c3",
+        "openingName": "French Defense, Winawer"
+      }
+    ],
+    "rnbqkbnr/ppp2ppp/4p3/3p4/3PP3/2N5/PPP2PPP/R1BQKBNR b KQkq -": [
+      {
+        "uci": "f8b4",
+        "san": "Bb4",
+        "from": "f8",
+        "to": "b4",
+        "openingName": "French Defense, Winawer"
+      },
+      {
+        "uci": "g8f6",
+        "san": "Nf6",
+        "from": "g8",
+        "to": "f6",
+        "openingName": "French Defense, Classical"
+      }
+    ],
+    "rnbqk1nr/ppp2ppp/4p3/3p4/1b1PP3/2N5/PPP2PPP/R1BQKBNR w KQkq -": [
+      {
+        "uci": "e4e5",
+        "san": "e5",
+        "from": "e4",
+        "to": "e5",
+        "openingName": "French Defense, Winawer"
+      }
+    ],
+    "rnbqk1nr/ppp2ppp/4p3/3pP3/1b1P4/2N5/PPP2PPP/R1BQKBNR b KQkq -": [
+      {
+        "uci": "c7c5",
+        "san": "c5",
+        "from": "c7",
+        "to": "c5",
+        "openingName": "French Defense, Winawer"
+      }
+    ],
+    "rnbqk1nr/pp3ppp/4p3/2ppP3/1b1P4/2N5/PPP2PPP/R1BQKBNR w KQkq -": [
+      {
+        "uci": "a2a3",
+        "san": "a3",
+        "from": "a2",
+        "to": "a3",
+        "openingName": "French Defense, Winawer"
+      }
+    ],
+    "rnbqk1nr/pp3ppp/4p3/2ppP3/1b1P4/P1N5/1PP2PPP/R1BQKBNR b KQkq -": [
+      {
+        "uci": "b4c3",
+        "san": "Bxc3+",
+        "from": "b4",
+        "to": "c3",
+        "openingName": "French Defense, Winawer"
+      }
+    ],
+    "rnbqk1nr/pp3ppp/4p3/2ppP3/3P4/P1b5/1PP2PPP/R1BQKBNR w KQkq -": [
+      {
+        "uci": "b2c3",
+        "san": "bxc3",
+        "from": "b2",
+        "to": "c3",
+        "openingName": "French Defense, Winawer"
+      }
+    ],
+    "rnbqk1nr/pp3ppp/4p3/2ppP3/3P4/P1P5/2P2PPP/R1BQKBNR b KQkq -": [
+      {
+        "uci": "g8e7",
+        "san": "Ne7",
+        "from": "g8",
+        "to": "e7",
+        "openingName": "French Defense, Winawer"
+      }
+    ],
+    "rnbqk2r/pp2nppp/4p3/2ppP3/3P4/P1P5/2P2PPP/R1BQKBNR w KQkq -": [
+      {
+        "uci": "d1g4",
+        "san": "Qg4",
+        "from": "d1",
+        "to": "g4",
+        "openingName": "French Defense, Winawer"
+      }
+    ],
+    "rnbqk2r/pp2nppp/4p3/2ppP3/3P2Q1/P1P5/2P2PPP/R1B1KBNR b KQkq -": [
+      {
+        "uci": "d8c7",
+        "san": "Qc7",
+        "from": "d8",
+        "to": "c7",
+        "openingName": "French Defense, Winawer"
+      }
+    ],
+    "rnb1k2r/ppq1nppp/4p3/2ppP3/3P2Q1/P1P5/2P2PPP/R1B1KBNR w KQkq -": [
+      {
+        "uci": "g4g7",
+        "san": "Qxg7",
+        "from": "g4",
+        "to": "g7",
+        "openingName": "French Defense, Winawer"
+      }
+    ],
+    "rnb1k2r/ppq1npQp/4p3/2ppP3/3P4/P1P5/2P2PPP/R1B1KBNR b KQkq -": [
+      {
+        "uci": "h8g8",
+        "san": "Rg8",
+        "from": "h8",
+        "to": "g8",
+        "openingName": "French Defense, Winawer"
+      }
+    ],
+    "rnb1k1r1/ppq1npQp/4p3/2ppP3/3P4/P1P5/2P2PPP/R1B1KBNR w KQq -": [
+      {
+        "uci": "g7h7",
+        "san": "Qxh7",
+        "from": "g7",
+        "to": "h7",
+        "openingName": "French Defense, Winawer"
+      }
+    ],
+    "rnb1k1r1/ppq1np1Q/4p3/2ppP3/3P4/P1P5/2P2PPP/R1B1KBNR b KQq -": [
+      {
+        "uci": "c5d4",
+        "san": "cxd4",
+        "from": "c5",
+        "to": "d4",
+        "openingName": "French Defense, Winawer"
+      }
+    ],
+    "rnb1k1r1/ppq1np1Q/4p3/3pP3/3p4/P1P5/2P2PPP/R1B1KBNR w KQq -": [
+      {
+        "uci": "g1e2",
+        "san": "Ne2",
+        "from": "g1",
+        "to": "e2",
+        "openingName": "French Defense, Winawer"
+      }
+    ],
+    "rnb1k1r1/ppq1np1Q/4p3/3pP3/3p4/P1P5/2P1NPPP/R1B1KB1R b KQq -": [
+      {
+        "uci": "b8c6",
+        "san": "Nbc6",
+        "from": "b8",
+        "to": "c6",
+        "openingName": "French Defense, Winawer"
+      }
+    ],
+    "r1b1k1r1/ppq1np1Q/2n1p3/3pP3/3p4/P1P5/2P1NPPP/R1B1KB1R w KQq -": [
+      {
+        "uci": "f2f4",
+        "san": "f4",
+        "from": "f2",
+        "to": "f4",
+        "openingName": "French Defense, Winawer"
+      }
+    ],
+    "r1b1k1r1/ppq1np1Q/2n1p3/3pP3/3p1P2/P1P5/2P1N1PP/R1B1KB1R b KQq -": [
+      {
+        "uci": "d4c3",
+        "san": "dxc3",
+        "from": "d4",
+        "to": "c3",
+        "openingName": "French Defense, Winawer"
+      }
+    ],
+    "rnbqkb1r/ppp2ppp/4pn2/3p4/3PP3/2N5/PPP2PPP/R1BQKBNR w KQkq -": [
+      {
+        "uci": "e4e5",
+        "san": "e5",
+        "from": "e4",
+        "to": "e5",
+        "openingName": "French Defense, Classical"
+      }
+    ],
+    "rnbqkb1r/ppp2ppp/4pn2/3pP3/3P4/2N5/PPP2PPP/R1BQKBNR b KQkq -": [
+      {
+        "uci": "f6d7",
+        "san": "Nfd7",
+        "from": "f6",
+        "to": "d7",
+        "openingName": "French Defense, Classical"
+      }
+    ],
+    "rnbqkb1r/pppn1ppp/4p3/3pP3/3P4/2N5/PPP2PPP/R1BQKBNR w KQkq -": [
+      {
+        "uci": "f2f4",
+        "san": "f4",
+        "from": "f2",
+        "to": "f4",
+        "openingName": "French Defense, Classical"
+      }
+    ],
+    "rnbqkb1r/pppn1ppp/4p3/3pP3/3P1P2/2N5/PPP3PP/R1BQKBNR b KQkq -": [
+      {
+        "uci": "c7c5",
+        "san": "c5",
+        "from": "c7",
+        "to": "c5",
+        "openingName": "French Defense, Classical"
+      }
+    ],
+    "rnbqkb1r/pp1n1ppp/4p3/2ppP3/3P1P2/2N5/PPP3PP/R1BQKBNR w KQkq -": [
+      {
+        "uci": "g1f3",
+        "san": "Nf3",
+        "from": "g1",
+        "to": "f3",
+        "openingName": "French Defense, Classical"
+      }
+    ],
+    "rnbqkb1r/pp1n1ppp/4p3/2ppP3/3P1P2/2N2N2/PPP3PP/R1BQKB1R b KQkq -": [
+      {
+        "uci": "b8c6",
+        "san": "Nc6",
+        "from": "b8",
+        "to": "c6",
+        "openingName": "French Defense, Classical"
+      }
+    ],
+    "r1bqkb1r/pp1n1ppp/2n1p3/2ppP3/3P1P2/2N2N2/PPP3PP/R1BQKB1R w KQkq -": [
+      {
+        "uci": "c1e3",
+        "san": "Be3",
+        "from": "c1",
+        "to": "e3",
+        "openingName": "French Defense, Classical"
+      }
+    ],
+    "r1bqkb1r/pp1n1ppp/2n1p3/2ppP3/3P1P2/2N1BN2/PPP3PP/R2QKB1R b KQkq -": [
+      {
+        "uci": "c5d4",
+        "san": "cxd4",
+        "from": "c5",
+        "to": "d4",
+        "openingName": "French Defense, Classical"
+      }
+    ],
+    "r1bqkb1r/pp1n1ppp/2n1p3/3pP3/3p1P2/2N1BN2/PPP3PP/R2QKB1R w KQkq -": [
+      {
+        "uci": "f3d4",
+        "san": "Nxd4",
+        "from": "f3",
+        "to": "d4",
+        "openingName": "French Defense, Classical"
+      }
+    ],
+    "r1bqkb1r/pp1n1ppp/2n1p3/3pP3/3N1P2/2N1B3/PPP3PP/R2QKB1R b KQkq -": [
+      {
+        "uci": "f8c5",
+        "san": "Bc5",
+        "from": "f8",
+        "to": "c5",
+        "openingName": "French Defense, Classical"
+      }
+    ],
+    "r1bqk2r/pp1n1ppp/2n1p3/2bpP3/3N1P2/2N1B3/PPP3PP/R2QKB1R w KQkq -": [
+      {
+        "uci": "d1d2",
+        "san": "Qd2",
+        "from": "d1",
+        "to": "d2",
+        "openingName": "French Defense, Classical"
+      }
+    ],
+    "r1bqk2r/pp1n1ppp/2n1p3/2bpP3/3N1P2/2N1B3/PPPQ2PP/R3KB1R b KQkq -": [
+      {
+        "uci": "e8g8",
+        "san": "O-O",
+        "from": "e8",
+        "to": "g8",
+        "openingName": "French Defense, Classical"
+      }
+    ],
+    "r1bq1rk1/pp1n1ppp/2n1p3/2bpP3/3N1P2/2N1B3/PPPQ2PP/R3KB1R w KQ -": [
+      {
+        "uci": "e1c1",
+        "san": "O-O-O",
+        "from": "e1",
+        "to": "c1",
+        "openingName": "French Defense, Classical"
+      }
+    ],
+    "r1bq1rk1/pp1n1ppp/2n1p3/2bpP3/3N1P2/2N1B3/PPPQ2PP/2KR1B1R b - -": [
+      {
+        "uci": "a7a6",
+        "san": "a6",
+        "from": "a7",
+        "to": "a6",
+        "openingName": "French Defense, Classical"
+      }
+    ],
+    "rnbqkbnr/pp1ppppp/2p5/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq -": [
+      {
+        "uci": "d2d4",
+        "san": "d4",
+        "from": "d2",
+        "to": "d4",
+        "openingName": "Caro-Kann Defense, Advance"
+      }
+    ],
+    "rnbqkbnr/pp1ppppp/2p5/8/3PP3/8/PPP2PPP/RNBQKBNR b KQkq -": [
+      {
+        "uci": "d7d5",
+        "san": "d5",
+        "from": "d7",
+        "to": "d5",
+        "openingName": "Caro-Kann Defense, Advance"
+      }
+    ],
+    "rnbqkbnr/pp2pppp/2p5/3p4/3PP3/8/PPP2PPP/RNBQKBNR w KQkq -": [
+      {
+        "uci": "e4e5",
+        "san": "e5",
+        "from": "e4",
+        "to": "e5",
+        "openingName": "Caro-Kann Defense, Advance"
+      },
+      {
+        "uci": "b1c3",
+        "san": "Nc3",
+        "from": "b1",
+        "to": "c3",
+        "openingName": "Caro-Kann Defense, Classical"
+      }
+    ],
+    "rnbqkbnr/pp2pppp/2p5/3pP3/3P4/8/PPP2PPP/RNBQKBNR b KQkq -": [
+      {
+        "uci": "c8f5",
+        "san": "Bf5",
+        "from": "c8",
+        "to": "f5",
+        "openingName": "Caro-Kann Defense, Advance"
+      }
+    ],
+    "rn1qkbnr/pp2pppp/2p5/3pPb2/3P4/8/PPP2PPP/RNBQKBNR w KQkq -": [
+      {
+        "uci": "g1f3",
+        "san": "Nf3",
+        "from": "g1",
+        "to": "f3",
+        "openingName": "Caro-Kann Defense, Advance"
+      }
+    ],
+    "rn1qkbnr/pp2pppp/2p5/3pPb2/3P4/5N2/PPP2PPP/RNBQKB1R b KQkq -": [
+      {
+        "uci": "e7e6",
+        "san": "e6",
+        "from": "e7",
+        "to": "e6",
+        "openingName": "Caro-Kann Defense, Advance"
+      }
+    ],
+    "rn1qkbnr/pp3ppp/2p1p3/3pPb2/3P4/5N2/PPP2PPP/RNBQKB1R w KQkq -": [
+      {
+        "uci": "f1e2",
+        "san": "Be2",
+        "from": "f1",
+        "to": "e2",
+        "openingName": "Caro-Kann Defense, Advance"
+      }
+    ],
+    "rn1qkbnr/pp3ppp/2p1p3/3pPb2/3P4/5N2/PPP1BPPP/RNBQK2R b KQkq -": [
+      {
+        "uci": "c6c5",
+        "san": "c5",
+        "from": "c6",
+        "to": "c5",
+        "openingName": "Caro-Kann Defense, Advance"
+      }
+    ],
+    "rn1qkbnr/pp3ppp/4p3/2ppPb2/3P4/5N2/PPP1BPPP/RNBQK2R w KQkq -": [
+      {
+        "uci": "c1e3",
+        "san": "Be3",
+        "from": "c1",
+        "to": "e3",
+        "openingName": "Caro-Kann Defense, Advance"
+      }
+    ],
+    "rn1qkbnr/pp3ppp/4p3/2ppPb2/3P4/4BN2/PPP1BPPP/RN1QK2R b KQkq -": [
+      {
+        "uci": "d8b6",
+        "san": "Qb6",
+        "from": "d8",
+        "to": "b6",
+        "openingName": "Caro-Kann Defense, Advance"
+      }
+    ],
+    "rn2kbnr/pp3ppp/1q2p3/2ppPb2/3P4/4BN2/PPP1BPPP/RN1QK2R w KQkq -": [
+      {
+        "uci": "b1c3",
+        "san": "Nc3",
+        "from": "b1",
+        "to": "c3",
+        "openingName": "Caro-Kann Defense, Advance"
+      }
+    ],
+    "rn2kbnr/pp3ppp/1q2p3/2ppPb2/3P4/2N1BN2/PPP1BPPP/R2QK2R b KQkq -": [
+      {
+        "uci": "b8c6",
+        "san": "Nc6",
+        "from": "b8",
+        "to": "c6",
+        "openingName": "Caro-Kann Defense, Advance"
+      }
+    ],
+    "r3kbnr/pp3ppp/1qn1p3/2ppPb2/3P4/2N1BN2/PPP1BPPP/R2QK2R w KQkq -": [
+      {
+        "uci": "e1g1",
+        "san": "O-O",
+        "from": "e1",
+        "to": "g1",
+        "openingName": "Caro-Kann Defense, Advance"
+      }
+    ],
+    "r3kbnr/pp3ppp/1qn1p3/2ppPb2/3P4/2N1BN2/PPP1BPPP/R2Q1RK1 b kq -": [
+      {
+        "uci": "b6b2",
+        "san": "Qxb2",
+        "from": "b6",
+        "to": "b2",
+        "openingName": "Caro-Kann Defense, Advance"
+      }
+    ],
+    "r3kbnr/pp3ppp/2n1p3/2ppPb2/3P4/2N1BN2/PqP1BPPP/R2Q1RK1 w kq -": [
+      {
+        "uci": "d1e1",
+        "san": "Qe1",
+        "from": "d1",
+        "to": "e1",
+        "openingName": "Caro-Kann Defense, Advance"
+      }
+    ],
+    "r3kbnr/pp3ppp/2n1p3/2ppPb2/3P4/2N1BN2/PqP1BPPP/R3QRK1 b kq -": [
+      {
+        "uci": "c5d4",
+        "san": "cxd4",
+        "from": "c5",
+        "to": "d4",
+        "openingName": "Caro-Kann Defense, Advance"
+      }
+    ],
+    "r3kbnr/pp3ppp/2n1p3/3pPb2/3p4/2N1BN2/PqP1BPPP/R3QRK1 w kq -": [
+      {
+        "uci": "e3d4",
+        "san": "Bxd4",
+        "from": "e3",
+        "to": "d4",
+        "openingName": "Caro-Kann Defense, Advance"
+      }
+    ],
+    "r3kbnr/pp3ppp/2n1p3/3pPb2/3B4/2N2N2/PqP1BPPP/R3QRK1 b kq -": [
+      {
+        "uci": "c6d4",
+        "san": "Nxd4",
+        "from": "c6",
+        "to": "d4",
+        "openingName": "Caro-Kann Defense, Advance"
+      }
+    ],
+    "r3kbnr/pp3ppp/4p3/3pPb2/3n4/2N2N2/PqP1BPPP/R3QRK1 w kq -": [
+      {
+        "uci": "f3d4",
+        "san": "Nxd4",
+        "from": "f3",
+        "to": "d4",
+        "openingName": "Caro-Kann Defense, Advance"
+      }
+    ],
+    "r3kbnr/pp3ppp/4p3/3pPb2/3N4/2N5/PqP1BPPP/R3QRK1 b kq -": [
+      {
+        "uci": "f8b4",
+        "san": "Bb4",
+        "from": "f8",
+        "to": "b4",
+        "openingName": "Caro-Kann Defense, Advance"
+      }
+    ],
+    "rnbqkbnr/pp2pppp/2p5/3p4/3PP3/2N5/PPP2PPP/R1BQKBNR b KQkq -": [
+      {
+        "uci": "d5e4",
+        "san": "dxe4",
+        "from": "d5",
+        "to": "e4",
+        "openingName": "Caro-Kann Defense, Classical"
+      }
+    ],
+    "rnbqkbnr/pp2pppp/2p5/8/3Pp3/2N5/PPP2PPP/R1BQKBNR w KQkq -": [
+      {
+        "uci": "c3e4",
+        "san": "Nxe4",
+        "from": "c3",
+        "to": "e4",
+        "openingName": "Caro-Kann Defense, Classical"
+      }
+    ],
+    "rnbqkbnr/pp2pppp/2p5/8/3PN3/8/PPP2PPP/R1BQKBNR b KQkq -": [
+      {
+        "uci": "c8f5",
+        "san": "Bf5",
+        "from": "c8",
+        "to": "f5",
+        "openingName": "Caro-Kann Defense, Classical"
+      }
+    ],
+    "rn1qkbnr/pp2pppp/2p5/5b2/3PN3/8/PPP2PPP/R1BQKBNR w KQkq -": [
+      {
+        "uci": "e4g3",
+        "san": "Ng3",
+        "from": "e4",
+        "to": "g3",
+        "openingName": "Caro-Kann Defense, Classical"
+      }
+    ],
+    "rn1qkbnr/pp2pppp/2p5/5b2/3P4/6N1/PPP2PPP/R1BQKBNR b KQkq -": [
+      {
+        "uci": "f5g6",
+        "san": "Bg6",
+        "from": "f5",
+        "to": "g6",
+        "openingName": "Caro-Kann Defense, Classical"
+      }
+    ],
+    "rn1qkbnr/pp2pppp/2p3b1/8/3P4/6N1/PPP2PPP/R1BQKBNR w KQkq -": [
+      {
+        "uci": "h2h4",
+        "san": "h4",
+        "from": "h2",
+        "to": "h4",
+        "openingName": "Caro-Kann Defense, Classical"
+      }
+    ],
+    "rn1qkbnr/pp2pppp/2p3b1/8/3P3P/6N1/PPP2PP1/R1BQKBNR b KQkq -": [
+      {
+        "uci": "h7h6",
+        "san": "h6",
+        "from": "h7",
+        "to": "h6",
+        "openingName": "Caro-Kann Defense, Classical"
+      }
+    ],
+    "rn1qkbnr/pp2ppp1/2p3bp/8/3P3P/6N1/PPP2PP1/R1BQKBNR w KQkq -": [
+      {
+        "uci": "g1f3",
+        "san": "Nf3",
+        "from": "g1",
+        "to": "f3",
+        "openingName": "Caro-Kann Defense, Classical"
+      }
+    ],
+    "rn1qkbnr/pp2ppp1/2p3bp/8/3P3P/5NN1/PPP2PP1/R1BQKB1R b KQkq -": [
+      {
+        "uci": "b8d7",
+        "san": "Nd7",
+        "from": "b8",
+        "to": "d7",
+        "openingName": "Caro-Kann Defense, Classical"
+      }
+    ],
+    "r2qkbnr/pp1nppp1/2p3bp/8/3P3P/5NN1/PPP2PP1/R1BQKB1R w KQkq -": [
+      {
+        "uci": "h4h5",
+        "san": "h5",
+        "from": "h4",
+        "to": "h5",
+        "openingName": "Caro-Kann Defense, Classical"
+      }
+    ],
+    "r2qkbnr/pp1nppp1/2p3bp/7P/3P4/5NN1/PPP2PP1/R1BQKB1R b KQkq -": [
+      {
+        "uci": "g6h7",
+        "san": "Bh7",
+        "from": "g6",
+        "to": "h7",
+        "openingName": "Caro-Kann Defense, Classical"
+      }
+    ],
+    "r2qkbnr/pp1npppb/2p4p/7P/3P4/5NN1/PPP2PP1/R1BQKB1R w KQkq -": [
+      {
+        "uci": "f1d3",
+        "san": "Bd3",
+        "from": "f1",
+        "to": "d3",
+        "openingName": "Caro-Kann Defense, Classical"
+      }
+    ],
+    "r2qkbnr/pp1npppb/2p4p/7P/3P4/3B1NN1/PPP2PP1/R1BQK2R b KQkq -": [
+      {
+        "uci": "h7d3",
+        "san": "Bxd3",
+        "from": "h7",
+        "to": "d3",
+        "openingName": "Caro-Kann Defense, Classical"
+      }
+    ],
+    "r2qkbnr/pp1nppp1/2p4p/7P/3P4/3b1NN1/PPP2PP1/R1BQK2R w KQkq -": [
+      {
+        "uci": "d1d3",
+        "san": "Qxd3",
+        "from": "d1",
+        "to": "d3",
+        "openingName": "Caro-Kann Defense, Classical"
+      }
+    ],
+    "r2qkbnr/pp1nppp1/2p4p/7P/3P4/3Q1NN1/PPP2PP1/R1B1K2R b KQkq -": [
+      {
+        "uci": "e7e6",
+        "san": "e6",
+        "from": "e7",
+        "to": "e6",
+        "openingName": "Caro-Kann Defense, Classical"
+      }
+    ],
+    "r2qkbnr/pp1n1pp1/2p1p2p/7P/3P4/3Q1NN1/PPP2PP1/R1B1K2R w KQkq -": [
+      {
+        "uci": "c1d2",
+        "san": "Bd2",
+        "from": "c1",
+        "to": "d2",
+        "openingName": "Caro-Kann Defense, Classical"
+      }
+    ],
+    "r2qkbnr/pp1n1pp1/2p1p2p/7P/3P4/3Q1NN1/PPPB1PP1/R3K2R b KQkq -": [
+      {
+        "uci": "g8f6",
+        "san": "Ngf6",
+        "from": "g8",
+        "to": "f6",
+        "openingName": "Caro-Kann Defense, Classical"
+      }
+    ],
+    "r2qkb1r/pp1n1pp1/2p1pn1p/7P/3P4/3Q1NN1/PPPB1PP1/R3K2R w KQkq -": [
+      {
+        "uci": "e1c1",
+        "san": "O-O-O",
+        "from": "e1",
+        "to": "c1",
+        "openingName": "Caro-Kann Defense, Classical"
+      }
+    ],
+    "r2qkb1r/pp1n1pp1/2p1pn1p/7P/3P4/3Q1NN1/PPPB1PP1/2KR3R b kq -": [
+      {
+        "uci": "f8e7",
+        "san": "Be7",
+        "from": "f8",
+        "to": "e7",
+        "openingName": "Caro-Kann Defense, Classical"
+      }
+    ],
+    "rnbqkbnr/pppppppp/8/8/3P4/8/PPP1PPPP/RNBQKBNR b KQkq -": [
+      {
+        "uci": "d7d5",
+        "san": "d5",
+        "from": "d7",
+        "to": "d5",
+        "openingName": "Queen's Gambit Declined"
+      },
+      {
+        "uci": "g8f6",
+        "san": "Nf6",
+        "from": "g8",
+        "to": "f6",
+        "openingName": "King's Indian Defense"
+      }
+    ],
+    "rnbqkbnr/ppp1pppp/8/3p4/3P4/8/PPP1PPPP/RNBQKBNR w KQkq -": [
+      {
+        "uci": "c2c4",
+        "san": "c4",
+        "from": "c2",
+        "to": "c4",
+        "openingName": "Queen's Gambit Declined"
+      }
+    ],
+    "rnbqkbnr/ppp1pppp/8/3p4/2PP4/8/PP2PPPP/RNBQKBNR b KQkq -": [
+      {
+        "uci": "e7e6",
+        "san": "e6",
+        "from": "e7",
+        "to": "e6",
+        "openingName": "Queen's Gambit Declined"
+      },
+      {
+        "uci": "d5c4",
+        "san": "dxc4",
+        "from": "d5",
+        "to": "c4",
+        "openingName": "Queen's Gambit Accepted"
+      },
+      {
+        "uci": "c7c6",
+        "san": "c6",
+        "from": "c7",
+        "to": "c6",
+        "openingName": "Slav Defense"
+      }
+    ],
+    "rnbqkbnr/ppp2ppp/4p3/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq -": [
+      {
+        "uci": "b1c3",
+        "san": "Nc3",
+        "from": "b1",
+        "to": "c3",
+        "openingName": "Queen's Gambit Declined"
+      }
+    ],
+    "rnbqkbnr/ppp2ppp/4p3/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR b KQkq -": [
+      {
+        "uci": "g8f6",
+        "san": "Nf6",
+        "from": "g8",
+        "to": "f6",
+        "openingName": "Queen's Gambit Declined"
+      }
+    ],
+    "rnbqkb1r/ppp2ppp/4pn2/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq -": [
+      {
+        "uci": "g1f3",
+        "san": "Nf3",
+        "from": "g1",
+        "to": "f3",
+        "openingName": "Queen's Gambit Declined"
+      }
+    ],
+    "rnbqkb1r/ppp2ppp/4pn2/3p4/2PP4/2N2N2/PP2PPPP/R1BQKB1R b KQkq -": [
+      {
+        "uci": "f8e7",
+        "san": "Be7",
+        "from": "f8",
+        "to": "e7",
+        "openingName": "Queen's Gambit Declined"
+      }
+    ],
+    "rnbqk2r/ppp1bppp/4pn2/3p4/2PP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq -": [
+      {
+        "uci": "c1f4",
+        "san": "Bf4",
+        "from": "c1",
+        "to": "f4",
+        "openingName": "Queen's Gambit Declined"
+      }
+    ],
+    "rnbqk2r/ppp1bppp/4pn2/3p4/2PP1B2/2N2N2/PP2PPPP/R2QKB1R b KQkq -": [
+      {
+        "uci": "e8g8",
+        "san": "O-O",
+        "from": "e8",
+        "to": "g8",
+        "openingName": "Queen's Gambit Declined"
+      }
+    ],
+    "rnbq1rk1/ppp1bppp/4pn2/3p4/2PP1B2/2N2N2/PP2PPPP/R2QKB1R w KQ -": [
+      {
+        "uci": "e2e3",
+        "san": "e3",
+        "from": "e2",
+        "to": "e3",
+        "openingName": "Queen's Gambit Declined"
+      }
+    ],
+    "rnbq1rk1/ppp1bppp/4pn2/3p4/2PP1B2/2N1PN2/PP3PPP/R2QKB1R b KQ -": [
+      {
+        "uci": "c7c5",
+        "san": "c5",
+        "from": "c7",
+        "to": "c5",
+        "openingName": "Queen's Gambit Declined"
+      }
+    ],
+    "rnbq1rk1/pp2bppp/4pn2/2pp4/2PP1B2/2N1PN2/PP3PPP/R2QKB1R w KQ -": [
+      {
+        "uci": "d4c5",
+        "san": "dxc5",
+        "from": "d4",
+        "to": "c5",
+        "openingName": "Queen's Gambit Declined"
+      }
+    ],
+    "rnbq1rk1/pp2bppp/4pn2/2Pp4/2P2B2/2N1PN2/PP3PPP/R2QKB1R b KQ -": [
+      {
+        "uci": "e7c5",
+        "san": "Bxc5",
+        "from": "e7",
+        "to": "c5",
+        "openingName": "Queen's Gambit Declined"
+      }
+    ],
+    "rnbq1rk1/pp3ppp/4pn2/2bp4/2P2B2/2N1PN2/PP3PPP/R2QKB1R w KQ -": [
+      {
+        "uci": "d1c2",
+        "san": "Qc2",
+        "from": "d1",
+        "to": "c2",
+        "openingName": "Queen's Gambit Declined"
+      }
+    ],
+    "rnbq1rk1/pp3ppp/4pn2/2bp4/2P2B2/2N1PN2/PPQ2PPP/R3KB1R b KQ -": [
+      {
+        "uci": "b8c6",
+        "san": "Nc6",
+        "from": "b8",
+        "to": "c6",
+        "openingName": "Queen's Gambit Declined"
+      }
+    ],
+    "r1bq1rk1/pp3ppp/2n1pn2/2bp4/2P2B2/2N1PN2/PPQ2PPP/R3KB1R w KQ -": [
+      {
+        "uci": "a2a3",
+        "san": "a3",
+        "from": "a2",
+        "to": "a3",
+        "openingName": "Queen's Gambit Declined"
+      }
+    ],
+    "r1bq1rk1/pp3ppp/2n1pn2/2bp4/2P2B2/P1N1PN2/1PQ2PPP/R3KB1R b KQ -": [
+      {
+        "uci": "d8a5",
+        "san": "Qa5",
+        "from": "d8",
+        "to": "a5",
+        "openingName": "Queen's Gambit Declined"
+      }
+    ],
+    "r1b2rk1/pp3ppp/2n1pn2/q1bp4/2P2B2/P1N1PN2/1PQ2PPP/R3KB1R w KQ -": [
+      {
+        "uci": "a1d1",
+        "san": "Rd1",
+        "from": "a1",
+        "to": "d1",
+        "openingName": "Queen's Gambit Declined"
+      }
+    ],
+    "r1b2rk1/pp3ppp/2n1pn2/q1bp4/2P2B2/P1N1PN2/1PQ2PPP/3RKB1R b K -": [
+      {
+        "uci": "c5e7",
+        "san": "Be7",
+        "from": "c5",
+        "to": "e7",
+        "openingName": "Queen's Gambit Declined"
+      }
+    ],
+    "r1b2rk1/pp2bppp/2n1pn2/q2p4/2P2B2/P1N1PN2/1PQ2PPP/3RKB1R w K -": [
+      {
+        "uci": "f3d2",
+        "san": "Nd2",
+        "from": "f3",
+        "to": "d2",
+        "openingName": "Queen's Gambit Declined"
+      }
+    ],
+    "r1b2rk1/pp2bppp/2n1pn2/q2p4/2P2B2/P1N1P3/1PQN1PPP/3RKB1R b K -": [
+      {
+        "uci": "e6e5",
+        "san": "e5",
+        "from": "e6",
+        "to": "e5",
+        "openingName": "Queen's Gambit Declined"
+      }
+    ],
+    "rnbqkbnr/ppp1pppp/8/8/2pP4/8/PP2PPPP/RNBQKBNR w KQkq -": [
+      {
+        "uci": "e2e4",
+        "san": "e4",
+        "from": "e2",
+        "to": "e4",
+        "openingName": "Queen's Gambit Accepted"
+      }
+    ],
+    "rnbqkbnr/ppp1pppp/8/8/2pPP3/8/PP3PPP/RNBQKBNR b KQkq -": [
+      {
+        "uci": "e7e5",
+        "san": "e5",
+        "from": "e7",
+        "to": "e5",
+        "openingName": "Queen's Gambit Accepted"
+      }
+    ],
+    "rnbqkbnr/ppp2ppp/8/4p3/2pPP3/8/PP3PPP/RNBQKBNR w KQkq -": [
+      {
+        "uci": "g1f3",
+        "san": "Nf3",
+        "from": "g1",
+        "to": "f3",
+        "openingName": "Queen's Gambit Accepted"
+      }
+    ],
+    "rnbqkbnr/ppp2ppp/8/4p3/2pPP3/5N2/PP3PPP/RNBQKB1R b KQkq -": [
+      {
+        "uci": "e5d4",
+        "san": "exd4",
+        "from": "e5",
+        "to": "d4",
+        "openingName": "Queen's Gambit Accepted"
+      }
+    ],
+    "rnbqkbnr/ppp2ppp/8/8/2ppP3/5N2/PP3PPP/RNBQKB1R w KQkq -": [
+      {
+        "uci": "f1c4",
+        "san": "Bxc4",
+        "from": "f1",
+        "to": "c4",
+        "openingName": "Queen's Gambit Accepted"
+      }
+    ],
+    "rnbqkbnr/ppp2ppp/8/8/2BpP3/5N2/PP3PPP/RNBQK2R b KQkq -": [
+      {
+        "uci": "b8c6",
+        "san": "Nc6",
+        "from": "b8",
+        "to": "c6",
+        "openingName": "Queen's Gambit Accepted"
+      }
+    ],
+    "r1bqkbnr/ppp2ppp/2n5/8/2BpP3/5N2/PP3PPP/RNBQK2R w KQkq -": [
+      {
+        "uci": "e1g1",
+        "san": "O-O",
+        "from": "e1",
+        "to": "g1",
+        "openingName": "Queen's Gambit Accepted"
+      }
+    ],
+    "r1bqkbnr/ppp2ppp/2n5/8/2BpP3/5N2/PP3PPP/RNBQ1RK1 b kq -": [
+      {
+        "uci": "c8e6",
+        "san": "Be6",
+        "from": "c8",
+        "to": "e6",
+        "openingName": "Queen's Gambit Accepted"
+      }
+    ],
+    "r2qkbnr/ppp2ppp/2n1b3/8/2BpP3/5N2/PP3PPP/RNBQ1RK1 w kq -": [
+      {
+        "uci": "c4e6",
+        "san": "Bxe6",
+        "from": "c4",
+        "to": "e6",
+        "openingName": "Queen's Gambit Accepted"
+      }
+    ],
+    "r2qkbnr/ppp2ppp/2n1B3/8/3pP3/5N2/PP3PPP/RNBQ1RK1 b kq -": [
+      {
+        "uci": "f7e6",
+        "san": "fxe6",
+        "from": "f7",
+        "to": "e6",
+        "openingName": "Queen's Gambit Accepted"
+      }
+    ],
+    "r2qkbnr/ppp3pp/2n1p3/8/3pP3/5N2/PP3PPP/RNBQ1RK1 w kq -": [
+      {
+        "uci": "d1b3",
+        "san": "Qb3",
+        "from": "d1",
+        "to": "b3",
+        "openingName": "Queen's Gambit Accepted"
+      }
+    ],
+    "r2qkbnr/ppp3pp/2n1p3/8/3pP3/1Q3N2/PP3PPP/RNB2RK1 b kq -": [
+      {
+        "uci": "d8d7",
+        "san": "Qd7",
+        "from": "d8",
+        "to": "d7",
+        "openingName": "Queen's Gambit Accepted"
+      }
+    ],
+    "r3kbnr/pppq2pp/2n1p3/8/3pP3/1Q3N2/PP3PPP/RNB2RK1 w kq -": [
+      {
+        "uci": "b3b7",
+        "san": "Qxb7",
+        "from": "b3",
+        "to": "b7",
+        "openingName": "Queen's Gambit Accepted"
+      }
+    ],
+    "r3kbnr/pQpq2pp/2n1p3/8/3pP3/5N2/PP3PPP/RNB2RK1 b kq -": [
+      {
+        "uci": "a8b8",
+        "san": "Rb8",
+        "from": "a8",
+        "to": "b8",
+        "openingName": "Queen's Gambit Accepted"
+      }
+    ],
+    "1r2kbnr/pQpq2pp/2n1p3/8/3pP3/5N2/PP3PPP/RNB2RK1 w k -": [
+      {
+        "uci": "b7a6",
+        "san": "Qa6",
+        "from": "b7",
+        "to": "a6",
+        "openingName": "Queen's Gambit Accepted"
+      }
+    ],
+    "1r2kbnr/p1pq2pp/Q1n1p3/8/3pP3/5N2/PP3PPP/RNB2RK1 b k -": [
+      {
+        "uci": "g8f6",
+        "san": "Nf6",
+        "from": "g8",
+        "to": "f6",
+        "openingName": "Queen's Gambit Accepted"
+      }
+    ],
+    "rnbqkbnr/pp2pppp/2p5/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq -": [
+      {
+        "uci": "g1f3",
+        "san": "Nf3",
+        "from": "g1",
+        "to": "f3",
+        "openingName": "Slav Defense"
+      }
+    ],
+    "rnbqkbnr/pp2pppp/2p5/3p4/2PP4/5N2/PP2PPPP/RNBQKB1R b KQkq -": [
+      {
+        "uci": "g8f6",
+        "san": "Nf6",
+        "from": "g8",
+        "to": "f6",
+        "openingName": "Slav Defense"
+      }
+    ],
+    "rnbqkb1r/pp2pppp/2p2n2/3p4/2PP4/5N2/PP2PPPP/RNBQKB1R w KQkq -": [
+      {
+        "uci": "b1c3",
+        "san": "Nc3",
+        "from": "b1",
+        "to": "c3",
+        "openingName": "Slav Defense"
+      }
+    ],
+    "rnbqkb1r/pp2pppp/2p2n2/3p4/2PP4/2N2N2/PP2PPPP/R1BQKB1R b KQkq -": [
+      {
+        "uci": "d5c4",
+        "san": "dxc4",
+        "from": "d5",
+        "to": "c4",
+        "openingName": "Slav Defense"
+      }
+    ],
+    "rnbqkb1r/pp2pppp/2p2n2/8/2pP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq -": [
+      {
+        "uci": "a2a4",
+        "san": "a4",
+        "from": "a2",
+        "to": "a4",
+        "openingName": "Slav Defense"
+      }
+    ],
+    "rnbqkb1r/pp2pppp/2p2n2/8/P1pP4/2N2N2/1P2PPPP/R1BQKB1R b KQkq -": [
+      {
+        "uci": "c8f5",
+        "san": "Bf5",
+        "from": "c8",
+        "to": "f5",
+        "openingName": "Slav Defense"
+      }
+    ],
+    "rn1qkb1r/pp2pppp/2p2n2/5b2/P1pP4/2N2N2/1P2PPPP/R1BQKB1R w KQkq -": [
+      {
+        "uci": "e2e3",
+        "san": "e3",
+        "from": "e2",
+        "to": "e3",
+        "openingName": "Slav Defense"
+      }
+    ],
+    "rn1qkb1r/pp2pppp/2p2n2/5b2/P1pP4/2N1PN2/1P3PPP/R1BQKB1R b KQkq -": [
+      {
+        "uci": "e7e6",
+        "san": "e6",
+        "from": "e7",
+        "to": "e6",
+        "openingName": "Slav Defense"
+      }
+    ],
+    "rn1qkb1r/pp3ppp/2p1pn2/5b2/P1pP4/2N1PN2/1P3PPP/R1BQKB1R w KQkq -": [
+      {
+        "uci": "f1c4",
+        "san": "Bxc4",
+        "from": "f1",
+        "to": "c4",
+        "openingName": "Slav Defense"
+      }
+    ],
+    "rn1qkb1r/pp3ppp/2p1pn2/5b2/P1BP4/2N1PN2/1P3PPP/R1BQK2R b KQkq -": [
+      {
+        "uci": "f8b4",
+        "san": "Bb4",
+        "from": "f8",
+        "to": "b4",
+        "openingName": "Slav Defense"
+      }
+    ],
+    "rn1qk2r/pp3ppp/2p1pn2/5b2/PbBP4/2N1PN2/1P3PPP/R1BQK2R w KQkq -": [
+      {
+        "uci": "e1g1",
+        "san": "O-O",
+        "from": "e1",
+        "to": "g1",
+        "openingName": "Slav Defense"
+      }
+    ],
+    "rn1qk2r/pp3ppp/2p1pn2/5b2/PbBP4/2N1PN2/1P3PPP/R1BQ1RK1 b kq -": [
+      {
+        "uci": "e8g8",
+        "san": "O-O",
+        "from": "e8",
+        "to": "g8",
+        "openingName": "Slav Defense"
+      }
+    ],
+    "rn1q1rk1/pp3ppp/2p1pn2/5b2/PbBP4/2N1PN2/1P3PPP/R1BQ1RK1 w - -": [
+      {
+        "uci": "d1e2",
+        "san": "Qe2",
+        "from": "d1",
+        "to": "e2",
+        "openingName": "Slav Defense"
+      }
+    ],
+    "rn1q1rk1/pp3ppp/2p1pn2/5b2/PbBP4/2N1PN2/1P2QPPP/R1B2RK1 b - -": [
+      {
+        "uci": "f5g6",
+        "san": "Bg6",
+        "from": "f5",
+        "to": "g6",
+        "openingName": "Slav Defense"
+      }
+    ],
+    "rn1q1rk1/pp3ppp/2p1pnb1/8/PbBP4/2N1PN2/1P2QPPP/R1B2RK1 w - -": [
+      {
+        "uci": "e3e4",
+        "san": "e4",
+        "from": "e3",
+        "to": "e4",
+        "openingName": "Slav Defense"
+      }
+    ],
+    "rn1q1rk1/pp3ppp/2p1pnb1/8/PbBPP3/2N2N2/1P2QPPP/R1B2RK1 b - -": [
+      {
+        "uci": "b4c3",
+        "san": "Bxc3",
+        "from": "b4",
+        "to": "c3",
+        "openingName": "Slav Defense"
+      }
+    ],
+    "rn1q1rk1/pp3ppp/2p1pnb1/8/P1BPP3/2b2N2/1P2QPPP/R1B2RK1 w - -": [
+      {
+        "uci": "b2c3",
+        "san": "bxc3",
+        "from": "b2",
+        "to": "c3",
+        "openingName": "Slav Defense"
+      }
+    ],
+    "rn1q1rk1/pp3ppp/2p1pnb1/8/P1BPP3/2P2N2/4QPPP/R1B2RK1 b - -": [
+      {
+        "uci": "f6e4",
+        "san": "Nxe4",
+        "from": "f6",
+        "to": "e4",
+        "openingName": "Slav Defense"
+      }
+    ],
+    "rnbqkb1r/pppppppp/5n2/8/3P4/8/PPP1PPPP/RNBQKBNR w KQkq -": [
+      {
+        "uci": "c2c4",
+        "san": "c4",
+        "from": "c2",
+        "to": "c4",
+        "openingName": "King's Indian Defense"
+      },
+      {
+        "uci": "c1f4",
+        "san": "Bf4",
+        "from": "c1",
+        "to": "f4",
+        "openingName": "London System"
+      }
+    ],
+    "rnbqkb1r/pppppppp/5n2/8/2PP4/8/PP2PPPP/RNBQKBNR b KQkq -": [
+      {
+        "uci": "g7g6",
+        "san": "g6",
+        "from": "g7",
+        "to": "g6",
+        "openingName": "King's Indian Defense"
+      },
+      {
+        "uci": "e7e6",
+        "san": "e6",
+        "from": "e7",
+        "to": "e6",
+        "openingName": "Nimzo-Indian Defense"
+      }
+    ],
+    "rnbqkb1r/pppppp1p/5np1/8/2PP4/8/PP2PPPP/RNBQKBNR w KQkq -": [
+      {
+        "uci": "b1c3",
+        "san": "Nc3",
+        "from": "b1",
+        "to": "c3",
+        "openingName": "King's Indian Defense"
+      }
+    ],
+    "rnbqkb1r/pppppp1p/5np1/8/2PP4/2N5/PP2PPPP/R1BQKBNR b KQkq -": [
+      {
+        "uci": "f8g7",
+        "san": "Bg7",
+        "from": "f8",
+        "to": "g7",
+        "openingName": "King's Indian Defense"
+      },
+      {
+        "uci": "d7d5",
+        "san": "d5",
+        "from": "d7",
+        "to": "d5",
+        "openingName": "Grunfeld Defense"
+      }
+    ],
+    "rnbqk2r/ppppppbp/5np1/8/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq -": [
+      {
+        "uci": "e2e4",
+        "san": "e4",
+        "from": "e2",
+        "to": "e4",
+        "openingName": "King's Indian Defense"
+      }
+    ],
+    "rnbqk2r/ppppppbp/5np1/8/2PPP3/2N5/PP3PPP/R1BQKBNR b KQkq -": [
+      {
+        "uci": "d7d6",
+        "san": "d6",
+        "from": "d7",
+        "to": "d6",
+        "openingName": "King's Indian Defense"
+      }
+    ],
+    "rnbqk2r/ppp1ppbp/3p1np1/8/2PPP3/2N5/PP3PPP/R1BQKBNR w KQkq -": [
+      {
+        "uci": "g1f3",
+        "san": "Nf3",
+        "from": "g1",
+        "to": "f3",
+        "openingName": "King's Indian Defense"
+      }
+    ],
+    "rnbqk2r/ppp1ppbp/3p1np1/8/2PPP3/2N2N2/PP3PPP/R1BQKB1R b KQkq -": [
+      {
+        "uci": "e8g8",
+        "san": "O-O",
+        "from": "e8",
+        "to": "g8",
+        "openingName": "King's Indian Defense"
+      }
+    ],
+    "rnbq1rk1/ppp1ppbp/3p1np1/8/2PPP3/2N2N2/PP3PPP/R1BQKB1R w KQ -": [
+      {
+        "uci": "f1e2",
+        "san": "Be2",
+        "from": "f1",
+        "to": "e2",
+        "openingName": "King's Indian Defense"
+      }
+    ],
+    "rnbq1rk1/ppp1ppbp/3p1np1/8/2PPP3/2N2N2/PP2BPPP/R1BQK2R b KQ -": [
+      {
+        "uci": "e7e5",
+        "san": "e5",
+        "from": "e7",
+        "to": "e5",
+        "openingName": "King's Indian Defense"
+      }
+    ],
+    "rnbq1rk1/ppp2pbp/3p1np1/4p3/2PPP3/2N2N2/PP2BPPP/R1BQK2R w KQ -": [
+      {
+        "uci": "e1g1",
+        "san": "O-O",
+        "from": "e1",
+        "to": "g1",
+        "openingName": "King's Indian Defense"
+      }
+    ],
+    "rnbq1rk1/ppp2pbp/3p1np1/4p3/2PPP3/2N2N2/PP2BPPP/R1BQ1RK1 b - -": [
+      {
+        "uci": "b8c6",
+        "san": "Nc6",
+        "from": "b8",
+        "to": "c6",
+        "openingName": "King's Indian Defense"
+      }
+    ],
+    "r1bq1rk1/ppp2pbp/2np1np1/4p3/2PPP3/2N2N2/PP2BPPP/R1BQ1RK1 w - -": [
+      {
+        "uci": "d4d5",
+        "san": "d5",
+        "from": "d4",
+        "to": "d5",
+        "openingName": "King's Indian Defense"
+      }
+    ],
+    "r1bq1rk1/ppp2pbp/2np1np1/3Pp3/2P1P3/2N2N2/PP2BPPP/R1BQ1RK1 b - -": [
+      {
+        "uci": "c6e7",
+        "san": "Ne7",
+        "from": "c6",
+        "to": "e7",
+        "openingName": "King's Indian Defense"
+      }
+    ],
+    "r1bq1rk1/ppp1npbp/3p1np1/3Pp3/2P1P3/2N2N2/PP2BPPP/R1BQ1RK1 w - -": [
+      {
+        "uci": "f3e1",
+        "san": "Ne1",
+        "from": "f3",
+        "to": "e1",
+        "openingName": "King's Indian Defense"
+      }
+    ],
+    "r1bq1rk1/ppp1npbp/3p1np1/3Pp3/2P1P3/2N5/PP2BPPP/R1BQNRK1 b - -": [
+      {
+        "uci": "f6d7",
+        "san": "Nd7",
+        "from": "f6",
+        "to": "d7",
+        "openingName": "King's Indian Defense"
+      }
+    ],
+    "r1bq1rk1/pppnnpbp/3p2p1/3Pp3/2P1P3/2N5/PP2BPPP/R1BQNRK1 w - -": [
+      {
+        "uci": "c1e3",
+        "san": "Be3",
+        "from": "c1",
+        "to": "e3",
+        "openingName": "King's Indian Defense"
+      }
+    ],
+    "r1bq1rk1/pppnnpbp/3p2p1/3Pp3/2P1P3/2N1B3/PP2BPPP/R2QNRK1 b - -": [
+      {
+        "uci": "f7f5",
+        "san": "f5",
+        "from": "f7",
+        "to": "f5",
+        "openingName": "King's Indian Defense"
+      }
+    ],
+    "r1bq1rk1/pppnn1bp/3p2p1/3Ppp2/2P1P3/2N1B3/PP2BPPP/R2QNRK1 w - -": [
+      {
+        "uci": "f2f3",
+        "san": "f3",
+        "from": "f2",
+        "to": "f3",
+        "openingName": "King's Indian Defense"
+      }
+    ],
+    "r1bq1rk1/pppnn1bp/3p2p1/3Ppp2/2P1P3/2N1BP2/PP2B1PP/R2QNRK1 b - -": [
+      {
+        "uci": "f5f4",
+        "san": "f4",
+        "from": "f5",
+        "to": "f4",
+        "openingName": "King's Indian Defense"
+      }
+    ],
+    "r1bq1rk1/pppnn1bp/3p2p1/3Pp3/2P1Pp2/2N1BP2/PP2B1PP/R2QNRK1 w - -": [
+      {
+        "uci": "e3f2",
+        "san": "Bf2",
+        "from": "e3",
+        "to": "f2",
+        "openingName": "King's Indian Defense"
+      }
+    ],
+    "r1bq1rk1/pppnn1bp/3p2p1/3Pp3/2P1Pp2/2N2P2/PP2BBPP/R2QNRK1 b - -": [
+      {
+        "uci": "g6g5",
+        "san": "g5",
+        "from": "g6",
+        "to": "g5",
+        "openingName": "King's Indian Defense"
+      }
+    ],
+    "rnbqkb1r/pppp1ppp/4pn2/8/2PP4/8/PP2PPPP/RNBQKBNR w KQkq -": [
+      {
+        "uci": "b1c3",
+        "san": "Nc3",
+        "from": "b1",
+        "to": "c3",
+        "openingName": "Nimzo-Indian Defense"
+      }
+    ],
+    "rnbqkb1r/pppp1ppp/4pn2/8/2PP4/2N5/PP2PPPP/R1BQKBNR b KQkq -": [
+      {
+        "uci": "f8b4",
+        "san": "Bb4",
+        "from": "f8",
+        "to": "b4",
+        "openingName": "Nimzo-Indian Defense"
+      }
+    ],
+    "rnbqk2r/pppp1ppp/4pn2/8/1bPP4/2N5/PP2PPPP/R1BQKBNR w KQkq -": [
+      {
+        "uci": "d1c2",
+        "san": "Qc2",
+        "from": "d1",
+        "to": "c2",
+        "openingName": "Nimzo-Indian Defense"
+      }
+    ],
+    "rnbqk2r/pppp1ppp/4pn2/8/1bPP4/2N5/PPQ1PPPP/R1B1KBNR b KQkq -": [
+      {
+        "uci": "e8g8",
+        "san": "O-O",
+        "from": "e8",
+        "to": "g8",
+        "openingName": "Nimzo-Indian Defense"
+      }
+    ],
+    "rnbq1rk1/pppp1ppp/4pn2/8/1bPP4/2N5/PPQ1PPPP/R1B1KBNR w KQ -": [
+      {
+        "uci": "a2a3",
+        "san": "a3",
+        "from": "a2",
+        "to": "a3",
+        "openingName": "Nimzo-Indian Defense"
+      }
+    ],
+    "rnbq1rk1/pppp1ppp/4pn2/8/1bPP4/P1N5/1PQ1PPPP/R1B1KBNR b KQ -": [
+      {
+        "uci": "b4c3",
+        "san": "Bxc3+",
+        "from": "b4",
+        "to": "c3",
+        "openingName": "Nimzo-Indian Defense"
+      }
+    ],
+    "rnbq1rk1/pppp1ppp/4pn2/8/2PP4/P1b5/1PQ1PPPP/R1B1KBNR w KQ -": [
+      {
+        "uci": "c2c3",
+        "san": "Qxc3",
+        "from": "c2",
+        "to": "c3",
+        "openingName": "Nimzo-Indian Defense"
+      }
+    ],
+    "rnbq1rk1/pppp1ppp/4pn2/8/2PP4/P1Q5/1P2PPPP/R1B1KBNR b KQ -": [
+      {
+        "uci": "b7b6",
+        "san": "b6",
+        "from": "b7",
+        "to": "b6",
+        "openingName": "Nimzo-Indian Defense"
+      }
+    ],
+    "rnbq1rk1/p1pp1ppp/1p2pn2/8/2PP4/P1Q5/1P2PPPP/R1B1KBNR w KQ -": [
+      {
+        "uci": "c1g5",
+        "san": "Bg5",
+        "from": "c1",
+        "to": "g5",
+        "openingName": "Nimzo-Indian Defense"
+      }
+    ],
+    "rnbq1rk1/p1pp1ppp/1p2pn2/6B1/2PP4/P1Q5/1P2PPPP/R3KBNR b KQ -": [
+      {
+        "uci": "c8b7",
+        "san": "Bb7",
+        "from": "c8",
+        "to": "b7",
+        "openingName": "Nimzo-Indian Defense"
+      }
+    ],
+    "rn1q1rk1/pbpp1ppp/1p2pn2/6B1/2PP4/P1Q5/1P2PPPP/R3KBNR w KQ -": [
+      {
+        "uci": "f2f3",
+        "san": "f3",
+        "from": "f2",
+        "to": "f3",
+        "openingName": "Nimzo-Indian Defense"
+      }
+    ],
+    "rn1q1rk1/pbpp1ppp/1p2pn2/6B1/2PP4/P1Q2P2/1P2P1PP/R3KBNR b KQ -": [
+      {
+        "uci": "h7h6",
+        "san": "h6",
+        "from": "h7",
+        "to": "h6",
+        "openingName": "Nimzo-Indian Defense"
+      }
+    ],
+    "rn1q1rk1/pbpp1pp1/1p2pn1p/6B1/2PP4/P1Q2P2/1P2P1PP/R3KBNR w KQ -": [
+      {
+        "uci": "g5h4",
+        "san": "Bh4",
+        "from": "g5",
+        "to": "h4",
+        "openingName": "Nimzo-Indian Defense"
+      }
+    ],
+    "rn1q1rk1/pbpp1pp1/1p2pn1p/8/2PP3B/P1Q2P2/1P2P1PP/R3KBNR b KQ -": [
+      {
+        "uci": "d7d5",
+        "san": "d5",
+        "from": "d7",
+        "to": "d5",
+        "openingName": "Nimzo-Indian Defense"
+      }
+    ],
+    "rn1q1rk1/pbp2pp1/1p2pn1p/3p4/2PP3B/P1Q2P2/1P2P1PP/R3KBNR w KQ -": [
+      {
+        "uci": "e2e3",
+        "san": "e3",
+        "from": "e2",
+        "to": "e3",
+        "openingName": "Nimzo-Indian Defense"
+      }
+    ],
+    "rn1q1rk1/pbp2pp1/1p2pn1p/3p4/2PP3B/P1Q1PP2/1P4PP/R3KBNR b KQ -": [
+      {
+        "uci": "b8d7",
+        "san": "Nbd7",
+        "from": "b8",
+        "to": "d7",
+        "openingName": "Nimzo-Indian Defense"
+      }
+    ],
+    "rnbqkb1r/ppp1pp1p/5np1/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq -": [
+      {
+        "uci": "c4d5",
+        "san": "cxd5",
+        "from": "c4",
+        "to": "d5",
+        "openingName": "Grunfeld Defense"
+      }
+    ],
+    "rnbqkb1r/ppp1pp1p/5np1/3P4/3P4/2N5/PP2PPPP/R1BQKBNR b KQkq -": [
+      {
+        "uci": "f6d5",
+        "san": "Nxd5",
+        "from": "f6",
+        "to": "d5",
+        "openingName": "Grunfeld Defense"
+      }
+    ],
+    "rnbqkb1r/ppp1pp1p/6p1/3n4/3P4/2N5/PP2PPPP/R1BQKBNR w KQkq -": [
+      {
+        "uci": "e2e4",
+        "san": "e4",
+        "from": "e2",
+        "to": "e4",
+        "openingName": "Grunfeld Defense"
+      }
+    ],
+    "rnbqkb1r/ppp1pp1p/6p1/3n4/3PP3/2N5/PP3PPP/R1BQKBNR b KQkq -": [
+      {
+        "uci": "d5c3",
+        "san": "Nxc3",
+        "from": "d5",
+        "to": "c3",
+        "openingName": "Grunfeld Defense"
+      }
+    ],
+    "rnbqkb1r/ppp1pp1p/6p1/8/3PP3/2n5/PP3PPP/R1BQKBNR w KQkq -": [
+      {
+        "uci": "b2c3",
+        "san": "bxc3",
+        "from": "b2",
+        "to": "c3",
+        "openingName": "Grunfeld Defense"
+      }
+    ],
+    "rnbqkb1r/ppp1pp1p/6p1/8/3PP3/2P5/P4PPP/R1BQKBNR b KQkq -": [
+      {
+        "uci": "f8g7",
+        "san": "Bg7",
+        "from": "f8",
+        "to": "g7",
+        "openingName": "Grunfeld Defense"
+      }
+    ],
+    "rnbqk2r/ppp1ppbp/6p1/8/3PP3/2P5/P4PPP/R1BQKBNR w KQkq -": [
+      {
+        "uci": "g1f3",
+        "san": "Nf3",
+        "from": "g1",
+        "to": "f3",
+        "openingName": "Grunfeld Defense"
+      }
+    ],
+    "rnbqk2r/ppp1ppbp/6p1/8/3PP3/2P2N2/P4PPP/R1BQKB1R b KQkq -": [
+      {
+        "uci": "c7c5",
+        "san": "c5",
+        "from": "c7",
+        "to": "c5",
+        "openingName": "Grunfeld Defense"
+      }
+    ],
+    "rnbqk2r/pp2ppbp/6p1/2p5/3PP3/2P2N2/P4PPP/R1BQKB1R w KQkq -": [
+      {
+        "uci": "a1b1",
+        "san": "Rb1",
+        "from": "a1",
+        "to": "b1",
+        "openingName": "Grunfeld Defense"
+      }
+    ],
+    "rnbqk2r/pp2ppbp/6p1/2p5/3PP3/2P2N2/P4PPP/1RBQKB1R b Kkq -": [
+      {
+        "uci": "e8g8",
+        "san": "O-O",
+        "from": "e8",
+        "to": "g8",
+        "openingName": "Grunfeld Defense"
+      }
+    ],
+    "rnbq1rk1/pp2ppbp/6p1/2p5/3PP3/2P2N2/P4PPP/1RBQKB1R w K -": [
+      {
+        "uci": "f1e2",
+        "san": "Be2",
+        "from": "f1",
+        "to": "e2",
+        "openingName": "Grunfeld Defense"
+      }
+    ],
+    "rnbq1rk1/pp2ppbp/6p1/2p5/3PP3/2P2N2/P3BPPP/1RBQK2R b K -": [
+      {
+        "uci": "c5d4",
+        "san": "cxd4",
+        "from": "c5",
+        "to": "d4",
+        "openingName": "Grunfeld Defense"
+      }
+    ],
+    "rnbq1rk1/pp2ppbp/6p1/8/3pP3/2P2N2/P3BPPP/1RBQK2R w K -": [
+      {
+        "uci": "c3d4",
+        "san": "cxd4",
+        "from": "c3",
+        "to": "d4",
+        "openingName": "Grunfeld Defense"
+      }
+    ],
+    "rnbq1rk1/pp2ppbp/6p1/8/3PP3/5N2/P3BPPP/1RBQK2R b K -": [
+      {
+        "uci": "d8a5",
+        "san": "Qa5+",
+        "from": "d8",
+        "to": "a5",
+        "openingName": "Grunfeld Defense"
+      }
+    ],
+    "rnb2rk1/pp2ppbp/6p1/q7/3PP3/5N2/P3BPPP/1RBQK2R w K -": [
+      {
+        "uci": "c1d2",
+        "san": "Bd2",
+        "from": "c1",
+        "to": "d2",
+        "openingName": "Grunfeld Defense"
+      }
+    ],
+    "rnb2rk1/pp2ppbp/6p1/q7/3PP3/5N2/P2BBPPP/1R1QK2R b K -": [
+      {
+        "uci": "a5a2",
+        "san": "Qxa2",
+        "from": "a5",
+        "to": "a2",
+        "openingName": "Grunfeld Defense"
+      }
+    ],
+    "rnb2rk1/pp2ppbp/6p1/8/3PP3/5N2/q2BBPPP/1R1QK2R w K -": [
+      {
+        "uci": "e1g1",
+        "san": "O-O",
+        "from": "e1",
+        "to": "g1",
+        "openingName": "Grunfeld Defense"
+      }
+    ],
+    "rnb2rk1/pp2ppbp/6p1/8/3PP3/5N2/q2BBPPP/1R1Q1RK1 b - -": [
+      {
+        "uci": "c8g4",
+        "san": "Bg4",
+        "from": "c8",
+        "to": "g4",
+        "openingName": "Grunfeld Defense"
+      }
+    ],
+    "rnbqkb1r/pppppppp/5n2/8/3P1B2/8/PPP1PPPP/RN1QKBNR b KQkq -": [
+      {
+        "uci": "d7d5",
+        "san": "d5",
+        "from": "d7",
+        "to": "d5",
+        "openingName": "London System"
+      }
+    ],
+    "rnbqkb1r/ppp1pppp/5n2/3p4/3P1B2/8/PPP1PPPP/RN1QKBNR w KQkq -": [
+      {
+        "uci": "e2e3",
+        "san": "e3",
+        "from": "e2",
+        "to": "e3",
+        "openingName": "London System"
+      }
+    ],
+    "rnbqkb1r/ppp1pppp/5n2/3p4/3P1B2/4P3/PPP2PPP/RN1QKBNR b KQkq -": [
+      {
+        "uci": "c7c5",
+        "san": "c5",
+        "from": "c7",
+        "to": "c5",
+        "openingName": "London System"
+      }
+    ],
+    "rnbqkb1r/pp2pppp/5n2/2pp4/3P1B2/4P3/PPP2PPP/RN1QKBNR w KQkq -": [
+      {
+        "uci": "c2c3",
+        "san": "c3",
+        "from": "c2",
+        "to": "c3",
+        "openingName": "London System"
+      }
+    ],
+    "rnbqkb1r/pp2pppp/5n2/2pp4/3P1B2/2P1P3/PP3PPP/RN1QKBNR b KQkq -": [
+      {
+        "uci": "b8c6",
+        "san": "Nc6",
+        "from": "b8",
+        "to": "c6",
+        "openingName": "London System"
+      }
+    ],
+    "r1bqkb1r/pp2pppp/2n2n2/2pp4/3P1B2/2P1P3/PP3PPP/RN1QKBNR w KQkq -": [
+      {
+        "uci": "b1d2",
+        "san": "Nd2",
+        "from": "b1",
+        "to": "d2",
+        "openingName": "London System"
+      }
+    ],
+    "r1bqkb1r/pp2pppp/2n2n2/2pp4/3P1B2/2P1P3/PP1N1PPP/R2QKBNR b KQkq -": [
+      {
+        "uci": "e7e6",
+        "san": "e6",
+        "from": "e7",
+        "to": "e6",
+        "openingName": "London System"
+      }
+    ],
+    "r1bqkb1r/pp3ppp/2n1pn2/2pp4/3P1B2/2P1P3/PP1N1PPP/R2QKBNR w KQkq -": [
+      {
+        "uci": "g1f3",
+        "san": "Ngf3",
+        "from": "g1",
+        "to": "f3",
+        "openingName": "London System"
+      }
+    ],
+    "r1bqkb1r/pp3ppp/2n1pn2/2pp4/3P1B2/2P1PN2/PP1N1PPP/R2QKB1R b KQkq -": [
+      {
+        "uci": "f8d6",
+        "san": "Bd6",
+        "from": "f8",
+        "to": "d6",
+        "openingName": "London System"
+      }
+    ],
+    "r1bqk2r/pp3ppp/2nbpn2/2pp4/3P1B2/2P1PN2/PP1N1PPP/R2QKB1R w KQkq -": [
+      {
+        "uci": "f4g3",
+        "san": "Bg3",
+        "from": "f4",
+        "to": "g3",
+        "openingName": "London System"
+      }
+    ],
+    "r1bqk2r/pp3ppp/2nbpn2/2pp4/3P4/2P1PNB1/PP1N1PPP/R2QKB1R b KQkq -": [
+      {
+        "uci": "e8g8",
+        "san": "O-O",
+        "from": "e8",
+        "to": "g8",
+        "openingName": "London System"
+      }
+    ],
+    "r1bq1rk1/pp3ppp/2nbpn2/2pp4/3P4/2P1PNB1/PP1N1PPP/R2QKB1R w KQ -": [
+      {
+        "uci": "f1d3",
+        "san": "Bd3",
+        "from": "f1",
+        "to": "d3",
+        "openingName": "London System"
+      }
+    ],
+    "r1bq1rk1/pp3ppp/2nbpn2/2pp4/3P4/2PBPNB1/PP1N1PPP/R2QK2R b KQ -": [
+      {
+        "uci": "b7b6",
+        "san": "b6",
+        "from": "b7",
+        "to": "b6",
+        "openingName": "London System"
+      }
+    ],
+    "r1bq1rk1/p4ppp/1pnbpn2/2pp4/3P4/2PBPNB1/PP1N1PPP/R2QK2R w KQ -": [
+      {
+        "uci": "f3e5",
+        "san": "Ne5",
+        "from": "f3",
+        "to": "e5",
+        "openingName": "London System"
+      }
+    ],
+    "r1bq1rk1/p4ppp/1pnbpn2/2ppN3/3P4/2PBP1B1/PP1N1PPP/R2QK2R b KQ -": [
+      {
+        "uci": "c8b7",
+        "san": "Bb7",
+        "from": "c8",
+        "to": "b7",
+        "openingName": "London System"
+      }
+    ],
+    "r2q1rk1/pb3ppp/1pnbpn2/2ppN3/3P4/2PBP1B1/PP1N1PPP/R2QK2R w KQ -": [
+      {
+        "uci": "f2f4",
+        "san": "f4",
+        "from": "f2",
+        "to": "f4",
+        "openingName": "London System"
+      }
+    ],
+    "r2q1rk1/pb3ppp/1pnbpn2/2ppN3/3P1P2/2PBP1B1/PP1N2PP/R2QK2R b KQ -": [
+      {
+        "uci": "c6e7",
+        "san": "Ne7",
+        "from": "c6",
+        "to": "e7",
+        "openingName": "London System"
+      }
+    ],
+    "rnbqkbnr/pppppppp/8/8/2P5/8/PP1PPPPP/RNBQKBNR b KQkq -": [
+      {
+        "uci": "e7e5",
+        "san": "e5",
+        "from": "e7",
+        "to": "e5",
+        "openingName": "English Opening"
+      }
+    ],
+    "rnbqkbnr/pppp1ppp/8/4p3/2P5/8/PP1PPPPP/RNBQKBNR w KQkq -": [
+      {
+        "uci": "b1c3",
+        "san": "Nc3",
+        "from": "b1",
+        "to": "c3",
+        "openingName": "English Opening"
+      }
+    ],
+    "rnbqkbnr/pppp1ppp/8/4p3/2P5/2N5/PP1PPPPP/R1BQKBNR b KQkq -": [
+      {
+        "uci": "g8f6",
+        "san": "Nf6",
+        "from": "g8",
+        "to": "f6",
+        "openingName": "English Opening"
+      }
+    ],
+    "rnbqkb1r/pppp1ppp/5n2/4p3/2P5/2N5/PP1PPPPP/R1BQKBNR w KQkq -": [
+      {
+        "uci": "g1f3",
+        "san": "Nf3",
+        "from": "g1",
+        "to": "f3",
+        "openingName": "English Opening"
+      }
+    ],
+    "rnbqkb1r/pppp1ppp/5n2/4p3/2P5/2N2N2/PP1PPPPP/R1BQKB1R b KQkq -": [
+      {
+        "uci": "b8c6",
+        "san": "Nc6",
+        "from": "b8",
+        "to": "c6",
+        "openingName": "English Opening"
+      }
+    ],
+    "r1bqkb1r/pppp1ppp/2n2n2/4p3/2P5/2N2N2/PP1PPPPP/R1BQKB1R w KQkq -": [
+      {
+        "uci": "g2g3",
+        "san": "g3",
+        "from": "g2",
+        "to": "g3",
+        "openingName": "English Opening"
+      }
+    ],
+    "r1bqkb1r/pppp1ppp/2n2n2/4p3/2P5/2N2NP1/PP1PPP1P/R1BQKB1R b KQkq -": [
+      {
+        "uci": "d7d5",
+        "san": "d5",
+        "from": "d7",
+        "to": "d5",
+        "openingName": "English Opening"
+      }
+    ],
+    "r1bqkb1r/ppp2ppp/2n2n2/3pp3/2P5/2N2NP1/PP1PPP1P/R1BQKB1R w KQkq -": [
+      {
+        "uci": "c4d5",
+        "san": "cxd5",
+        "from": "c4",
+        "to": "d5",
+        "openingName": "English Opening"
+      }
+    ],
+    "r1bqkb1r/ppp2ppp/2n2n2/3Pp3/8/2N2NP1/PP1PPP1P/R1BQKB1R b KQkq -": [
+      {
+        "uci": "f6d5",
+        "san": "Nxd5",
+        "from": "f6",
+        "to": "d5",
+        "openingName": "English Opening"
+      }
+    ],
+    "r1bqkb1r/ppp2ppp/2n5/3np3/8/2N2NP1/PP1PPP1P/R1BQKB1R w KQkq -": [
+      {
+        "uci": "f1g2",
+        "san": "Bg2",
+        "from": "f1",
+        "to": "g2",
+        "openingName": "English Opening"
+      }
+    ],
+    "r1bqkb1r/ppp2ppp/2n5/3np3/8/2N2NP1/PP1PPPBP/R1BQK2R b KQkq -": [
+      {
+        "uci": "d5b6",
+        "san": "Nb6",
+        "from": "d5",
+        "to": "b6",
+        "openingName": "English Opening"
+      }
+    ],
+    "r1bqkb1r/ppp2ppp/1nn5/4p3/8/2N2NP1/PP1PPPBP/R1BQK2R w KQkq -": [
+      {
+        "uci": "e1g1",
+        "san": "O-O",
+        "from": "e1",
+        "to": "g1",
+        "openingName": "English Opening"
+      }
+    ],
+    "r1bqkb1r/ppp2ppp/1nn5/4p3/8/2N2NP1/PP1PPPBP/R1BQ1RK1 b kq -": [
+      {
+        "uci": "f8e7",
+        "san": "Be7",
+        "from": "f8",
+        "to": "e7",
+        "openingName": "English Opening"
+      }
+    ],
+    "r1bqk2r/ppp1bppp/1nn5/4p3/8/2N2NP1/PP1PPPBP/R1BQ1RK1 w kq -": [
+      {
+        "uci": "d2d3",
+        "san": "d3",
+        "from": "d2",
+        "to": "d3",
+        "openingName": "English Opening"
+      }
+    ],
+    "r1bqk2r/ppp1bppp/1nn5/4p3/8/2NP1NP1/PP2PPBP/R1BQ1RK1 b kq -": [
+      {
+        "uci": "e8g8",
+        "san": "O-O",
+        "from": "e8",
+        "to": "g8",
+        "openingName": "English Opening"
+      }
+    ],
+    "r1bq1rk1/ppp1bppp/1nn5/4p3/8/2NP1NP1/PP2PPBP/R1BQ1RK1 w - -": [
+      {
+        "uci": "c1e3",
+        "san": "Be3",
+        "from": "c1",
+        "to": "e3",
+        "openingName": "English Opening"
+      }
+    ],
+    "r1bq1rk1/ppp1bppp/1nn5/4p3/8/2NPBNP1/PP2PPBP/R2Q1RK1 b - -": [
+      {
+        "uci": "f7f5",
+        "san": "f5",
+        "from": "f7",
+        "to": "f5",
+        "openingName": "English Opening"
+      }
+    ],
+    "r1bq1rk1/ppp1b1pp/1nn5/4pp2/8/2NPBNP1/PP2PPBP/R2Q1RK1 w - -": [
+      {
+        "uci": "a1c1",
+        "san": "Rc1",
+        "from": "a1",
+        "to": "c1",
+        "openingName": "English Opening"
+      }
+    ],
+    "r1bq1rk1/ppp1b1pp/1nn5/4pp2/8/2NPBNP1/PP2PPBP/2RQ1RK1 b - -": [
+      {
+        "uci": "g8h8",
+        "san": "Kh8",
+        "from": "g8",
+        "to": "h8",
+        "openingName": "English Opening"
+      }
     ]
   },
   "sources": [
     {
-      "id": "da6592f0-aaaf-44e0-a408-e2ef06e9670f",
+      "id": "d549120c-0564-896d-41de-4e5fca9666d8",
+      "openingName": "Caro-Kann Defense, Advance",
+      "preview": "1. e4 c6 2. d4 d5 3. e5 Bf5 4. Nf3 e6",
+      "plyCount": 22,
+      "uploadedAt": "1970-01-01T00:00:00.000Z",
+      "eco": "B12"
+    },
+    {
+      "id": "f84e29f0-a1a9-024e-0bff-82c1dfa21c9e",
+      "openingName": "Caro-Kann Defense, Classical",
+      "preview": "1. e4 c6 2. d4 d5 3. Nc3 dxe4 4. Nxe4 Bf5",
+      "plyCount": 24,
+      "uploadedAt": "1970-01-01T00:00:00.000Z",
+      "eco": "B18"
+    },
+    {
+      "id": "38ab1541-86f5-dbea-257d-59fda3e232a1",
+      "openingName": "English Opening",
+      "preview": "1. c4 e5 2. Nc3 Nf6 3. Nf3 Nc6 4. g3 d5",
+      "plyCount": 20,
+      "uploadedAt": "1970-01-01T00:00:00.000Z",
+      "eco": "A20"
+    },
+    {
+      "id": "e3d2e546-d98d-b3a0-d75f-5f87a93ba884",
+      "openingName": "French Defense, Classical",
+      "preview": "1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. e5 Nfd7",
+      "plyCount": 20,
+      "uploadedAt": "1970-01-01T00:00:00.000Z",
+      "eco": "C11"
+    },
+    {
+      "id": "d0fc9046-9edc-9baf-36eb-8ebe43d255ba",
+      "openingName": "French Defense, Winawer",
+      "preview": "1. e4 e6 2. d4 d5 3. Nc3 Bb4 4. e5 c5",
+      "plyCount": 22,
+      "uploadedAt": "1970-01-01T00:00:00.000Z",
+      "eco": "C18"
+    },
+    {
+      "id": "21eb4267-3e0f-ae80-fa72-5e4785602094",
+      "openingName": "Grunfeld Defense",
+      "preview": "1. d4 Nf6 2. c4 g6 3. Nc3 d5 4. cxd5 Nxd5",
+      "plyCount": 24,
+      "uploadedAt": "1970-01-01T00:00:00.000Z",
+      "eco": "D85"
+    },
+    {
+      "id": "0099be01-c083-8878-7505-31263b24bf8a",
+      "openingName": "Italian Game",
+      "preview": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. d3 Bc5",
+      "plyCount": 20,
+      "uploadedAt": "1970-01-01T00:00:00.000Z",
+      "eco": "C50"
+    },
+    {
+      "id": "04b14dc3-d017-9c4e-8744-e99d4d125a6c",
+      "openingName": "Italian Game",
+      "preview": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. c3 Nf6",
+      "plyCount": 20,
+      "uploadedAt": "1970-01-01T00:00:00.000Z",
+      "eco": "C54"
+    },
+    {
+      "id": "4e2e71e7-8adf-d6ac-c617-be3056631fa7",
+      "openingName": "King's Indian Defense",
+      "preview": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6",
+      "plyCount": 24,
+      "uploadedAt": "1970-01-01T00:00:00.000Z",
+      "eco": "E60"
+    },
+    {
+      "id": "e07fef7b-d8c7-08e8-cee5-5914494d7afc",
+      "openingName": "London System",
+      "preview": "1. d4 Nf6 2. Bf4 d5 3. e3 c5 4. c3 Nc6",
+      "plyCount": 20,
+      "uploadedAt": "1970-01-01T00:00:00.000Z",
+      "eco": "A45"
+    },
+    {
+      "id": "31d1aa04-036f-21e9-895f-635599f54d71",
+      "openingName": "Nimzo-Indian Defense",
+      "preview": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 O-O",
+      "plyCount": 20,
+      "uploadedAt": "1970-01-01T00:00:00.000Z",
+      "eco": "E32"
+    },
+    {
+      "id": "2c3e38e1-5ca1-4306-4947-05b03897a7bc",
+      "openingName": "Petrov Defense",
+      "preview": "1. e4 e5 2. Nf3 Nf6 3. Nxe5 d6 4. Nf3 Nxe4",
+      "plyCount": 20,
+      "uploadedAt": "1970-01-01T00:00:00.000Z",
+      "eco": "C42"
+    },
+    {
+      "id": "08741aa6-6a5a-e013-27ab-c7b34aaf11bb",
+      "openingName": "Queen's Gambit Accepted",
+      "preview": "1. d4 d5 2. c4 dxc4 3. e4 e5 4. Nf3 exd4",
+      "plyCount": 20,
+      "uploadedAt": "1970-01-01T00:00:00.000Z",
+      "eco": "D20"
+    },
+    {
+      "id": "3455f45a-24ba-9978-cd28-8e1d45f44267",
+      "openingName": "Queen's Gambit Declined",
+      "preview": "1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Nf3 Be7",
+      "plyCount": 22,
+      "uploadedAt": "1970-01-01T00:00:00.000Z",
+      "eco": "D37"
+    },
+    {
+      "id": "75188725-0b35-441c-baac-e60e7e7f7453",
       "openingName": "Ruy Lopez",
-      "preview": "1. e4 e5 2. Nf3 Nc6 3. Bb5 a6",
-      "plyCount": 6,
-      "uploadedAt": "2026-09-07T22:05:04.958Z",
-      "eco": "C60"
+      "preview": "1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6",
+      "plyCount": 24,
+      "uploadedAt": "1970-01-01T00:00:00.000Z",
+      "eco": "C88"
+    },
+    {
+      "id": "9a544147-182e-ade4-6756-398e0c31b576",
+      "openingName": "Ruy Lopez",
+      "preview": "1. e4 e5 2. Nf3 Nc6 3. Bb5 Nf6 4. O-O Nxe4",
+      "plyCount": 20,
+      "uploadedAt": "1970-01-01T00:00:00.000Z",
+      "eco": "C65"
+    },
+    {
+      "id": "8efc297b-5792-cb01-40cb-90f56236567b",
+      "openingName": "Scotch Game",
+      "preview": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Nxd4 Bc5",
+      "plyCount": 20,
+      "uploadedAt": "1970-01-01T00:00:00.000Z",
+      "eco": "C45"
+    },
+    {
+      "id": "0a4f17b3-9a92-6a7d-f978-fbd72676e607",
+      "openingName": "Sicilian Defense, Alapin",
+      "preview": "1. e4 c5 2. c3 d5 3. exd5 Qxd5 4. d4 Nf6",
+      "plyCount": 20,
+      "uploadedAt": "1970-01-01T00:00:00.000Z",
+      "eco": "B22"
+    },
+    {
+      "id": "0519ba91-7bf3-0889-c6c0-27c41f595495",
+      "openingName": "Sicilian Defense, Najdorf",
+      "preview": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6",
+      "plyCount": 22,
+      "uploadedAt": "1970-01-01T00:00:00.000Z",
+      "eco": "B90"
+    },
+    {
+      "id": "4a4546d8-d197-495a-ec79-39eccdc8430a",
+      "openingName": "Sicilian Defense, Sveshnikov",
+      "preview": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6",
+      "plyCount": 24,
+      "uploadedAt": "1970-01-01T00:00:00.000Z",
+      "eco": "B33"
+    },
+    {
+      "id": "e5a8dc9c-bf19-634c-82e9-aecacebdfff9",
+      "openingName": "Slav Defense",
+      "preview": "1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 dxc4",
+      "plyCount": 22,
+      "uploadedAt": "1970-01-01T00:00:00.000Z",
+      "eco": "D10"
     }
   ]
 }

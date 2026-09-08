@@ -1,0 +1,44 @@
+name: Build opening book
+
+# Regenerates frontend/public/book.json whenever a PGN under book/ changes.
+# Merging a PR that touches book/ is the "admin upload" — no API, no accounts.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "book/**"
+      - "backend/chesslab/book.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: repo-writes
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -e backend
+      - name: Build book.json
+        run: python -m chesslab.cli build-book
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- frontend/public/book.json; then
+            echo "book.json unchanged"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add frontend/public/book.json
+          git commit -m "book: rebuild from book/*.pgn"
+          # main may have moved while this job ran; replay our commit on top of it
+          git pull --rebase origin main
+          git push

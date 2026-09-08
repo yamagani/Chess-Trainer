@@ -12,16 +12,12 @@ export function Trainer({
   course,
   courses,
   progress,
-  signedIn,
   onProgress,
-  onNeedAuth,
 }: {
   course: OpeningCourse | null;
   courses: OpeningCourse[];
   progress: OpeningProgress;
-  signedIn: boolean;
-  onProgress: (next: OpeningProgress, persist: boolean) => void;
-  onNeedAuth: () => void;
+  onProgress: (next: OpeningProgress) => void;
 }) {
   const { ref, width } = useBoardWidth(true);
   const [fen, setFen] = useState(START_FEN);
@@ -79,7 +75,6 @@ export function Trainer({
         learnedLineIds: [...progress.learnedLineIds, nextId],
         updatedAt: new Date().toISOString(),
       },
-      signedIn,
     );
     setMessage(`Line complete. ${course.name} progress updated.`);
   };
@@ -165,18 +160,11 @@ export function Trainer({
   };
 
   const saveNotes = () => {
-    if (!signedIn) {
-      onNeedAuth();
-      return;
-    }
-    onProgress(
-      {
-        ...progress,
-        notes,
-        updatedAt: new Date().toISOString(),
-      },
-      true,
-    );
+    onProgress({
+      ...progress,
+      notes,
+      updatedAt: new Date().toISOString(),
+    });
     setNotesDirty(false);
   };
 
@@ -264,33 +252,17 @@ export function Trainer({
             onChange={(event) => {
               setNotes(event.target.value);
               setNotesDirty(true);
-              if (!signedIn) {
-                onProgress(
-                  {
-                    ...progress,
-                    notes: event.target.value,
-                    updatedAt: new Date().toISOString(),
-                  },
-                  false,
-                );
-              }
             }}
           />
         </label>
-        {signedIn ? (
-          <button
-            type="button"
-            className="primary"
-            disabled={!notesDirty}
-            onClick={saveNotes}
-          >
-            {notesDirty ? "Save notes" : "Notes saved"}
-          </button>
-        ) : (
-          <button type="button" className="ghost" onClick={onNeedAuth}>
-            Sign up to save notes and progress
-          </button>
-        )}
+        <button
+          type="button"
+          className="primary"
+          disabled={!notesDirty}
+          onClick={saveNotes}
+        >
+          {notesDirty ? "Save notes" : "Notes saved"}
+        </button>
       </aside>
     </main>
   );

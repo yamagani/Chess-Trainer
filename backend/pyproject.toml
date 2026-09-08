@@ -1,0 +1,25 @@
+[project]
+name = "chesslab"
+version = "0.1.0"
+description = "Opening Lab batch backend: builds the opening book and reviews games with Stockfish. Runs in GitHub Actions; no server, no secrets."
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = ["chess>=1.10,<2"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+build-book = "chesslab.cli:build_book_main"
+review-game = "chesslab.cli:review_game_main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["chesslab*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,42 +1,24 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
-import {
-  createStudy,
-  deleteStudy,
-  fetchMe,
-  getAllProgress,
-  getStudy,
-  importBookPgn,
-  listBookSources,
-  listOpenings,
-  listStudies,
-  login,
-  logout,
-  putProgress,
-  register,
-} from "./api";
-import { AuthScreen } from "./AuthScreen";
-import { BookAdmin } from "./BookAdmin";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { listOpenings } from "./api";
 import { Home } from "./Home";
 import { ReviewScreen } from "./ReviewScreen";
 import { Studies } from "./Studies";
 import { Trainer } from "./Trainer";
 import { navigate, parseHash, type AppRoute } from "./hashRoute";
 import {
-  clearSessionProgress,
-  loadSessionProgress,
-  mergeProgress,
-  writeSessionOpening,
-} from "./sessionProgress";
-import type {
-  BookSource,
-  OpeningCourse,
-  OpeningProgress,
-  PublicUser,
-  StudyListItem,
-} from "./types";
+  STORAGE_NOTE,
+  createStudy,
+  deleteStudy,
+  downloadText,
+  exportBackup,
+  getStudy,
+  importBackup,
+  listStudies,
+  loadProgress,
+  writeOpeningProgress,
+} from "./localStore";
+import type { OpeningCourse, OpeningProgress, StudyListItem } from "./types";
 import "./App.css";
-
-const GUEST_KEY = "opening-lab-guest";
 
 function emptyProgress(): OpeningProgress {
   return {
@@ -51,11 +33,6 @@ function navClass(active: boolean) {
 }
 
 export default function App() {
-  const [user, setUser] = useState<PublicUser | null>(null);
-  const [authReady, setAuthReady] = useState(false);
-  const [authMode, setAuthMode] = useState<"login" | "register">("login");
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
   const [route, setRoute] = useState<AppRoute>(() =>
     typeof window === "undefined"
       ? { name: "home" }
@@ -63,18 +40,16 @@ export default function App() {
   );
   const [courses, setCourses] = useState<OpeningCourse[]>([]);
   const [progress, setProgress] = useState<Record<string, OpeningProgress>>(
-    () => loadSessionProgress(),
+    () => loadProgress(),
   );
-  const [studies, setStudies] = useState<StudyListItem[]>([]);
-  const [sources, setSources] = useState<BookSource[]>([]);
-  const [bookPgn, setBookPgn] = useState("");
+  const [studies, setStudies] = useState<StudyListItem[]>(() => listStudies());
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [notice, setNotice] = useState<string | null>(null);
   const [search, setSearch] = useState("");
   const [reviewPgn, setReviewPgn] = useState<string | undefined>();
+  const importInput = useRef<HTMLInputElement>(null);
 
-  const signedIn = Boolean(user);
   const trainSlug = route.name === "train" ? route.slug : undefined;
   const course = useMemo(
     () => courses.find((item) => item.slug === trainSlug) ?? null,
@@ -90,148 +65,85 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    void fetchMe()
-      .then(setUser)
-      .catch(() => setUser(null))
-      .finally(() => setAuthReady(true));
-  }, []);
-
-  useEffect(() => {
     void listOpenings()
       .then(setCourses)
-      .catch(() => setCourses([]));
+      .catch((err) => {
+        setCourses([]);
+        setError(err instanceof Error ? err.message : "Could not load the opening book");
+      });
   }, []);
 
   useEffect(() => {
-    if (!user) {
-      setStudies([]);
-      setProgress(loadSessionProgress());
+    if (!notice) {
       return;
     }
-    void listStudies()
-      .then(setStudies)
-      .catch(() => setStudies([]));
-    void getAllProgress()
-      .then(async (remote) => {
-        const merged = mergeProgress(remote, loadSessionProgress());
-        const next: Record<string, OpeningProgress> = {};
-        for (const [id, patch] of Object.entries(merged)) {
-          next[id] = await putProgress(id, patch);
-        }
-        setProgress({ ...remote, ...next });
-        clearSessionProgress();
-      })
-      .catch(() => setProgress({}));
-  }, [user]);
+    const timer = window.setTimeout(() => setNotice(null), 4000);
+    return () => window.clearTimeout(timer);
+  }, [notice]);
 
-  useEffect(() => {
-    if (!user?.isAdmin || route.name !== "book") {
-      return;
-    }
-    void listBookSources()
-      .then(setSources)
-      .catch(() => setSources([]));
-  }, [route.name, user]);
+  const onProgress = useCallback(
+    (next: OpeningProgress) => {
+      const saved = writeOpeningProgress(openingId, {
+        learnedLineIds: next.learnedLineIds,
+        notes: next.notes,
+      });
+      setProgress((current) => ({ ...current, [openingId]: saved }));
+    },
+    [openingId],
+  );
 
-  const goAuth = useCallback((mode: "login" | "register") => {
-    setAuthMode(mode);
-    setError(null);
-    navigate({ name: "auth" });
-  }, []);
-
-  const onAuth = useCallback(async () => {
+  const onCreateStudy = useCallback((title: string, pgn: string) => {
     setBusy(true);
     setError(null);
     try {
-      const next =
-        authMode === "register"
-          ? await register(username, password)
-          : await login(username, password);
-      sessionStorage.removeItem(GUEST_KEY);
-      setUser(next);
-      setPassword("");
-      navigate({ name: "home" });
+      createStudy(title, pgn);
+      setStudies(listStudies());
+      setNotice("Study saved in this browser.");
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Could not sign in");
+      setError(err instanceof Error ? err.message : "Could not save study");
     } finally {
       setBusy(false);
     }
-  }, [authMode, password, username]);
-
-  const onLogout = useCallback(async () => {
-    await logout();
-    setUser(null);
-    setStudies([]);
-    sessionStorage.setItem(GUEST_KEY, "1");
-    navigate({ name: "home" });
   }, []);
-
-  const onGuest = useCallback(() => {
-    sessionStorage.setItem(GUEST_KEY, "1");
-    setError(null);
-  }, []);
-
-  const onProgress = useCallback(
-    (next: OpeningProgress, persist: boolean) => {
-      setProgress((current) => ({ ...current, [openingId]: next }));
-      if (!persist) {
-        writeSessionOpening(openingId, next);
-        return;
-      }
-      if (!signedIn) {
-        writeSessionOpening(openingId, next);
-        return;
-      }
-      void putProgress(openingId, {
-        learnedLineIds: next.learnedLineIds,
-        notes: next.notes,
-      }).then((saved) => {
-        setProgress((current) => ({ ...current, [openingId]: saved }));
-      });
-    },
-    [openingId, signedIn],
-  );
-
-  const onCreateStudy = useCallback(
-    (title: string, pgn: string) => {
-      setBusy(true);
-      setError(null);
-      void createStudy(title, pgn)
-        .then(async () => setStudies(await listStudies()))
-        .catch((err) =>
-          setError(err instanceof Error ? err.message : "Could not save study"),
-        )
-        .finally(() => setBusy(false));
-    },
-    [],
-  );
 
   const onDeleteStudy = useCallback((id: string) => {
-    void deleteStudy(id)
-      .then(async () => setStudies(await listStudies()))
-      .catch((err) =>
-        setError(err instanceof Error ? err.message : "Could not delete study"),
-      );
+    deleteStudy(id);
+    setStudies(listStudies());
   }, []);
 
   const onOpenStudy = useCallback((id: string) => {
-    void getStudy(id)
-      .then((study) => {
-        setReviewPgn(study.pgn);
-        navigate({ name: "review" });
-      })
-      .catch((err) =>
-        setError(err instanceof Error ? err.message : "Could not open study"),
-      );
+    try {
+      setReviewPgn(getStudy(id).pgn);
+      navigate({ name: "review" });
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Could not open study");
+    }
   }, []);
 
-  if (!authReady) {
-    return (
-      <div className="app-shell">
-        <p className="muted center-note">Loading…</p>
-      </div>
-    );
-  }
+  const onExport = useCallback(() => {
+    const stamp = new Date().toISOString().slice(0, 10);
+    downloadText(`opening-lab-backup-${stamp}.json`, exportBackup());
+  }, []);
+
+  const onImportFile = useCallback((file: File | undefined) => {
+    if (!file) {
+      return;
+    }
+    const reader = new FileReader();
+    reader.onload = () => {
+      try {
+        const result = importBackup(String(reader.result ?? ""));
+        setProgress(loadProgress());
+        setStudies(listStudies());
+        setNotice(
+          `Imported ${result.openings} opening(s) and ${result.studies} new study(ies).`,
+        );
+      } catch (err) {
+        setError(err instanceof Error ? err.message : "Could not import backup");
+      }
+    };
+    reader.readAsText(file);
+  }, []);
 
   return (
     <div className="app-shell">
@@ -272,64 +184,38 @@ export default function App() {
           >
             Studies
           </button>
-          {user?.isAdmin ? (
-            <button
-              type="button"
-              className={navClass(route.name === "book")}
-              onClick={() => navigate({ name: "book" })}
-            >
-              Book
-            </button>
-          ) : null}
         </nav>
         <div className="site-auth">
-          {user ? (
-            <>
-              <span className="user-label">
-                {user.username}
-                {user.isAdmin ? " · admin" : ""}
-              </span>
-              <button type="button" className="text-btn" onClick={() => void onLogout()}>
-                Log out
-              </button>
-            </>
-          ) : (
-            <>
-              <span className="user-label">Guest</span>
-              <button type="button" className="text-btn" onClick={() => goAuth("register")}>
-                Sign up
-              </button>
-              <button type="button" className="text-btn" onClick={() => goAuth("login")}>
-                Log in
-              </button>
-            </>
-          )}
+          <span className="user-label" title={STORAGE_NOTE}>
+            Local data
+          </span>
+          <button type="button" className="text-btn" onClick={onExport}>
+            Export
+          </button>
+          <button
+            type="button"
+            className="text-btn"
+            onClick={() => importInput.current?.click()}
+          >
+            Import
+          </button>
+          <input
+            ref={importInput}
+            type="file"
+            accept="application/json,.json"
+            hidden
+            onChange={(event) => {
+              onImportFile(event.target.files?.[0]);
+              event.target.value = "";
+            }}
+          />
         </div>
       </header>
 
-      {!user && route.name !== "auth" ? (
-        <p className="guest-banner">
-          Sign up to save studies and training progress.
-        </p>
-      ) : null}
+      {notice ? <p className="guest-banner">{notice}</p> : null}
+      {error && route.name === "home" ? <p className="error">{error}</p> : null}
 
-      {route.name === "auth" ? (
-        <AuthScreen
-          mode={authMode}
-          username={username}
-          password={password}
-          busy={busy}
-          error={error}
-          onMode={(mode) => {
-            setAuthMode(mode);
-            setError(null);
-          }}
-          onUsername={setUsername}
-          onPassword={setPassword}
-          onSubmit={() => void onAuth()}
-          onGuest={onGuest}
-        />
-      ) : route.name === "home" ? (
+      {route.name === "home" ? (
         <Home
           courses={courses}
           progress={progress}
@@ -342,58 +228,24 @@ export default function App() {
           course={course}
           courses={courses}
           progress={openingProgress}
-          signedIn={signedIn}
           onProgress={onProgress}
-          onNeedAuth={() => goAuth("register")}
         />
       ) : route.name === "studies" ? (
         <Studies
-          signedIn={signedIn}
           studies={studies}
           busy={busy}
           error={error}
           onCreate={onCreateStudy}
           onDelete={onDeleteStudy}
           onOpen={onOpenStudy}
-          onNeedAuth={() => goAuth("register")}
-        />
-      ) : route.name === "book" && user?.isAdmin ? (
-        <BookAdmin
-          bookPgn={bookPgn}
-          sources={sources}
-          busy={busy}
-          error={error}
-          notice={notice}
-          onBookPgn={setBookPgn}
-          onImport={() => {
-            setBusy(true);
-            setError(null);
-            void importBookPgn(bookPgn)
-              .then(async (result) => {
-                setSources(await listBookSources());
-                setCourses(await listOpenings());
-                setBookPgn("");
-                setNotice(
-                  `Added ${result.games} game(s), ${result.positions} new book moves.`,
-                );
-              })
-              .catch((err) =>
-                setError(
-                  err instanceof Error ? err.message : "Could not import book",
-                ),
-              )
-              .finally(() => setBusy(false));
-          }}
         />
       ) : (
         <ReviewScreen
-          key={reviewPgn ?? "review"}
-          user={user}
+          key={`${route.id ?? ""}:${reviewPgn ?? ""}`}
+          reviewId={route.id}
           initialPgn={reviewPgn}
-          onNeedAuth={() => goAuth("register")}
-          onSaveStudy={async (title, pgn) => {
-            await createStudy(title, pgn);
-            setStudies(await listStudies());
+          onSaveStudy={(title, pgn) => {
+            onCreateStudy(title, pgn);
           }}
         />
       )}

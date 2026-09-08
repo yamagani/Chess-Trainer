@@ -11,11 +11,11 @@ import {
 } from "react";
 import { Chessboard } from "react-chessboard";
 import {
-  REVIEW_API_MESSAGE,
-  createReview,
   getReview,
   listReviews,
-  usesOfflineBook,
+  parseReviewJson,
+  repoUrl,
+  reviewRequestUrl,
 } from "./api";
 import { AnnotatedSquare } from "./AnnotatedSquare";
 import { EvalBar } from "./EvalBar";
@@ -26,7 +26,8 @@ import {
   formatSan,
 } from "./glyphs";
 import { useBoardWidth } from "./useBoardWidth";
-import type { GameReview, PublicUser, ReviewListItem, ReviewedMove } from "./types";
+import { navigate } from "./hashRoute";
+import type { GameReview, ReviewListItem, ReviewedMove } from "./types";
 
 const START_FEN = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
 
@@ -72,15 +73,13 @@ function readPgnFile(
 }
 
 export function ReviewScreen({
-  user,
+  reviewId,
   initialPgn,
-  onNeedAuth,
   onSaveStudy,
 }: {
-  user: PublicUser | null;
+  reviewId?: string;
   initialPgn?: string;
-  onNeedAuth: () => void;
-  onSaveStudy: (title: string, pgn: string) => Promise<void>;
+  onSaveStudy: (title: string, pgn: string) => void;
 }) {
   const [pgn, setPgn] = useState(initialPgn ?? "");
   const [reviews, setReviews] = useState<ReviewListItem[]>([]);
@@ -127,61 +126,29 @@ export function ReviewScreen({
   }, [currentMove]);
 
   useEffect(() => {
-    if (autoStarted.current || !initialPgn || initialPgn.trim().length < 10) {
+    void listReviews()
+      .then(setReviews)
+      .catch(() => setReviews([]));
+  }, []);
+
+  useEffect(() => {
+    if (autoStarted.current || !reviewId) {
       return;
     }
     autoStarted.current = true;
     setBusy(true);
     setError(null);
-    void createReview(initialPgn)
+    void getReview(reviewId)
       .then((next) => {
         setReview(next);
         setPly(0);
         setStudyTitle(`${next.white} vs ${next.black}`);
       })
       .catch((err) => {
-        setError(err instanceof Error ? err.message : "Could not start review");
+        setError(err instanceof Error ? err.message : "Could not load review");
       })
       .finally(() => setBusy(false));
-  }, [initialPgn]);
-
-  useEffect(() => {
-    if (!user) {
-      setReviews([]);
-      return;
-    }
-    void listReviews()
-      .then(setReviews)
-      .catch(() => setReviews([]));
-  }, [user]);
-
-  useEffect(() => {
-    if (!review || review.status !== "analyzing") {
-      return;
-    }
-    const timer = window.setInterval(() => {
-      void getReview(review.id)
-        .then((next) => {
-          setReview(next);
-          setReviews((current) =>
-            current.map((item) =>
-              item.id === next.id
-                ? {
-                    ...item,
-                    status: next.status,
-                    progress: next.progress,
-                    summary: next.summary,
-                  }
-                : item,
-            ),
-          );
-        })
-        .catch((err) => {
-          setError(err instanceof Error ? err.message : "Could not load review");
-        });
-    }, 900);
-    return () => window.clearInterval(timer);
-  }, [review]);
+  }, [reviewId]);
 
   useEffect(() => {
     const onKey = (event: KeyboardEvent) => {
@@ -199,67 +166,46 @@ export function ReviewScreen({
     return () => window.removeEventListener("keydown", onKey);
   }, [review]);
 
-  const onUploadReview = useCallback(async () => {
-    setBusy(true);
-    setError(null);
-    try {
-      const next = await createReview(pgn);
-      setReview(next);
-      setPly(0);
-      setStudyTitle(`${next.white} vs ${next.black}`);
-      if (user) {
-        setReviews((current) => [
-          {
-            id: next.id,
-            white: next.white,
-            black: next.black,
-            result: next.result,
-            event: next.event,
-            date: next.date,
-            status: next.status,
-            progress: next.progress,
-            summary: next.summary,
-            createdAt: next.createdAt,
-          },
-          ...current,
-        ]);
-      }
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "Could not start review");
-    } finally {
-      setBusy(false);
-    }
-  }, [pgn, user]);
+  const request = reviewRequestUrl(pgn);
 
-  const openReview = useCallback(async (id: string) => {
-    setBusy(true);
+  const onRequestReview = useCallback(() => {
+    setError(null);
+    window.open(request.url, "_blank", "noopener");
+    if (!request.prefilled) {
+      setError(
+        "This PGN is too long to prefill. Paste it into the PGN field of the GitHub form.",
+      );
+    }
+  }, [request]);
+
+  const openReview = useCallback((id: string) => {
+    navigate({ name: "review", id });
+  }, []);
+
+  const onLoadReviewFile = useCallback((text: string) => {
     setError(null);
     try {
-      const next = await getReview(id);
+      const next = parseReviewJson(text);
       setReview(next);
       setPly(0);
       setStudyTitle(`${next.white} vs ${next.black}`);
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Could not open review");
-    } finally {
-      setBusy(false);
+      setError(err instanceof Error ? err.message : "Could not read that file");
     }
   }, []);
 
   if (!review) {
     return (
       <section className="setup-card wide">
-        <h2>Upload a PGN</h2>
+        <h2>Review a game</h2>
         <p className="muted">
           Stockfish reviews the game and marks inaccuracies (?!), mistakes (?),
-          and blunders (??). Book moves show the opening name.
-          {!user
-            ? " Guest analysis stays in this session and is not saved to an account."
-            : ""}
+          and blunders (??). Book moves show the opening name. Analysis runs in
+          GitHub Actions: paste your PGN, open the request, and the finished
+          review is linked back on the issue and listed here after the next
+          deploy.
         </p>
-        {usesOfflineBook() ? (
-          <p className="error">{REVIEW_API_MESSAGE}</p>
-        ) : null}
+        {busy ? <p className="muted">Loading review…</p> : null}
         <label className="field">
           <span>PGN file</span>
           <input
@@ -281,29 +227,44 @@ export function ReviewScreen({
         <button
           type="button"
           className="primary"
-          onClick={() => void onUploadReview()}
-          disabled={busy || usesOfflineBook() || pgn.trim().length < 10}
+          onClick={onRequestReview}
+          disabled={pgn.trim().length < 10}
         >
-          {busy ? "Uploading…" : "Review game"}
+          Request review on GitHub
         </button>
+        <p className="muted">
+          Reviews are public on{" "}
+          <a href={`${repoUrl()}/issues?q=label%3Areview`} target="_blank" rel="noreferrer">
+            the repository
+          </a>
+          . Running the analysis locally? Load its JSON here:
+        </p>
+        <label className="field">
+          <span>Review JSON</span>
+          <input
+            type="file"
+            accept="application/json,.json"
+            onChange={(event) => readPgnFile(event, onLoadReviewFile)}
+          />
+        </label>
         {reviews.length > 0 ? (
           <div className="review-list">
-            <h3>Your reviews</h3>
+            <h3>Published reviews</h3>
             {reviews.map((item) => (
               <button
                 key={item.id}
                 type="button"
                 className="review-row"
-                onClick={() => void openReview(item.id)}
+                onClick={() => openReview(item.id)}
               >
                 <strong>
                   {item.white} vs {item.black}
                 </strong>
                 <span>
                   {item.result} ·{" "}
-                  {item.status === "analyzing"
-                    ? `${item.progress.analyzed}/${item.progress.total}`
-                    : `${item.summary.blunders} blunders, ${item.summary.mistakes} mistakes`}
+                  {item.status === "ready"
+                    ? `${item.summary.blunders} blunders, ${item.summary.mistakes} mistakes`
+                    : item.status}
                 </span>
               </button>
             ))}
@@ -372,6 +333,7 @@ export function ReviewScreen({
                 ? `${currentMove.san}${currentMove.annotation ? ` ${annotationGlyph(currentMove.annotation)} ${annotationLabel(currentMove.annotation)}` : ""}${currentMove.openingName ? ` · ${currentMove.openingName}` : ""} · eval ${evalLabel(evaluation)}`
                 : "Starting position"}
         </p>
+        {review.warning ? <p className="muted">{review.warning}</p> : null}
         {error ? <p className="error">{error}</p> : null}
       </section>
       <aside className="sidebar">
@@ -465,20 +427,14 @@ export function ReviewScreen({
             maxLength={80}
           />
         </label>
-        {user ? (
-          <button
-            type="button"
-            className="primary"
-            disabled={studyTitle.trim().length < 1}
-            onClick={() => void onSaveStudy(studyTitle.trim(), review.pgn)}
-          >
-            Save study
-          </button>
-        ) : (
-          <button type="button" className="ghost" onClick={onNeedAuth}>
-            Sign up to save this study
-          </button>
-        )}
+        <button
+          type="button"
+          className="primary"
+          disabled={studyTitle.trim().length < 1}
+          onClick={() => onSaveStudy(studyTitle.trim(), review.pgn)}
+        >
+          Save study
+        </button>
         <div className="actions">
           <button
             type="button"
@@ -486,9 +442,12 @@ export function ReviewScreen({
             onClick={() => {
               setReview(null);
               setPly(0);
+              if (reviewId) {
+                navigate({ name: "review" });
+              }
             }}
           >
-            Back to uploads
+            Back to reviews
           </button>
         </div>
       </aside>

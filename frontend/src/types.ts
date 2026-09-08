@@ -14,12 +14,6 @@ export type MoveAnnotation = {
   glyph: "book" | "?!" | "?" | "??";
 };
 
-export type PublicUser = {
-  id: string;
-  username: string;
-  isAdmin: boolean;
-};
-
 export type ReviewStatus = "analyzing" | "ready" | "error";
 
 export type ReviewedMove = {
@@ -66,6 +60,8 @@ export type GameReview = {
   moves: ReviewedMove[];
   summary: ReviewSummary;
   createdAt: string;
+  engine?: { depth: number; multipv: number };
+  warning?: string;
 };
 
 export type ReviewListItem = {
@@ -131,7 +127,6 @@ export type TrainerTryResult = {
 
 export type Study = {
   id: string;
-  userId: string;
   title: string;
   pgn: string;
   createdAt: string;

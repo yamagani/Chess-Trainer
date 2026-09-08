@@ -34,5 +34,9 @@ Thumbs.db
 *.sln
 *.sw?
 
-# Local API runtime data (users, book, progress, reviews, studies)
-backend1/data/*.json
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+.venv/

@@ -1,0 +1,13 @@
+title = "Opening Lab gitleaks config"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Chess data is not a secret"
+paths = [
+  '''frontend/public/book\.json''',
+  '''frontend/public/reviews/.*\.json''',
+  '''book/.*\.pgn''',
+  '''frontend/package-lock\.json''',
+]

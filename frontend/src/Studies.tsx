@@ -15,47 +15,29 @@ function readPgnFile(
 }
 
 export function Studies({
-  signedIn,
   studies,
   busy,
   error,
   onCreate,
   onDelete,
   onOpen,
-  onNeedAuth,
 }: {
-  signedIn: boolean;
   studies: StudyListItem[];
   busy: boolean;
   error: string | null;
   onCreate: (title: string, pgn: string) => void;
   onDelete: (id: string) => void;
   onOpen: (id: string) => void;
-  onNeedAuth: () => void;
 }) {
   const [title, setTitle] = useState("");
   const [pgn, setPgn] = useState("");
-
-  if (!signedIn) {
-    return (
-      <section className="setup-card">
-        <h2>Studies</h2>
-        <p className="muted">
-          Create an account to save studies as PGNs. Guests can review games in
-          this session, but nothing is stored on the server.
-        </p>
-        <button type="button" className="primary" onClick={onNeedAuth}>
-          Sign up to save studies
-        </button>
-      </section>
-    );
-  }
 
   return (
     <section className="setup-card wide">
       <h2>Your studies</h2>
       <p className="muted">
-        Save a PGN with a title. Open one later to review it on the board.
+        Save a PGN with a title. Studies stay in this browser — use Export in
+        the header to back them up.
       </p>
       <label className="field">
         <span>Title</span>

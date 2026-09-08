@@ -1,10 +1,8 @@
 export type AppRoute =
   | { name: "home" }
-  | { name: "auth" }
-  | { name: "review" }
+  | { name: "review"; id?: string }
   | { name: "train"; slug?: string }
-  | { name: "studies" }
-  | { name: "book" };
+  | { name: "studies" };
 
 function hashParts(hash: string): string[] {
   const parts = hash.replace(/^#\/?/, "").split("/").filter(Boolean);
@@ -19,11 +17,8 @@ function hashParts(hash: string): string[] {
 
 export function parseHash(hash: string): AppRoute {
   const [first, second] = hashParts(hash);
-  if (first === "auth") {
-    return { name: "auth" };
-  }
   if (first === "review") {
-    return { name: "review" };
+    return { name: "review", id: second };
   }
   if (first === "train") {
     return { name: "train", slug: second };
@@ -31,24 +26,17 @@ export function parseHash(hash: string): AppRoute {
   if (first === "studies") {
     return { name: "studies" };
   }
-  if (first === "book") {
-    return { name: "book" };
-  }
   return { name: "home" };
 }
 
 export function toHash(route: AppRoute): string {
   switch (route.name) {
-    case "auth":
-      return "#/auth";
     case "review":
-      return "#/review";
+      return route.id ? `#/review/${route.id}` : "#/review";
     case "train":
       return route.slug ? `#/train/${route.slug}` : "#/train";
     case "studies":
       return "#/studies";
-    case "book":
-      return "#/book";
     default:
       return "#/";
   }

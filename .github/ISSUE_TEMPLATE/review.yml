@@ -1,0 +1,30 @@
+name: Game review
+description: Have Stockfish review a game. The result is published on the site and linked back here.
+title: "Review: "
+labels: [review]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Paste one game in PGN. Analysis runs in GitHub Actions (about 1 second per move at depth 14) and a link to the annotated game is posted on this issue when it is done.
+
+        Reviews are public — anyone who can see this repository can open them.
+  - type: textarea
+    id: pgn
+    attributes:
+      label: PGN
+      description: One game. Headers are optional; White / Black / Result are shown if present.
+      placeholder: |
+        [White "Me"]
+        [Black "Opponent"]
+        [Result "0-1"]
+
+        1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 ...
+      render: pgn
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes (optional)
+      description: Anything you want to remember about this game.

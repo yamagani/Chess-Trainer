@@ -1,121 +1,140 @@
 # Opening Lab
 
-A chess training app: browse opening courses from an admin-uploaded book, drill those lines on the board, and review games with Stockfish. The UI is a React + Vite frontend; the API is Express in `backend1/`.
+A chess training app: browse opening courses from a book, drill those lines on the board, and review games with Stockfish.
 
-Live demo (static GitHub Pages): [https://level-11-0.github.io/Chess-Trainer/](https://level-11-0.github.io/Chess-Trainer/)
+- **Frontend**: React + Vite, static, deployed to GitHub Pages.
+- **Backend**: Python (`backend/`), runs **only inside GitHub Actions**. It builds the opening book from PGN files and reviews games with Stockfish, then commits the results as JSON for the site to read.
 
-Guests can browse the catalog and train against the shipped book. An account (and the Express API) is required to persist PGN studies, opening training progress, and Stockfish reviews.
+There is no server, no database, no accounts, and **no secrets** — the workflows use the built-in `GITHUB_TOKEN` and nothing else. Personal data (training progress, notes, saved studies) stays in your browser, with Export/Import for backups.
+
+Live site: `https://<owner>.github.io/Chess-Trainer/`
 
 ## Features
 
-- **Courses** (`#/`) — catalog of openings built from the book, with search and line counts
-- **Train** (`#/train`, `#/train/<slug>`) — play book moves; the server (or the client-side book on Pages) replies, or hints a correct continuation on a wrong / out-of-book move
-- **Review** (`#/review`) — paste or upload a PGN; Stockfish annotates inaccuracies, mistakes, and blunders (book moves are marked separately). The eval bar shows **+4 / +2 / 0 / −2 / −4** plus the current score. Review needs the API.
-- **Studies** (`#/studies`) — save and reopen PGNs (signed-in only)
-- **Book** (`#/book`) — admin-only PGN import
+| Route | What it does | Data source |
+| --- | --- | --- |
+| `#/` | Course catalog with search and line counts | `frontend/public/book.json` |
+| `#/train`, `#/train/<slug>` | Play book moves; the app replies, or hints a correct continuation on a wrong / out-of-book move | book, in the browser |
+| `#/review` | Request a Stockfish review (via a GitHub Issue), browse published reviews | `frontend/public/reviews/` |
+| `#/review/<id>` | Annotated game: ?! ? ?? glyphs, eval bar, worst moves, book moves | one review JSON |
+| `#/studies` | Save and reopen PGNs | `localStorage` |
 
-Course names use the PGN `Opening` header, otherwise `ECO` / `Event`, otherwise “Unnamed opening”.
+Course names come from the PGN `Opening` header, else `ECO: Event`, else `Event`, else "Unnamed opening".
+
+## How the pieces fit
+
+```
+book/*.pgn ──(Actions: build-book.yml → python -m chesslab.cli build-book)──▶ frontend/public/book.json ─┐
+                                                                                                          ├─▶ pages.yml ──▶ GitHub Pages
+GitHub Issue "Game review" ──(Actions: review.yml → review-game + Stockfish)──▶ frontend/public/reviews/ ─┘
+```
+
+### Adding openings to the book
+
+Commit `.pgn` files under `book/` (one or many games per file, up to 24 plies each are used). On push to `main`, **Build opening book** regenerates `book.json` and commits it. Opening a pull request is the review gate — there is no admin upload.
+
+### Reviewing a game
+
+1. On the site, go to **Review**, paste a PGN, click **Request review on GitHub**. That opens a pre-filled issue using the *Game review* form (or open one yourself: New issue → Game review).
+2. The **Review game** workflow installs Stockfish, analyzes the game (depth 14, MultiPV 3, ≤160 plies, ~1 s/move), writes `frontend/public/reviews/issue-<n>.json`, updates `reviews/index.json`, comments a summary on the issue, and closes it.
+3. **Deploy to GitHub Pages** runs after it and the review appears at `#/review/issue-<n>`.
+
+Reviews are public (they live in the repository). You can also run **Review game** from the Actions tab with a pasted PGN (`workflow_dispatch`), or run the analysis locally and load the JSON on the Review page.
 
 ## Run locally
 
-Needs Node.js. Install and start each package in its own terminal:
+Requirements: Node.js 22, Python 3.10+, and Stockfish (only for game reviews and the engine tests).
+
+macOS (Homebrew):
 
 ```bash
-# API — http://localhost:3001
-cd backend1
-npm install
-npm run dev
+brew install node@22 stockfish
 ```
 
+Ubuntu / Debian:
+
 ```bash
-# App — http://localhost:5173/
+sudo apt-get install -y stockfish
+```
+
+Frontend:
+
+```bash
 cd frontend
-npm install
-npm run dev
+npm ci
+npm run dev        # http://localhost:5173/
+npm run build      # typecheck + production build (uses base /Chess-Trainer/)
+npm run preview    # serve the build at http://localhost:4173/Chess-Trainer/
+npm run lint       # oxlint
 ```
 
-Open [http://localhost:5173/](http://localhost:5173/). Local `npm run dev` uses `base: '/'` and proxies `/api` to `http://127.0.0.1:3001` (`frontend/vite.config.ts`). Production / GitHub Pages builds use `base: '/Chess-Trainer/'`. The API also allows CORS from `localhost:5173` / `127.0.0.1:5173`.
+Backend, in a virtual environment (Homebrew and Debian Pythons refuse `pip install` outside one):
 
-| Script | Where | What |
-| --- | --- | --- |
-| `npm run dev` | `frontend/` | Vite dev server (port 5173) |
-| `npm run build` | `frontend/` | Typecheck + production build |
-| `npm run preview` | `frontend/` | Serve the production build |
-| `npm run lint` | `frontend/` | Oxlint |
-| `npm run dev` | `backend1/` | Express with reload (`tsx watch`) |
-| `npm start` | `backend1/` | Express once |
-| `npm run build` | `backend1/` | `tsc` → `dist/` |
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -e "backend[dev]"
+python -m chesslab.cli build-book                       # book/*.pgn -> frontend/public/book.json
+python -m chesslab.cli review-game --pgn-file game.pgn  # -> frontend/public/reviews/<id>.json
+```
 
-Optional environment variables for the API:
+Stockfish is found on `PATH`, or set `STOCKFISH_PATH=/path/to/stockfish`.
 
-- `PORT` — listen port (default `3001`)
-- `ADMIN_USERNAME` — username that should be treated as admin (case-insensitive)
+## Testing
 
-Optional frontend build variable:
+### Locally (what CI runs)
 
-- `VITE_API_URL` — public API origin (no trailing slash). When set, the built app talks to that host instead of the static book.
+```bash
+source .venv/bin/activate
+python -m chesslab.cli build-book --check   # fails if book.json is stale
+pytest -q backend                           # engine tests skip when Stockfish is missing
+cd frontend && npm run lint && npm run build
+```
 
-## GitHub Pages
+To try a review end to end without GitHub, run the analysis into a scratch folder and load the JSON on the Review page (**Review JSON** file input):
 
-The repo name is **Chess-Trainer**. The production URL is:
+```bash
+python -m chesslab.cli review-game --pgn-file game.pgn --id local-1 --out-dir /tmp/reviews --depth 12
+```
 
-`https://level-11-0.github.io/Chess-Trainer/`
+Or drop the output into `frontend/dist/reviews/` after `npm run build` and open `npm run preview` at `/Chess-Trainer/#/review/local-1`.
 
-Hash routes (`#/`, `#/train`, `#/train/ruy-lopez`, `#/review`) work under that subpath. Production Vite `base` is `/Chess-Trainer/` (override with `BASE_URL` if you fork under another name). Local `npm run dev` stays at `/`.
+### On GitHub
 
-GitHub Pages is a static host and **cannot run Express or Stockfish**. Do not expect `/api` on `github.io` to reach your laptop.
+1. **Pull request** → the **CI** workflow runs pytest, the book freshness check, frontend lint + build, and gitleaks. Nothing deploys.
+2. **Merge to `main`** → **Deploy to GitHub Pages** publishes the site. **Build opening book** runs too if `book/` changed.
+3. **Review a game** → open a *Game review* issue (or use the site's **Request review on GitHub** button). Within a few minutes the **Review game** workflow comments a summary, closes the issue, and Pages redeploys with the review at `#/review/issue-<n>`. You can also start it from the Actions tab with **Run workflow** and a pasted PGN; that result lands at `#/review/run-<run id>`.
 
-On Pages, when `VITE_API_URL` is unset:
+If a workflow fails, the Actions tab has the log; a failed review also leaves a comment on the issue and can be retried by editing the issue.
 
-- **Catalog + trainer** run offline from `frontend/public/book.json` (chess.js + book positions in the browser)
-- Guest progress stays in `sessionStorage`
-- **Review / studies / accounts** show that they need the API instead of crashing on empty JSON
+## GitHub setup (once)
 
-To enable Pages:
+1. **Settings → Pages → Build and deployment → Source: GitHub Actions**
+2. **Settings → Actions → General → Workflow permissions: Read and write** (needed for the bot commits in `build-book.yml` / `review.yml`)
+3. Push to `main`. Workflows:
+   - [`ci.yml`](.github/workflows/ci.yml) — pytest, book freshness, frontend lint + build, secret scan (gitleaks)
+   - [`pages.yml`](.github/workflows/pages.yml) — build + deploy the site
+   - [`build-book.yml`](.github/workflows/build-book.yml) — regenerate `book.json` when `book/` changes
+   - [`review.yml`](.github/workflows/review.yml) — Stockfish review from an issue or manual run
 
-1. Repo **Settings → Pages → Build and deployment → Source: GitHub Actions**
-2. Push to `main` (or run **Deploy to GitHub Pages** from the Actions tab)
-3. Workflow: [`.github/workflows/pages.yml`](.github/workflows/pages.yml)
+The Pages build derives the base path from the repository name, so forks work unchanged. `VITE_REPO_URL` (set automatically in `pages.yml`) tells the site which repository to open review issues in.
 
-To point the Pages build at a hosted API later, set repository variable `VITE_API_URL` (Actions → Variables). Leave it unset to keep the offline book demo.
+### Secrets policy
 
-## Guest vs account
+- No repository secrets are used or needed. Each workflow declares the minimum `permissions:` it requires.
+- User input (issue bodies, dispatch inputs) is passed to scripts through environment variables and files, never interpolated into shell commands.
+- `gitleaks` runs in CI over the full history; `.gitleaks.toml` allowlists only chess data files.
+- `.gitignore` excludes `.env*` (except `.env.example`). Don't add credentials to the repo — nothing here needs them.
 
-| | Guest | Account |
-| --- | --- | --- |
-| Browse courses, train | Yes (API or shipped book) | Yes |
-| Review a PGN with Stockfish | API required | API required |
-| Opening progress / trainer notes | This browser tab only (`sessionStorage`) | Saved under `backend1/data/` |
-| PGN studies | Not stored | Saved and listed |
-| Saved review history | Not stored | Saved for that user |
+## Layout
 
-Sign-up usernames are 3–20 letters, numbers, or underscores; passwords are 8–72 characters.
-
-## Admin
-
-Admins see **Book** in the nav and can upload PGN to grow the opening catalog (API required).
-
-A user becomes admin if any of these apply:
-
-1. They are the first registered user and `ADMIN_USERNAME` is unset
-2. Their username matches `ADMIN_USERNAME`
-3. Their username is `admin`
-4. `isAdmin` is set to `true` on their record in `backend1/data/users.json` (created at runtime)
-
-If `ADMIN_USERNAME` is set, the API also reapplies admin flags on load/login so that username (and `admin`) stay admin.
-
-## Data
-
-Runtime JSON lives in `backend1/data/` (`users.json`, `book.json`, `progress.json`, `reviews.json`, `studies.json`). Those files are gitignored.
-
-A committed snapshot of the recovered book lives in:
-
-- `backend1/seed/book.json` — if `data/book.json` is missing or empty, the API restores this seed (users/progress/notes are not touched)
-- `frontend/public/book.json` — same snapshot, used by the Pages/offline trainer
-
-Admin PGN imports still write `backend1/data/book.json` when the API is running.
-
-`backend1/node_modules` was committed earlier. `.gitignore` now excludes it — drop it from the index before the first GitHub push so language stats stay on your source (`git rm -r --cached backend1/node_modules`).
+```
+backend/chesslab/   book.py (PGN -> book), engine.py (Stockfish, classification), review.py, cli.py
+backend/tests/      pytest (Stockfish tests skip if the binary is missing)
+book/               PGN sources for the opening book
+frontend/           React app; public/book.json and public/reviews/ are generated
+.github/            workflows + the "Game review" issue form
+```
 
 ## License
 

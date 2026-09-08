@@ -1,3 +1,7 @@
+// Data access for the static site. There is no server: the opening book and
+// finished reviews are JSON files produced by GitHub Actions (backend/), and
+// personal data (progress, notes, studies) lives in this browser (localStore).
+
 import {
   offlineGetOpening,
   offlineListBookSources,
@@ -8,359 +12,127 @@ import type {
   BookSource,
   GameReview,
   OpeningCourse,
-  OpeningProgress,
-  PublicUser,
   ReviewListItem,
-  Study,
-  StudyListItem,
   TrainerTryResult,
 } from "./types";
 
-const jsonHeaders = { "Content-Type": "application/json" };
+const DEFAULT_REPO_URL = "https://github.com/yamagani/Chess-Trainer";
 
-export const API_DOWN_MESSAGE =
-  "API is not running (start backend1 on port 3001)";
-
-export const REVIEW_API_MESSAGE =
-  "PGN review needs the Stockfish API. Run the backend locally or set VITE_API_URL.";
-
-export const AUTH_API_MESSAGE = API_DOWN_MESSAGE;
-
-function apiOrigin(): string {
-  const raw = import.meta.env.VITE_API_URL;
-  return typeof raw === "string" ? raw.replace(/\/$/, "") : "";
+/** Repository that runs the review workflow (set VITE_REPO_URL at build time to override). */
+export function repoUrl(): string {
+  const raw = import.meta.env.VITE_REPO_URL;
+  return (typeof raw === "string" && raw.trim() ? raw.trim() : DEFAULT_REPO_URL).replace(/\/$/, "");
 }
 
-export function usesRemoteApi(): boolean {
-  return Boolean(apiOrigin()) || import.meta.env.DEV;
+function siteUrl(path: string): string {
+  return `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
 }
 
-export function usesOfflineBook(): boolean {
-  return !usesRemoteApi();
+// ---- opening book (client-side) -------------------------------------------
+
+export function listOpenings(): Promise<OpeningCourse[]> {
+  return offlineListOpenings();
 }
 
-function apiUrl(path: string): string {
-  return `${apiOrigin()}${path}`;
+export function getOpening(slug: string): Promise<OpeningCourse> {
+  return offlineGetOpening(slug);
 }
 
-function looksLikeApiDown(status: number, text: string): boolean {
-  if (status === 502 || status === 503 || status === 504) {
-    return true;
-  }
-  const snippet = text.toLowerCase();
-  return (
-    snippet.includes("econnrefused") ||
-    snippet.includes("http proxy error") ||
-    (status >= 500 &&
-      (!text.trim() ||
-        snippet.includes("<!doctype") ||
-        snippet.includes("<html")))
-  );
+export function listBookSources(): Promise<BookSource[]> {
+  return offlineListBookSources();
 }
 
-async function parseResponse<T>(response: Response): Promise<T> {
-  const text = await response.text();
-  const where = response.url || "API";
-  if (looksLikeApiDown(response.status, text)) {
-    throw new Error(API_DOWN_MESSAGE);
-  }
-  if (!text.trim()) {
-    throw new Error(
-      `Empty response from ${where} (${response.status} ${response.statusText || "no status"}). ${API_DOWN_MESSAGE}.`,
-    );
-  }
-  let payload: T & { error?: string };
-  try {
-    payload = JSON.parse(text) as T & { error?: string };
-  } catch {
-    const snippet = text.replace(/\s+/g, " ").slice(0, 140);
-    throw new Error(
-      `Expected JSON from ${where} (${response.status}): ${snippet}`,
-    );
-  }
-  if (!response.ok) {
-    throw new Error(payload.error ?? `Request failed (${response.status})`);
-  }
-  return payload;
-}
-
-function request(path: string, init: RequestInit = {}): Promise<Response> {
-  return fetch(apiUrl(path), {
-    ...init,
-    credentials: "include",
-  }).catch(() => {
-    throw new Error(API_DOWN_MESSAGE);
-  });
-}
-
-async function withBookFallback<T>(
-  remote: () => Promise<T>,
-  local: () => Promise<T>,
-): Promise<T> {
-  if (!usesRemoteApi()) {
-    return local();
-  }
-  try {
-    return await remote();
-  } catch {
-    return local();
-  }
-}
-
-export async function fetchMe(): Promise<PublicUser | null> {
-  if (!usesRemoteApi()) {
-    return null;
-  }
-  const response = await request("/api/auth/me");
-  if (response.status === 401) {
-    return null;
-  }
-  return parseResponse<PublicUser>(response);
-}
-
-export async function register(
-  username: string,
-  password: string,
-): Promise<PublicUser> {
-  if (!usesRemoteApi()) {
-    throw new Error(AUTH_API_MESSAGE);
-  }
-  const response = await request("/api/auth/register", {
-    method: "POST",
-    headers: jsonHeaders,
-    body: JSON.stringify({ username, password }),
-  });
-  return parseResponse<PublicUser>(response);
-}
-
-export async function login(
-  username: string,
-  password: string,
-): Promise<PublicUser> {
-  if (!usesRemoteApi()) {
-    throw new Error(AUTH_API_MESSAGE);
-  }
-  const response = await request("/api/auth/login", {
-    method: "POST",
-    headers: jsonHeaders,
-    body: JSON.stringify({ username, password }),
-  });
-  return parseResponse<PublicUser>(response);
-}
-
-export async function logout(): Promise<void> {
-  if (!usesRemoteApi()) {
-    return;
-  }
-  await request("/api/auth/logout", { method: "POST" });
-}
-
-export async function listReviews(): Promise<ReviewListItem[]> {
-  if (!usesRemoteApi()) {
-    return [];
-  }
-  const response = await request("/api/reviews");
-  return parseResponse<ReviewListItem[]>(response);
-}
-
-export async function createReview(pgn: string): Promise<GameReview> {
-  if (!usesRemoteApi()) {
-    throw new Error(REVIEW_API_MESSAGE);
-  }
-  const response = await request("/api/reviews", {
-    method: "POST",
-    headers: jsonHeaders,
-    body: JSON.stringify({ pgn }),
-  });
-  return parseResponse<GameReview>(response);
-}
-
-export async function getReview(id: string): Promise<GameReview> {
-  if (!usesRemoteApi()) {
-    throw new Error(REVIEW_API_MESSAGE);
-  }
-  const response = await request(`/api/reviews/${id}`);
-  return parseResponse<GameReview>(response);
-}
-
-export async function listOpenings(): Promise<OpeningCourse[]> {
-  return withBookFallback(
-    async () => {
-      const response = await request("/api/book/openings");
-      return parseResponse<OpeningCourse[]>(response);
-    },
-    offlineListOpenings,
-  );
-}
-
-export async function getOpening(slug: string): Promise<OpeningCourse> {
-  return withBookFallback(
-    async () => {
-      const response = await request(`/api/book/openings/${slug}`);
-      return parseResponse<OpeningCourse>(response);
-    },
-    () => offlineGetOpening(slug),
-  );
-}
-
-export async function listBookSources(): Promise<BookSource[]> {
-  return withBookFallback(
-    async () => {
-      const response = await request("/api/book/sources");
-      return parseResponse<BookSource[]>(response);
-    },
-    offlineListBookSources,
-  );
-}
-
-export async function importBookPgn(pgn: string): Promise<{
-  games: number;
-  positions: number;
-  sources: BookSource[];
-}> {
-  if (!usesRemoteApi()) {
-    throw new Error(
-      "Book import needs the API. Run the backend locally or set VITE_API_URL.",
-    );
-  }
-  const response = await request("/api/book/pgns", {
-    method: "POST",
-    headers: jsonHeaders,
-    body: JSON.stringify({ pgn }),
-  });
-  return parseResponse(response);
-}
-
-export async function tryTrainerMove(input: {
+export function tryTrainerMove(input: {
   fen: string;
   from: string;
   to: string;
   promotion?: string;
   preferredOpening?: string;
 }): Promise<TrainerTryResult> {
-  return withBookFallback(
-    async () => {
-      const response = await request("/api/trainer/try", {
-        method: "POST",
-        headers: jsonHeaders,
-        body: JSON.stringify(input),
-      });
-      return parseResponse<TrainerTryResult>(response);
-    },
-    () => offlineTryTrainerMove(input),
-  );
+  return offlineTryTrainerMove(input);
 }
 
-export async function getTrainerNotes(openingName: string): Promise<string> {
-  if (!usesRemoteApi()) {
-    return "";
+// ---- reviews (JSON published by the "Review game" workflow) ---------------
+
+async function fetchJson<T>(path: string): Promise<T | null> {
+  const response = await fetch(siteUrl(path), { cache: "no-cache" });
+  if (response.status === 404) {
+    return null;
   }
-  const params = new URLSearchParams();
-  if (openingName) {
-    params.set("opening", openingName);
+  if (!response.ok) {
+    throw new Error(`Could not load ${path} (${response.status})`);
   }
-  const response = await request(`/api/trainer/notes?${params.toString()}`);
-  const payload = await parseResponse<{ text: string }>(response);
-  return payload.text;
+  const text = await response.text();
+  if (!text.trim()) {
+    return null;
+  }
+  return JSON.parse(text) as T;
 }
 
-export async function saveTrainerNotes(
-  openingName: string,
-  text: string,
-): Promise<void> {
-  if (!usesRemoteApi()) {
-    return;
-  }
-  const response = await request("/api/trainer/notes", {
-    method: "PUT",
-    headers: jsonHeaders,
-    body: JSON.stringify({ openingName, text }),
-  });
-  await parseResponse(response);
+export async function listReviews(): Promise<ReviewListItem[]> {
+  const items = await fetchJson<ReviewListItem[]>("reviews/index.json");
+  return Array.isArray(items) ? items : [];
 }
 
-export async function listStudies(): Promise<StudyListItem[]> {
-  if (!usesRemoteApi()) {
-    return [];
-  }
-  const response = await request("/api/studies");
-  return parseResponse<StudyListItem[]>(response);
-}
+export const REVIEW_ID_PATTERN = /^[A-Za-z0-9_-]{1,64}$/;
 
-export async function createStudy(
-  title: string,
-  pgn: string,
-): Promise<Study> {
-  if (!usesRemoteApi()) {
+export async function getReview(id: string): Promise<GameReview> {
+  if (!REVIEW_ID_PATTERN.test(id)) {
+    throw new Error("Invalid review id");
+  }
+  const review = await fetchJson<GameReview>(`reviews/${id}.json`);
+  if (!review) {
     throw new Error(
-      "Studies need the API. Run the backend locally or set VITE_API_URL.",
+      "Review not found. If you just requested it, wait for the site to redeploy and reload.",
     );
   }
-  const response = await request("/api/studies", {
-    method: "POST",
-    headers: jsonHeaders,
-    body: JSON.stringify({ title, pgn }),
-  });
-  return parseResponse<Study>(response);
+  return review;
 }
 
-export async function getStudy(id: string): Promise<Study> {
-  if (!usesRemoteApi()) {
-    throw new Error(
-      "Studies need the API. Run the backend locally or set VITE_API_URL.",
-    );
+/** Parse a review JSON produced by `python -m chesslab.cli review-game` (for local runs). */
+export function parseReviewJson(text: string): GameReview {
+  const parsed = JSON.parse(text) as Partial<GameReview>;
+  if (
+    !parsed ||
+    typeof parsed.id !== "string" ||
+    !Array.isArray(parsed.moves) ||
+    typeof parsed.startingFen !== "string"
+  ) {
+    throw new Error("That file is not an Opening Lab review");
   }
-  const response = await request(`/api/studies/${id}`);
-  return parseResponse<Study>(response);
+  return parsed as GameReview;
 }
 
-export async function deleteStudy(id: string): Promise<void> {
-  if (!usesRemoteApi()) {
-    return;
+// GitHub's issue-form prefill works through query parameters named after the
+// form field ids (see .github/ISSUE_TEMPLATE/review.yml). Browsers cap URLs
+// around 8k chars, so very long PGNs are pasted manually instead.
+const MAX_PREFILL_CHARS = 6000;
+
+export function reviewRequestUrl(pgn: string): { url: string; prefilled: boolean } {
+  const trimmed = pgn.trim();
+  const params = new URLSearchParams({ template: "review.yml" });
+  const title = titleFromPgn(trimmed);
+  if (title) {
+    params.set("title", `Review: ${title}`);
   }
-  const response = await request(`/api/studies/${id}`, { method: "DELETE" });
-  await parseResponse(response);
+  const prefilled = trimmed.length > 0 && trimmed.length <= MAX_PREFILL_CHARS;
+  if (prefilled) {
+    params.set("pgn", trimmed);
+  }
+  return { url: `${repoUrl()}/issues/new?${params.toString()}`, prefilled };
 }
 
-export async function getAllProgress(): Promise<
-  Record<string, OpeningProgress>
-> {
-  if (!usesRemoteApi()) {
-    return {};
-  }
-  const response = await request("/api/progress");
-  return parseResponse<Record<string, OpeningProgress>>(response);
+function header(pgn: string, key: string): string {
+  const match = pgn.match(new RegExp(`^\\[${key}\\s+"([^"]*)"\\]`, "m"));
+  const value = match?.[1]?.trim() ?? "";
+  return value && value !== "?" ? value : "";
 }
 
-export async function getProgress(
-  openingId: string,
-): Promise<OpeningProgress> {
-  if (!usesRemoteApi()) {
-    return {
-      learnedLineIds: [],
-      notes: "",
-      updatedAt: new Date().toISOString(),
-    };
+export function titleFromPgn(pgn: string): string {
+  const white = header(pgn, "White");
+  const black = header(pgn, "Black");
+  if (white || black) {
+    return `${white || "White"} vs ${black || "Black"}`;
   }
-  const response = await request(`/api/progress/${openingId}`);
-  return parseResponse<OpeningProgress>(response);
-}
-
-export async function putProgress(
-  openingId: string,
-  patch: { learnedLineIds?: string[]; notes?: string },
-): Promise<OpeningProgress> {
-  if (!usesRemoteApi()) {
-    return {
-      learnedLineIds: patch.learnedLineIds ?? [],
-      notes: patch.notes ?? "",
-      updatedAt: new Date().toISOString(),
-    };
-  }
-  const response = await request(`/api/progress/${openingId}`, {
-    method: "PUT",
-    headers: jsonHeaders,
-    body: JSON.stringify(patch),
-  });
-  return parseResponse<OpeningProgress>(response);
+  return "";
 }

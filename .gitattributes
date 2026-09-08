@@ -1,4 +1,5 @@
 * text=auto eol=lf
 
-# Already-tracked install tree; keep GitHub language stats on app source
-backend1/node_modules/** linguist-vendored
+# Generated data; keep GitHub language stats on app source
+frontend/public/book.json linguist-generated
+frontend/public/reviews/** linguist-generated

@@ -1,0 +1,124 @@
+name: Review game
+
+# A Stockfish review runs when someone opens an issue with the "Game review"
+# form (label: review). The result is committed to frontend/public/reviews/,
+# a summary is posted on the issue, and Pages redeploys.
+#
+# Only the job's own GITHUB_TOKEN is used. No repository secrets exist.
+
+on:
+  issues:
+    types: [opened, edited]
+  workflow_dispatch:
+    inputs:
+      pgn:
+        description: "PGN of the game to review"
+        required: true
+        type: string
+      depth:
+        description: "Search depth (8–20)"
+        required: false
+        default: "14"
+        type: string
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: repo-writes
+  cancel-in-progress: false
+
+jobs:
+  review:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      contains(github.event.issue.labels.*.name, 'review')
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      SITE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Stockfish + backend
+        run: |
+          sudo apt-get update -q && sudo apt-get install -y -q stockfish
+          pip install -e backend
+
+      - name: Write input
+        env:
+          # Pass user text through env, never by string-interpolating into the shell
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          DISPATCH_PGN: ${{ inputs.pgn }}
+          DISPATCH_DEPTH: ${{ inputs.depth }}
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          if [ "$EVENT_NAME" = "issues" ]; then
+            printf '%s' "$ISSUE_BODY" > /tmp/input.txt
+            echo "REVIEW_ID=issue-${{ github.event.issue.number }}" >> "$GITHUB_ENV"
+            echo "INPUT_FLAG=--issue-body-file" >> "$GITHUB_ENV"
+          else
+            printf '%s' "$DISPATCH_PGN" > /tmp/input.txt
+            echo "REVIEW_ID=run-${{ github.run_id }}" >> "$GITHUB_ENV"
+            echo "INPUT_FLAG=--pgn-file" >> "$GITHUB_ENV"
+          fi
+          DEPTH="${DISPATCH_DEPTH:-14}"
+          case "$DEPTH" in ''|*[!0-9]*) DEPTH=14;; esac
+          [ "$DEPTH" -lt 8 ] && DEPTH=8
+          [ "$DEPTH" -gt 20 ] && DEPTH=20
+          echo "DEPTH=$DEPTH" >> "$GITHUB_ENV"
+
+      - name: Analyze with Stockfish
+        id: analyze
+        continue-on-error: true
+        run: |
+          python -m chesslab.cli review-game "$INPUT_FLAG" /tmp/input.txt \
+            --id "$REVIEW_ID" --depth "$DEPTH" \
+            --summary-file /tmp/summary.md --site-url "$SITE_URL"
+
+      - name: Commit review
+        if: steps.analyze.outcome == 'success'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add frontend/public/reviews
+          git commit -m "review: ${REVIEW_ID}"
+          # main may have moved while this job ran; replay our commit on top of it
+          git pull --rebase origin main
+          git push
+
+      - name: Comment on issue
+        if: github.event_name == 'issues'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          OUTCOME: ${{ steps.analyze.outcome }}
+        run: |
+          if [ "$OUTCOME" = "success" ]; then
+            {
+              echo "✅ Review is ready. It will appear on the site after the next Pages deploy (a minute or two)."
+              echo
+              cat /tmp/summary.md
+            } > /tmp/comment.md
+            gh issue comment "${{ github.event.issue.number }}" --body-file /tmp/comment.md
+            gh issue close "${{ github.event.issue.number }}" --reason completed
+          else
+            {
+              echo "❌ Could not review this game."
+              echo
+              cat /tmp/summary.md 2>/dev/null || echo "Analysis failed — check the workflow log."
+              echo
+              echo "Edit this issue with a corrected PGN to try again."
+            } > /tmp/comment.md
+            gh issue comment "${{ github.event.issue.number }}" --body-file /tmp/comment.md
+          fi
+
+      - name: Fail job if analysis failed
+        if: steps.analyze.outcome != 'success'
+        run: exit 1
